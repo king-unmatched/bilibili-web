@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8"UTF-8">
+    <meta name="apple-itunes-app" content="app-id=736536022, app-argument=bilibili://?av=10933953">
+    <meta data-n-head="true" name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="theme-color" content="#de698c">
+    <meta name="description" content="å“”å“©å“”å“©ä¸“æ æ˜¯ä¸€ä¸ªé¢å‘å…¨ä½“bilibiliç”¨æˆ·çš„å›¾æ–‡å†…å®¹ã€‚ä¸ºäº†ç»™å¤§å®¶æä¾›å›¾æ–‡åˆ›ä½œä¸åˆ†äº«çš„ç©ºé—´ï¼Œæ„Ÿå—å°†æ–‡å­—åˆ†äº«äºä»–äººçš„å–œæ‚¦ã€‚ä¸ºäº†ç»™UPä¸»æ›´å¤šæ ·åŒ–çš„å†…å®¹å‘ˆç°å½¢å¼ï¼Œè®©bilibiliç”¨æˆ·ä½“éªŒå†™ä½œä¸é˜…è¯»çš„å¿«æ„Ÿã€‚æ¬¢è¿å„ä½çš„åŠ å…¥ï½">
+    <meta name="keywords" content="ç»åœ°æ±‚ç”Ÿ,å®çŸ³ä¹‹å›½,ç—…åä¸ºçˆ±,fate,å‡¹å‡¸ä¸–ç•Œ,å¹²ç‰©å¦¹!å°åŸ‹,æ–‡ç« åŒº,åŠ¨ç”»æ¨è,æ·±åº¦è§£æ,æ¸¸æˆ,ç§‘æ™®,æ‚è°ˆ,ä¸“æ ,ACGN,è½»å°è¯´">
+    <meta http="Cache-Control" content="no-transform">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
+    <link rel="apple-touch-icon-precomposed" href="//static.hdslb.com/mobile/img/512.png">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="//www.bilibili.com/favicon.ico">
+    <link rel="apple-touch-icon" href="//www.bilibili.com/favicon.ico">
+    <meta name="spm_prefix" content="333.14">
+    <link data-n-head="true" rel="icon" type="image/x-icon" href="//www.bilibili.com/favicon.ico">
+    <link data-n-head="true" rel="apple-touch-icon-precomposed" type="image/x-icon" href="http://static.hdslb.com/mobile/img/512.png">
+    <title>å“”å“©å“”å“©ä¸“æ </title>
+    <!--æˆ‘ 22 æ‰“é’±-->
+    <script>
+      
+      (function(){
+        var webp = (function(){
+          try{
+            return (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
+          }catch(err) {
+            return false;
+          }
+        })()
+        var DR = window.devicePixelRatio||1
+
+        function formatImg(url,w,h) {
+          url = trimHttp(url)
+          w = Math.abs(parseInt(w))
+          h = Math.abs(parseInt(h))
+          if (w > 4096 || h > 4096) {return url}
+          if(!url) return
+          var suffix = url.match(/(.*\.(jpg|jpeg|gif|png))(\?.*)?/)
+          if(!suffix) return
+          //è·¯å¾„æ˜¯å¦åŒ…å«/bfs/
+          var isBfs = url.indexOf('/bfs/') != -1 ? true : false
+          //æ˜¯å¦æ˜¯GIFå›¾ç‰‡
+          if(suffix[2] === 'gif' || !isBfs){
+            return url
+          }
+          //è£å‰ªè§„åˆ™
+          var cut = (w && h) ? '@' + w + 'w_' + h + 'h' : '@'
+          //å›¾ç‰‡åå‚æ•° æ¯”å¦‚è§†é¢‘åŠ¨æ€å›¾
+          var args = suffix[3] ? suffix[3] : ''
+          if(webp){
+            return suffix[1] + cut + '.webp' + args
+          }else{
+            return suffix[1] + cut + '.' + suffix[2] + args
+          }
+        }
+
+        function trimHttp(url){
+          return url ? url.replace(/^http:|^https:/, '') : ''
+        }
+        function detailImg(e,w,h){
+          var w = w||null
+          var h = h||null          
+          if(e.getAttribute('webpCheck')){
+            return
+          }
+          // let w = e.width;
+          // let h = e.height;
+          var imgStr = e.getAttribute('data-bg-img');
+          if(!imgStr){
+            return
+          }
+          var webpStr = formatImg(imgStr,w*DR,h*DR)
+          e.setAttribute('webpCheck','checked')
+          e.setAttribute('src',webpStr)
+          
+          e.onerror=null
+        }
+        //try
+
+        window.detailImg = detailImg
+
+
+        
+          window.articleIdList = []
+        
+        
+        window.original = {
+          rid:"0",
+          categories: JSON.parse('[{"id":2,"parent_id":0,"name":"åŠ¨ç”»","children":[{"id":4,"parent_id":2,"name":"åŠ¨æ¼«æ‚è°ˆ"},{"id":5,"parent_id":2,"name":"åŠ¨æ¼«èµ„è®¯"},{"id":31,"parent_id":2,"name":"åŠ¨ç”»æŠ€æœ¯"}]},{"id":1,"parent_id":0,"name":"æ¸¸æˆ","children":[{"id":6,"parent_id":1,"name":"å•æœºæ¸¸æˆ"},{"id":7,"parent_id":1,"name":"ç”µå­ç«æŠ€"},{"id":8,"parent_id":1,"name":"æ‰‹æœºæ¸¸æˆ"},{"id":9,"parent_id":1,"name":"ç½‘ç»œæ¸¸æˆ"},{"id":10,"parent_id":1,"name":"æ¡Œæ¸¸æ£‹ç‰Œ"}]},{"id":28,"parent_id":0,"name":"å½±è§†","children":[{"id":12,"parent_id":28,"name":"ç”µå½±"},{"id":35,"parent_id":28,"name":"ç”µè§†å‰§"},{"id":36,"parent_id":28,"name":"çºªå½•ç‰‡"},{"id":37,"parent_id":28,"name":"ç»¼è‰º"}]},{"id":3,"parent_id":0,"name":"ç”Ÿæ´»","children":[{"id":13,"parent_id":3,"name":"ç¾é£Ÿ"},{"id":21,"parent_id":3,"name":"èŒå® "},{"id":14,"parent_id":3,"name":"æ—¶å°š"},{"id":22,"parent_id":3,"name":"è¿åŠ¨"},{"id":15,"parent_id":3,"name":"æ—¥å¸¸"}]},{"id":29,"parent_id":0,"name":"å…´è¶£","children":[{"id":23,"parent_id":29,"name":"ç»˜ç”»"},{"id":24,"parent_id":29,"name":"æ‰‹å·¥"},{"id":38,"parent_id":29,"name":"æ‘„å½±"},{"id":39,"parent_id":29,"name":"éŸ³ä¹èˆè¹ˆ"},{"id":11,"parent_id":29,"name":"æ¨¡å‹æ‰‹åŠ"}]},{"id":16,"parent_id":0,"name":"è½»å°è¯´","children":[{"id":18,"parent_id":16,"name":"åŸåˆ›è¿è½½"},{"id":19,"parent_id":16,"name":"åŒäººè¿è½½"},{"id":32,"parent_id":16,"name":"çŸ­ç¯‡å°è¯´"},{"id":20,"parent_id":16,"name":"å°è¯´æ‚è°ˆ"}]},{"id":17,"parent_id":0,"name":"ç§‘æŠ€","children":[{"id":25,"parent_id":17,"name":"äººæ–‡å†å²"},{"id":33,"parent_id":17,"name":"è‡ªç„¶"},{"id":26,"parent_id":17,"name":"æ•°ç "},{"id":27,"parent_id":17,"name":"æ±½è½¦"},{"id":34,"parent_id":17,"name":"å­¦ä¹ "}]}]')
+        }
+      })()
+
+    </script>
+      
+  <link href="../../s1.hdslb.com/bfs/static/jinkela/article/list.71bd845a57e60bcddb5eaf305474b80d909b54db.css" tppabs="https://s1.hdslb.com/bfs/static/jinkela/article/list.71bd845a57e60bcddb5eaf305474b80d909b54db.css" rel="stylesheet"/></head>
+  <body>
+    <div id="biliMainHeader" class="report-wrap-module" style="height: 56px;"></div>
+    <div class="tab-content">
+      <div class="nav-tab-bar">
+        <a href="home.htm" tppabs="https://www.bilibili.com/read/home" target="_self" class="logo">
+        </a>
+        <a href="home.htm" tppabs="https://www.bilibili.com/read/home" target="_self" class="tab-item on" data-tab-id="0">
+          <span>æ¨è</span>
+          
+            <div class="pointer"></div>
+          
+
+        </a>
+            
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/douga  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/douga'" tppabs="https://www.bilibili.com/read/douga" target="_self" class="tab-item  " data-tab-id="2">
+            <span>åŠ¨ç”»</span>
+          </a>
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/game  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/game'" tppabs="https://www.bilibili.com/read/game" target="_self" class="tab-item  " data-tab-id="1">
+            <span>æ¸¸æˆ</span>
+          </a>
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/cinephile  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cinephile'" tppabs="https://www.bilibili.com/read/cinephile" target="_self" class="tab-item  " data-tab-id="28">
+            <span>å½±è§†</span>
+          </a>
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/life  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/life'" tppabs="https://www.bilibili.com/read/life" target="_self" class="tab-item  " data-tab-id="3">
+            <span>ç”Ÿæ´»</span>
+          </a>
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/interest  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/interest'" tppabs="https://www.bilibili.com/read/interest" target="_self" class="tab-item  " data-tab-id="29">
+            <span>å…´è¶£</span>
+          </a>
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/lightnovel  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/lightnovel'" tppabs="https://www.bilibili.com/read/lightnovel" target="_self" class="tab-item  " data-tab-id="16">
+            <span>è½»å°è¯´</span>
+          </a>
+          
+          <a href="javascript:if(confirm('https://www.bilibili.com/read/technology  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/technology'" tppabs="https://www.bilibili.com/read/technology" target="_self" class="tab-item  " data-tab-id="17">
+            <span>ç§‘æŠ€</span>
+          </a>
+          
+        
+      </div>
+      <div class="page-content">
+        <div class="left-side">
+          
+          <!-- <span>loading...</span> -->
+          
+          <div class="carousel">
+            <ul class="carousel-list">
+            
+              <li class="carousel-item" data-carousel-index="0">
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8107744?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8107744?from=1001'" tppabs="https://www.bilibili.com/read/cv8107744?from=1001" target="_blank">
+                  <img src="../../static.hdslb.com/images/transparent.gif" tppabs="https://static.hdslb.com/images/transparent.gif" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/cca060ce7e0556fadcfe6295de7be7b4cfab89c4.png" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)">
+                </a>
+              </li>
+            
+              <li class="carousel-item" data-carousel-index="1">
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8115624?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8115624?from=1001'" tppabs="https://www.bilibili.com/read/cv8115624?from=1001" target="_blank">
+                  <img src="../../static.hdslb.com/images/transparent.gif" tppabs="https://static.hdslb.com/images/transparent.gif" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/4472efcffc7b855cf65df7e80564e38deaf6e5f8.png" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)">
+                </a>
+              </li>
+            
+              <li class="carousel-item" data-carousel-index="2">
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8058000?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8058000?from=1001'" tppabs="https://www.bilibili.com/read/cv8058000?from=1001" target="_blank">
+                  <img src="../../static.hdslb.com/images/transparent.gif" tppabs="https://static.hdslb.com/images/transparent.gif" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/60e33cb869fb8828480e5b9cf2329fd31569b755.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)">
+                </a>
+              </li>
+            
+              <li class="carousel-item" data-carousel-index="3">
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8105323?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8105323?from=1001'" tppabs="https://www.bilibili.com/read/cv8105323?from=1001" target="_blank">
+                  <img src="../../static.hdslb.com/images/transparent.gif" tppabs="https://static.hdslb.com/images/transparent.gif" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/7197d117b13c28cbf71825cd54876415f75965f0.png" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)">
+                </a>
+              </li>
+            
+              <li class="carousel-item" data-carousel-index="4">
+                <a href="javascript:if(confirm('https://www.bilibili.com/blackboard/renzheng.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/blackboard/renzheng.html'" tppabs="https://www.bilibili.com/blackboard/renzheng.html" target="_blank">
+                  <img src="../../static.hdslb.com/images/transparent.gif" tppabs="https://static.hdslb.com/images/transparent.gif" class="carousel-bg" data-bg-img="http://i0.hdslb.com/bfs/archive/b87893dba13dfb6028f22ce934d1f874409dc766.jpg" onload="detailImg(this,680,212)" onerror="detailImg(this,680,212)">
+                </a>
+              </li>
+            
+            </ul>
+            <div class="titles">
+              
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8107744?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8107744?from=1001'" tppabs="https://www.bilibili.com/read/cv8107744?from=1001" class=" on " data-title-index="0" target="_blank">è¿˜æœ‰ä»€ä¹ˆæ¯”æŒ¥åˆ€æ–©å­å¼¹çš„èµ›åšå¿è€…æ›´é…·å‘¢</a>
+              
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8115624?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8115624?from=1001'" tppabs="https://www.bilibili.com/read/cv8115624?from=1001" class="" data-title-index="1" target="_blank">è¿‘è·ç¦»è§‚èµç»†èŠ‚ï¼ŒPS5æœ‰ä»€ä¹ˆæƒŠå–œä¹‹å¤„</a>
+              
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8058000?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8058000?from=1001'" tppabs="https://www.bilibili.com/read/cv8058000?from=1001" class="" data-title-index="2" target="_blank">æ‹’ç»é˜»æŒ¡æ‚²å‰§è”“å»¶çš„ç±³æ³½ç©—ä¿¡</a>
+              
+                <a href="javascript:if(confirm('https://www.bilibili.com/read/cv8105323?from=1001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8105323?from=1001'" tppabs="https://www.bilibili.com/read/cv8105323?from=1001" class="" data-title-index="3" target="_blank">çˆ†è‚å¤ç›˜ï¼Œè¿™äº›ç»†èŠ‚ä¸å®¹é”™è¿‡ï¼</a>
+              
+                <a href="javascript:if(confirm('https://www.bilibili.com/blackboard/renzheng.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/blackboard/renzheng.html'" tppabs="https://www.bilibili.com/blackboard/renzheng.html" class="" data-title-index="4" target="_blank">ä¸“æ è®¤è¯ä¸Šçº¿å•¦ï¼</a>
+              
+            </div>
+            <ul class="indicator">
+              
+              <li class="indicator-btn-holder">
+                <div class="indicator-btn  on " data-indicator-index="0"></div>
+              </li>
+              
+              <li class="indicator-btn-holder">
+                <div class="indicator-btn " data-indicator-index="1"></div>
+              </li>
+              
+              <li class="indicator-btn-holder">
+                <div class="indicator-btn " data-indicator-index="2"></div>
+              </li>
+              
+              <li class="indicator-btn-holder">
+                <div class="indicator-btn " data-indicator-index="3"></div>
+              </li>
+              
+              <li class="indicator-btn-holder">
+                <div class="indicator-btn " data-indicator-index="4"></div>
+              </li>
+              
+            </ul>
+          </div>
+
+          
+          
+          <div class="partitio-name">
+            
+              <label>æ¨èæ–‡ç« </label>              
+            
+          </div>
+
+          <div class="article-list">
+            <div class="article-list-holder">
+              
+            </div>
+
+            <div class="tips-holder">
+              loading...
+            </div>
+          </div>
+
+
+        </div>
+        <div class="right-side">
+          <div class="search-module">
+            <div class="search-block">
+              <input placeholder="æœç´¢ä¸“æ æ–‡ç« ">
+              <div class="search-icon"></div>
+              <ul class="search-word-panel">
+                <li class="panel-title">
+                  <div class="split-line"></div>
+                  <p>
+                    <span></span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rank-module">
+            <div class="rank-tabs-bar">
+              <label>æ’è¡Œæ¦œ</label>
+              <ul class="rank-tabs-list">
+              </ul>
+            </div>  
+            <ul class="rank-list">
+              
+              
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">1</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8166726/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8166726/'" tppabs="https://www.bilibili.com/read/cv8166726/" target="_blank" title="å¤§æ—¥æœ¬å¸å›½æœæ€ä¹ˆä¼šæœ‰ä¸­å›½äººï¼Ÿ">å¤§æ—¥æœ¬å¸å›½æœæ€ä¹ˆä¼šæœ‰ä¸­å›½äººï¼Ÿ</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">2</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8144442/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8144442/'" tppabs="https://www.bilibili.com/read/cv8144442/" target="_blank" title="ã€ŠåŸç¥ã€‹ç»ˆäºè‰¯å¿ƒäº†ï¼Œ1.1ç‰ˆæœ¬å¤§æ›´æ”¹ï¼é¦–æœˆ2.45äº¿ç¾å…ƒåˆ©æ¶¦">ã€ŠåŸç¥ã€‹ç»ˆäºè‰¯å¿ƒäº†ï¼Œ1.1ç‰ˆæœ¬å¤§æ›´æ”¹ï¼é¦–æœˆ2.45äº¿ç¾å…ƒåˆ©æ¶¦</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">3</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8186822/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8186822/'" tppabs="https://www.bilibili.com/read/cv8186822/" target="_blank" title="äººå„ä¸åŒ éšå¿ƒæ‰€æ¬² 11.2ç›˜ä¸­ç­–ç•¥">äººå„ä¸åŒ éšå¿ƒæ‰€æ¬² 11.2ç›˜ä¸­ç­–ç•¥</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">4</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8191091/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8191091/'" tppabs="https://www.bilibili.com/read/cv8191091/" target="_blank" title="éŸ©å‰æ€»ç»Ÿææ˜åšé‡è¿”ç›‘ç‹±æœåˆ‘ï¼ç‰¢æˆ¿ç‹¬å±…13å¹³ç±³ï¼Œ95å²å‡ºç‹±">éŸ©å‰æ€»ç»Ÿææ˜åšé‡è¿”ç›‘ç‹±æœåˆ‘ï¼ç‰¢æˆ¿ç‹¬å±…13å¹³ç±³ï¼Œ95å²å‡ºç‹±</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">5</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8185180/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8185180/'" tppabs="https://www.bilibili.com/read/cv8185180/" target="_blank" title="é€‰ä»€ä¹ˆæ ·çš„çƒ­æ°´å™¨å¥½ï¼Ÿçœ‹è¿™6å¼ å›¾å°±å¤Ÿäº†ï¼">é€‰ä»€ä¹ˆæ ·çš„çƒ­æ°´å™¨å¥½ï¼Ÿçœ‹è¿™6å¼ å›¾å°±å¤Ÿäº†ï¼</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">6</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8120201/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8120201/'" tppabs="https://www.bilibili.com/read/cv8120201/" target="_blank" title="åœ¨è¿™ä¸ªç”¨ç™¾å§“é’±ä¹°çƒ­æœçš„å…¬å­é¢å‰ï¼ŒèŒƒå†°å†°å°±æ˜¯ä¸ªå¦¹å¦¹">åœ¨è¿™ä¸ªç”¨ç™¾å§“é’±ä¹°çƒ­æœçš„å…¬å­é¢å‰ï¼ŒèŒƒå†°å†°å°±æ˜¯ä¸ªå¦¹å¦¹</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">7</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8184587/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8184587/'" tppabs="https://www.bilibili.com/read/cv8184587/" target="_blank" title="â€œBç«™ç›´æ’­æ–°ç¥â€åœ¨å¥‡è¿¹ä¹‹å¤œå‰çš„ä¸€å¹´é‡Œï¼Œåˆ°åº•ç»å†äº†ä»€ä¹ˆï¼Ÿ">â€œBç«™ç›´æ’­æ–°ç¥â€åœ¨å¥‡è¿¹ä¹‹å¤œå‰çš„ä¸€å¹´é‡Œï¼Œåˆ°åº•ç»å†äº†ä»€ä¹ˆï¼Ÿ</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">8</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8110481/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8110481/'" tppabs="https://www.bilibili.com/read/cv8110481/" target="_blank" title="Nuguriä¸Chovyæˆè‡ªç”±äººï¼ŒLCKæéš¾ç•™ä½ï¼ŒLPLé˜Ÿä¼èƒ½æŒ–åŠ¨ï¼Ÿ">Nuguriä¸Chovyæˆè‡ªç”±äººï¼ŒLCKæéš¾ç•™ä½ï¼ŒLPLé˜Ÿä¼èƒ½æŒ–åŠ¨ï¼Ÿ</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">9</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8149637/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8149637/'" tppabs="https://www.bilibili.com/read/cv8149637/" target="_blank" title="åŸç¥ï¼š30å¤©æ—¶é—´ï¼Œ3ä¸ªäº‹å®è®©å›½å†…ç©å®¶æ„å¤–ï¼Œå°¤å…¶æœ€åä¸€ä¸ªï¼">åŸç¥ï¼š30å¤©æ—¶é—´ï¼Œ3ä¸ªäº‹å®è®©å›½å†…ç©å®¶æ„å¤–ï¼Œå°¤å…¶æœ€åä¸€ä¸ªï¼</a>
+                  </li>
+                
+                  
+                  
+                  <li class="item">
+                    <span class="rank-index">10</span><a href="javascript:if(confirm('https://www.bilibili.com/read/cv8181522/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/cv8181522/'" tppabs="https://www.bilibili.com/read/cv8181522/" target="_blank" title="æˆ‘å»å½±é™¢çœ‹äº†éƒ¨å›½äº§ææ€–ç‰‡.....">æˆ‘å»å½±é™¢çœ‹äº†éƒ¨å›½äº§ææ€–ç‰‡.....</a>
+                  </li>
+                
+                  
+            </ul>
+            <a class="complete-rank" target="_blank">æŸ¥çœ‹å®Œæ•´æ¦œå•</a>
+          </div>
+          
+          <div class="up-list">
+            <div class="title">æœ€æ–°æŠ•ç¨¿çš„UPä¸»
+              <div class="fresh-btn"></div>
+            </div>
+          </div>
+          
+          <!--<div class="web-show-c">
+            
+          </div>-->
+          <div class="more">
+            <div class="top-bar">
+              <label>æ›´å¤š</label>
+            </div>
+            <a class="ac-link" href="javascript:if(confirm('https://www.bilibili.com/read/apply/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓëËüµÄÆôÊ¼µØÖ·ºÜÔ¶µÄÁ´½Ó¡£Èç¹ûÄãÔö´óÆôÊ¼µØÖ·ÓòÄÚÉî¶ÈÉèÖÃ, ¸ÃÎÄ¼ş½«±»¼ÓÈëÏÂÔØ¶ÓÁĞ¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.bilibili.com/read/apply/'" tppabs="https://www.bilibili.com/read/apply/" target="_blank">
+              <div class="link">
+                <span class="icon">
+                </span>
+                <p class="title">æˆä¸ºåˆ›ä½œè€…</p>
+                <p class="info">ç”³è¯·æˆä¸ºä¸“æ UPä¸»</p>
+              </div>
+            </a>
+            <a href="../blackboard/help.html#%E4%B8%93%E6%A0%8F%E7%9B%B8%E5%85%B3" tppabs="https://www.bilibili.com/blackboard/help.html#%E4%B8%93%E6%A0%8F%E7%9B%B8%E5%85%B3" target="_blank">
+              <div class="help">
+                <span class="icon">
+                </span>
+                <p class="title">ä¸“æ å¸®åŠ©</p>
+                <p class="info">æŸ¥çœ‹ä¸“æ ä½¿ç”¨è¯´æ˜</p>
+              </div>
+            </a>
+          </div>
+            
+        </div>
+        
+      </div>
+    </div>
+    <div class="to-top">
+        
+    </div>
+  <script src="../../static.hdslb.com/public/timing.min.js" tppabs="https://static.hdslb.com/public/timing.min.js"></script>
+  <script>window.performanceLog.setSource('article');</script>
+  <script src="../../static.hdslb.com/js/jquery-3.3.1.min.js" tppabs="https://static.hdslb.com/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../s1.hdslb.com/bfs/seed/jinkela/header-v2/header.js" tppabs="https://s1.hdslb.com/bfs/seed/jinkela/header-v2/header.js"></script>
+  <script>
+    window.reportMsgObj = {}
+    window.reportConfig = {
+      sample: 1,
+      errorTracker: false,
+      resourceTracker: false,
+      scrollTracker: false,
+      msgObjects: 'reportMsgObj'
+    }
+  </script>
+  <script type="text/javascript" src="../../s1.hdslb.com/bfs/seed/log/report/log-reporter.js" tppabs="https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js" crossorigin></script>
+<script type="text/javascript" src="../../s1.hdslb.com/bfs/static/jinkela/article/manifest.71bd845a57e60bcddb5eaf305474b80d909b54db.js" tppabs="https://s1.hdslb.com/bfs/static/jinkela/article/manifest.71bd845a57e60bcddb5eaf305474b80d909b54db.js"></script><script type="text/javascript" src="../../s1.hdslb.com/bfs/static/jinkela/article/vendor.71bd845a57e60bcddb5eaf305474b80d909b54db.js" tppabs="https://s1.hdslb.com/bfs/static/jinkela/article/vendor.71bd845a57e60bcddb5eaf305474b80d909b54db.js"></script><script type="text/javascript" src="../../s1.hdslb.com/bfs/static/jinkela/article/list.71bd845a57e60bcddb5eaf305474b80d909b54db.js" tppabs="https://s1.hdslb.com/bfs/static/jinkela/article/list.71bd845a57e60bcddb5eaf305474b80d909b54db.js"></script></body>
+</html>
