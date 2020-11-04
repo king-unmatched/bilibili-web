@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("slide")
 public class SlideshowController {
     @Autowired
     private SlideshowService slideshowService;
-    @RequestMapping("slide/slideshow")
+    @RequestMapping("slideshow")
     public List<SlideshowBean> slideshow(){
         return slideshowService.selslideshow();
     }
