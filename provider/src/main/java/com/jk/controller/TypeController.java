@@ -1,27 +1,23 @@
 package com.jk.controller;
 
-import com.jk.entity.SlideshowBean;
 import com.jk.entity.SyTypeBean;
-import com.jk.service.SlideshowService;
+import com.jk.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("slide")
-public class SlideshowController {
+public class TypeController {
+
     @Autowired
-    private SlideshowService slideshowService;
-    @RequestMapping("slideshow")
-    public List<SlideshowBean> slideshow(){
-        return slideshowService.selslideshow();
-    }
+    private TypeService typeService;
 
 
     @RequestMapping("seltype")
     public List<SyTypeBean> seltype(){
-        return slideshowService.seltype();
+        return typeService.seltype();
     }
 }
