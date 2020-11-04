@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("login")
+@RequestMapping("index")
 public class IndexController {
     @Autowired
     private UserService userService;
@@ -17,6 +17,11 @@ public class IndexController {
     @RequestMapping("login")
     public String login(){
         return "login";
+    }
+
+    @RequestMapping("index")
+    public String index(){
+        return "index";
     }
 
     @RequestMapping("logins")

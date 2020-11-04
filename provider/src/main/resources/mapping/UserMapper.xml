@@ -104,6 +104,6 @@
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
   <select id="login" resultType="com.jk.entity.User">
-   select * from t_user where usercode=#{userPhone}
+   select * from t_user where user_phone=#{userPhone}
   </select>
 </mapper>
