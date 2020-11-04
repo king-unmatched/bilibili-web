@@ -7,4 +7,8 @@
 *.iml
 out
 gen
+<<<<<<< HEAD
 !/common/
+=======
+!/pom.xml
+>>>>>>> 904f72a63a3249e7477741f964bbe5b4c5ce7a21
