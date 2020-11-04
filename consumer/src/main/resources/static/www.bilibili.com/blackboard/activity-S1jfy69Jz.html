@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-Hans"><head>
+    <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
+    <meta httpequiv="Cache-Control" content="no-transform">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//s1.hdslb.com">
+    <link rel="dns-prefetch" href="//i0.hdslb.com">
+    <link rel="dns-prefetch" href="//i1.hdslb.com">
+    <link rel="dns-prefetch" href="//i2.hdslb.com">
+    <link rel="dns-prefetch" href="//static.hdslb.com">
+    <link rel="dns-prefetch" href="//activity.hdslb.comm">
+    <link rel="shortcut icon" href="//static.hdslb.com/images/favicon.ico">
+    <script src="../../static.hdslb.com/js/jquery.min.js" tppabs="https://static.hdslb.com/js/jquery.min.js"></script>
+    <script src="../../s1.hdslb.com/bfs/static/activity/plat/pc/plat.global.min.js" tppabs="https://s1.hdslb.com/bfs/static/activity/plat/pc/plat.global.min.js" crossorigin="anonymous"></script>
+    <title>名人堂</title><meta name="keywords" content="名人堂"><meta name="spm_prefix" content="888.668">
+      <script type="text/javascript">
+        window.activity = {id: 7374, spmId: 'https://www.bilibili.com/blackboard/888.668'};
+        window.reportMsgObj = {};
+        window.reportConfig = {
+          sample: 1,
+          scrollTracker: true,
+          msgObjects: 'reportMsgObj',
+          errorTracker: true
+        };
+      </script>
+      <script src="../../s1.hdslb.com/bfs/seed/log/report/log-reporter.js" tppabs="https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script>
+    
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .main-inner {
+        width: 1020px;
+        margin: auto;
+        font-size: 12px;
+      }
+
+      #uplist {
+        margin: 20px 0;
+      }
+
+      .up-card {
+        width: 240px;
+        height: 80px;
+        display: inline-block;
+        border: 1px #ddd solid;
+        border-radius: 5px;
+        margin: 5px;
+      }
+
+      .up-card:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,.2);
+      }
+
+      .up-face {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .up-text {
+        display: inline-block;
+        vertical-align: top;
+        width: 160px;
+        color: #333;
+      }
+
+      .up-text span.up-name {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px 0 2px;
+      }
+      .up-text span.up-desc {
+        display: block;
+        color: #999;
+        line-height: 120%;
+      }
+    </style>
+    </head>
+    <body>
+      <div id="biliMainHeader"></div>
+<div class="main-inner">
+<div class="h1">名人堂</div>
+<div id="uplist"></div>
+<div class="mrinfo"><b>什么是名人堂？</b><br>
+名人堂是一个大展厅，展示的是对本站做出过或正在做出贡献的优秀用户，是一种荣誉的象征。<br>
+<br>
+<b>什么样的用户有资格进入名人堂？</b><br>
+在本站内，有一定知名度并且有较为优秀的作品的UP主。<br>
+对bilibili做出特殊贡献的人物。<br>
+其他根据情况而定。<br>
+<br>
+<b>我可以进入名人堂吗？</b><br>
+当然可以。只要您符合以上条件，就可以进入名人堂。</div>
+</div>
+<div class="footer bili-footer"></div>
+<script>
+  var userlist = [
+  {
+    name: '荼荼丸',
+    face: 'https://i0.hdslb.com/bfs/face/5ed2d4e54d1cb752ef37be38a2b9e375e141a573.jpg',
+    space: 'https://space.bilibili.com/16'
+  },
+  {
+    name: '叫兽小星',
+  },
+  {
+    name: '失明少女',
+    space: 'https://space.bilibili.com/2691',
+    desc: 'One HITACHI',
+    face: 'https://i0.hdslb.com/bfs/face/6ea18525c2ad5c2193253533d1aeb2709a469209.jpg'
+  },
+  {
+    name: 'beijizhu',
+    space: 'https://space.bilibili.com/2565',
+    desc: 'lily实况系列：mylist1198 FXTZ咲夜CMV：mylist1199',
+    face: 'https://i2.hdslb.com/bfs/face/c8b31b323caec4821380ccf6fbd5ee1c123ccc44.jpg'
+  },
+  {
+    name: 'hank',
+    space: 'https://space.bilibili.com/109',
+    desc: '因为有梦，所以更强。',
+    face: 'https://i0.hdslb.com/bfs/face/e58453c264ba5196dc3da8ef9f4a0152e0e1f21c.jpg'
+  },
+  {
+    name: 'NINI',
+    space: 'https://space.bilibili.com/2046',
+    desc: 'I used to be an adventurer like you, then I took an arrow in the knee',
+    face: 'https://i0.hdslb.com/bfs/face/5b1448d178504b5b86b1686a25ab3186930f3d81.jpg'
+  },
+  {
+    name: '新大陆视听文化研究部',
+  },
+  {
+    name: '捂脸姬',
+    space: 'https://space.bilibili.com/2997',
+    desc: '签乃妹！',
+    face: 'https://i2.hdslb.com/bfs/face/62a9fe05ffe4a8f11305578fa7a5fb0eed86c770.jpg'
+  },
+  {
+    name: 'AUER',
+    space: 'https://space.bilibili.com/38039',
+    desc: '1/20000的幸福',
+    face: 'https://i2.hdslb.com/bfs/face/f5deceafb3b4ba44a978ad0c6ede822f9135a5ac.jpg'
+  },
+  {
+    name: 'ハオ',
+    space: 'https://space.bilibili.com/23098',
+    face: 'https://i0.hdslb.com/bfs/face/d2f0cffd8d138d061d0c2f23e8e7a7d666e56efc.jpg'
+  },
+  {
+    name: '疾风之龙',
+    space: 'https://space.bilibili.com/1439',
+    desc: '专门投没人气的视频',
+    face: 'https://i2.hdslb.com/bfs/face/7f165ecbc5c2ad137aa511f5132bc79de20664dd.jpg'
+  },
+  {
+    name: '平安夜的噩梦',
+    space: 'https://space.bilibili.com/11167',
+    desc: '没有回忆就去创造回忆，没有道路就去开辟道路',
+    face: 'https://i1.hdslb.com/bfs/face/feba345a78102cc914ce5d54b068b95f6108b84f.jpg'
+  },
+];
+document.getElementById('uplist').innerHTML = userlist.map(function(item){
+  return '<div class="up-card"><a href="'+(item.space || 'javascript: void(0);') +'" target="' + (item.space ? '_blank' : '_self') +'"><img src="'+ (item.face ? item.face + '@80w_80h.jpg' : '../../static.hdslb.com/images/member/noface.gif'/*tpa=https://static.hdslb.com/images/member/noface.gif*/)+'" class="up-face" /><div class="up-text" ><span class="up-name" >'+(item.name || '')+'</span><span class="up-desc">'+(item.desc || '')+'</span></div></a></div>'
+}).join('');
+</script>
+<script type="text/javascript" src="../../s1.hdslb.com/bfs/seed/jinkela/header-v2/header.js" tppabs="https://s1.hdslb.com/bfs/seed/jinkela/header-v2/header.js" crossorigin="anonymous"></script>
+<style>
+
+.b-footer-wrap, .b-wrap {
+    width: 980px;
+}
+</style>
+<script type="text/javascript" src="../../s1.hdslb.com/bfs/seed/jinkela/footer-v2/footer.js" tppabs="https://s1.hdslb.com/bfs/seed/jinkela/footer-v2/footer.js" crossorigin="anonymous"></script>
+    
+    </body></html>

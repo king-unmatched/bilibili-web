@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head>
+    <title>bilibili html5 player</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
+    <meta content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui,viewport-fit=cover" name="viewport"><meta name="spm_prefix" content="888.453">
+      <script type="text/javascript">
+        window.activity = {id: 6934, spmId: 'https://www.bilibili.com/blackboard/888.453'};
+        window.reportMsgObj = {};
+        window.reportConfig = {
+          sample: 1,
+          scrollTracker: true,
+          msgObjects: 'reportMsgObj',
+          errorTracker: true
+        };
+      </script>
+      <script src="../../s1.hdslb.com/bfs/seed/log/report/log-reporter.js" tppabs="https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script>
+    
+    <script src="../../s1.hdslb.com/bfs/static/player/main/html5/player-mobile.js-ver=20200827" tppabs="https://s1.hdslb.com/bfs/static/player/main/html5/player-mobile.js?ver=20200827" crossorigin="anonymous"></script>
+    <!-- <script src="//static.hdslb.com/player/js/whitelist.js"></script> -->
+    <style type="text/css">
+        html,
+        body,
+        #bilibiliPlayer {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="bilibiliPlayer"></div>
+<script>
+    var GetUrlValue = function(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            try {
+                return decodeURIComponent(r[2]);
+            } catch (e) {
+                return null;
+            }
+        }
+        return null;
+    };
+    if (GetUrlValue('bvid')) {
+      window.show_bv = 1;
+    } else {
+      window.show_bv = 0;
+    }
+    var allow = true;
+    if (window.top != window.self && window.REFERRER_LIST) {
+        try {
+            var h = window.document.referrer.match(/^http(s)?:\/\/(.*?)\//);
+            if (
+                h &&
+                h[2] &&
+                !new RegExp(
+                    window.REFERRER_LIST.join('|')
+                        .replace(/\./g, '\\.')
+                        .replace(/\*/g, '\.\*')
+                ).test(h[2])
+            ) {
+                allow = false;
+            } else if (
+                !window.document.referrer &&
+                window.navigator.userAgent.indexOf('MicroMessenger') === -1 &&
+                window.navigator.userAgent.indexOf('IqiyiApp') === -1
+            ) {
+                allow = false;
+            }
+        } catch (e) {}
+    }
+    var defaultSearch = function() {
+        var config = {
+            aid: GetUrlValue('aid'),
+            cid: GetUrlValue('cid'),
+            bvid: GetUrlValue('bvid'),
+            quality: GetUrlValue('quality') || GetUrlValue('qn'),
+            portraitFullScreen: (GetUrlValue('portraitFullScreen') || GetUrlValue('portrait_full_screen')) ? true : false,
+            page: GetUrlValue('p') || GetUrlValue('page') || 1,
+            type: GetUrlValue('type') || -1,
+            autoplay: GetUrlValue('autoplay') ? true : false,
+            episodeId: GetUrlValue('episodeId') || GetUrlValue('epid'),
+            seasonId: +GetUrlValue('seasonId') || +GetUrlValue('season_id'),
+            noRecommend: true,
+            danmaku: GetUrlValue('danmaku') !== '0',
+            highQuality: GetUrlValue('highQuality') || GetUrlValue('high_quality')
+        };
+        if (GetUrlValue('seasonType') || GetUrlValue('season_type')) {
+            config.seasonType = GetUrlValue('seasonType') || GetUrlValue('season_type') || 1;
+        }
+        return config;
+    };
+    if (allow) {
+        var config = defaultSearch();
+        var player = new BPlayerMobile(config);
+    }
+</script>
+
+</body></html>
