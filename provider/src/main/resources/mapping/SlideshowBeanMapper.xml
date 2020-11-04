@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.SlideshowBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.entity.SlideshowBean" >
+    <id column="slideshow_id" property="slideshowId" jdbcType="INTEGER" />
+    <result column="slideshow_name" property="slideshowName" jdbcType="VARCHAR" />
+    <result column="slideshow_url" property="slideshowUrl" jdbcType="VARCHAR" />
+    <result column="elapsed_time" property="elapsedTime" jdbcType="TIMESTAMP" />
+    <result column="stop_time" property="stopTime" jdbcType="TIMESTAMP" />
+    <result column="slideshow_img" property="slideshowImg" jdbcType="VARCHAR" />
+    <result column="pageDisplay" property="pagedisplay" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    slideshow_id, slideshow_name, slideshow_url, elapsed_time, stop_time, slideshow_img, 
+    pageDisplay
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sy_slideshow
+    where slideshow_id = #{slideshowId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sy_slideshow
+    where slideshow_id = #{slideshowId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jk.entity.SlideshowBean" >
+    insert into sy_slideshow (slideshow_id, slideshow_name, slideshow_url, 
+      elapsed_time, stop_time, slideshow_img, 
+      pageDisplay)
+    values (#{slideshowId,jdbcType=INTEGER}, #{slideshowName,jdbcType=VARCHAR}, #{slideshowUrl,jdbcType=VARCHAR}, 
+      #{elapsedTime,jdbcType=TIMESTAMP}, #{stopTime,jdbcType=TIMESTAMP}, #{slideshowImg,jdbcType=VARCHAR}, 
+      #{pagedisplay,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jk.entity.SlideshowBean" >
+    insert into sy_slideshow
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="slideshowId != null" >
+        slideshow_id,
+      </if>
+      <if test="slideshowName != null" >
+        slideshow_name,
+      </if>
+      <if test="slideshowUrl != null" >
+        slideshow_url,
+      </if>
+      <if test="elapsedTime != null" >
+        elapsed_time,
+      </if>
+      <if test="stopTime != null" >
+        stop_time,
+      </if>
+      <if test="slideshowImg != null" >
+        slideshow_img,
+      </if>
+      <if test="pagedisplay != null" >
+        pageDisplay,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="slideshowId != null" >
+        #{slideshowId,jdbcType=INTEGER},
+      </if>
+      <if test="slideshowName != null" >
+        #{slideshowName,jdbcType=VARCHAR},
+      </if>
+      <if test="slideshowUrl != null" >
+        #{slideshowUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="elapsedTime != null" >
+        #{elapsedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stopTime != null" >
+        #{stopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="slideshowImg != null" >
+        #{slideshowImg,jdbcType=VARCHAR},
+      </if>
+      <if test="pagedisplay != null" >
+        #{pagedisplay,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jk.entity.SlideshowBean" >
+    update sy_slideshow
+    <set >
+      <if test="slideshowName != null" >
+        slideshow_name = #{slideshowName,jdbcType=VARCHAR},
+      </if>
+      <if test="slideshowUrl != null" >
+        slideshow_url = #{slideshowUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="elapsedTime != null" >
+        elapsed_time = #{elapsedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stopTime != null" >
+        stop_time = #{stopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="slideshowImg != null" >
+        slideshow_img = #{slideshowImg,jdbcType=VARCHAR},
+      </if>
+      <if test="pagedisplay != null" >
+        pageDisplay = #{pagedisplay,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where slideshow_id = #{slideshowId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jk.entity.SlideshowBean" >
+    update sy_slideshow
+    set slideshow_name = #{slideshowName,jdbcType=VARCHAR},
+      slideshow_url = #{slideshowUrl,jdbcType=VARCHAR},
+      elapsed_time = #{elapsedTime,jdbcType=TIMESTAMP},
+      stop_time = #{stopTime,jdbcType=TIMESTAMP},
+      slideshow_img = #{slideshowImg,jdbcType=VARCHAR},
+      pageDisplay = #{pagedisplay,jdbcType=VARCHAR}
+    where slideshow_id = #{slideshowId,jdbcType=INTEGER}
+  </update>
+  <select id="selselideshow" resultType="SlideshowBean">
+    select * from sy_slideshow
+  </select>
+</mapper>
