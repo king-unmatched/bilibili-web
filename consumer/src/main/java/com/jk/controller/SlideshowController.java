@@ -1,6 +1,7 @@
 package com.jk.controller;
 
 import com.jk.entity.SlideshowBean;
+import com.jk.entity.SuperBean;
 import com.jk.entity.SyTypeBean;
 import com.jk.service.SlideshowService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,10 @@ public class SlideshowController {
     @RequestMapping("seltype")
     public List<SyTypeBean> seltype(){
         return slideshowService.seltype();
+    }
+
+    @RequestMapping("selsuper")
+    public List<SuperBean> selsuper(){
+        return slideshowService.selsuper();
     }
 }
