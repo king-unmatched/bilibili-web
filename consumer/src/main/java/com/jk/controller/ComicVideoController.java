@@ -1,7 +1,7 @@
 package com.jk.controller;
 
-import com.jk.entity.DssyTeleplay;
-import com.jk.service.DssyTeleplayService;
+import com.jk.entity.ComicVideo;
+import com.jk.service.ComicVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("select")
-public class DssyTeleplayController {
+@RequestMapping("listAll")
+public class ComicVideoController {
     @Autowired
-    private DssyTeleplayService dssyTeleplayService;
+    private ComicVideoService  comicVideoService;
 
-    @RequestMapping("listAll")
+    @RequestMapping("listComic")
     @ResponseBody
-    public List<DssyTeleplay>listAll(){
-        return dssyTeleplayService.list();
+    public List<ComicVideo>listComic(){
+        return comicVideoService.selectComicVideo();
     }
 }

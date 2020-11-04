@@ -3,6 +3,7 @@
 <mapper namespace="com.jk.dao.DysyVideoMapper">
 
   <select id="selectVideo" resultType="DysyVideo">
-   select * from dy_sy_video a  left join dy_relevance b on a.video_typeid=b.dy_video_id
+  select * from dy_sy_video a  left join dy_relevance b on a.video_typeid=b.dy_video_id
+  order by a.video_heat desc
   </select>
 </mapper>
