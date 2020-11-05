@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.NewVideoMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.entity.NewVideo" >
+    <id column="new_hot_id" property="newHotId" jdbcType="INTEGER" />
+    <result column="new_hot_name" property="newHotName" jdbcType="VARCHAR" />
+    <result column="new_hot_duration" property="newHotDuration" jdbcType="VARCHAR" />
+    <result column="new_heat" property="newHeat" jdbcType="VARCHAR" />
+    <result column="new_hot_img" property="newHotImg" jdbcType="VARCHAR" />
+    <result column="new_hot_url" property="newHotUrl" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+  <select id="listNewVideo" resultType="NewVideo">
+    select * from new_video a order by  a.new_heat desc
+  </select>
+</mapper>
