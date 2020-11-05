@@ -20,12 +20,47 @@ public class ComicVideo {
 
     private String url;
 
-    private Integer setNumber;
+    private Integer comicNumber;
 
     private Date toUpdate;
 
-    private Integer 
-number;
+    private Integer jiNumber;
+
+    private String comicXiaoimg;
+
+    private String ztvip;
+
+    public String getZtvip() {
+        return ztvip;
+    }
+
+    public void setZtvip(String ztvip) {
+        this.ztvip = ztvip;
+    }
+
+    public Integer getJiNumber() {
+        return jiNumber;
+    }
+
+    public void setJiNumber(Integer jiNumber) {
+        this.jiNumber = jiNumber;
+    }
+
+    public Integer getComicNumber() {
+        return comicNumber;
+    }
+
+    public void setComicNumber(Integer comicNumber) {
+        this.comicNumber = comicNumber;
+    }
+
+    public String getComicXiaoimg() {
+        return comicXiaoimg;
+    }
+
+    public void setComicXiaoimg(String comicXiaoimg) {
+        this.comicXiaoimg = comicXiaoimg;
+    }
 
     public Integer getId() {
         return id;
@@ -83,13 +118,6 @@ number;
         this.url = url == null ? null : url.trim();
     }
 
-    public Integer getSetNumber() {
-        return setNumber;
-    }
-
-    public void setSetNumber(Integer setNumber) {
-        this.setNumber = setNumber;
-    }
 
     public Date getToUpdate() {
         return toUpdate;
@@ -99,11 +127,4 @@ number;
         this.toUpdate = toUpdate;
     }
 
-    public Integer getnumber() {
-        return number;
-    }
-
-    public void setnumber(Integer number) {
-        this.number = number;
-    }
 }
