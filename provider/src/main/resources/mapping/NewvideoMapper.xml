@@ -5,7 +5,7 @@
     <id column="new_hot_id" property="newHotId" jdbcType="INTEGER" />
     <result column="new_hot_name" property="newHotName" jdbcType="VARCHAR" />
     <result column="new_hot_duration" property="newHotDuration" jdbcType="VARCHAR" />
-    <result column="new_heat" property="newHeat" jdbcType="VARCHAR" />
+    <result column="new_heat" property="newHeat" jdbcType="INTEGER" />
     <result column="new_hot_img" property="newHotImg" jdbcType="VARCHAR" />
     <result column="new_hot_url" property="newHotUrl" jdbcType="VARCHAR" />
   </resultMap>

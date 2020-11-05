@@ -1,11 +1,6 @@
 package com.jk.entity;
 
-<<<<<<< HEAD
 import lombok.Data;
-=======
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
->>>>>>> 6db4745694ca679a28ccd2e8e761ac23327681ce
 
 import java.util.Date;
 
@@ -25,7 +20,6 @@ public class ComicVideo {
 
     private String url;
 
-<<<<<<< HEAD
     private Integer comicNumber;
 
     private Date toUpdate;
@@ -67,14 +61,6 @@ public class ComicVideo {
     public void setComicXiaoimg(String comicXiaoimg) {
         this.comicXiaoimg = comicXiaoimg;
     }
-=======
-    private Integer setNumber;
-    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date toUpdate;
-
-    private Integer number;
->>>>>>> 6db4745694ca679a28ccd2e8e761ac23327681ce
 
     public Integer getId() {
         return id;

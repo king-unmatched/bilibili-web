@@ -13,6 +13,26 @@ public class JxChoiceness {
 
     private String choicenessImg;
 
+    private String choicenessZhongxin;
+
+    private String choicenessTouxiang;
+
+    public String getChoicenessTouxiang() {
+        return choicenessTouxiang;
+    }
+
+    public void setChoicenessTouxiang(String choicenessTouxiang) {
+        this.choicenessTouxiang = choicenessTouxiang;
+    }
+
+    public String getChoicenessZhongxin() {
+        return choicenessZhongxin;
+    }
+
+    public void setChoicenessZhongxin(String choicenessZhongxin) {
+        this.choicenessZhongxin = choicenessZhongxin;
+    }
+
     public Integer getChoicenessId() {
         return choicenessId;
     }

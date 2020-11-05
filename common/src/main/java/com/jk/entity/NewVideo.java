@@ -7,7 +7,7 @@ public class NewVideo {
 
     private String newHotDuration;
 
-    private String newHeat;
+    private Integer newHeat;
 
     private String newHotImg;
 
@@ -37,12 +37,12 @@ public class NewVideo {
         this.newHotDuration = newHotDuration == null ? null : newHotDuration.trim();
     }
 
-    public String getNewHeat() {
+    public Integer getNewHeat() {
         return newHeat;
     }
 
-    public void setNewHeat(String newHeat) {
-        this.newHeat = newHeat == null ? null : newHeat.trim();
+    public void setNewHeat(Integer newHeat) {
+        this.newHeat = newHeat;
     }
 
     public String getNewHotImg() {
