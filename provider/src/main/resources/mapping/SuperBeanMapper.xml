@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.SuperBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.entity.SuperBean" >
+    <id column="zb_id" property="zbId" jdbcType="INTEGER" />
+    <result column="zb_name" property="zbName" jdbcType="VARCHAR" />
+    <result column="zb_url" property="zbUrl" jdbcType="VARCHAR" />
+    <result column="zb_createtimn" property="zbCreatetimn" jdbcType="VARCHAR" />
+    <result column="zb_stoptime" property="zbStoptime" jdbcType="VARCHAR" />
+    <result column="zb_img" property="zbImg" jdbcType="VARCHAR" />
+    <result column="zb_text" property="zbText" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    zb_id, zb_name, zb_url, zb_createtimn, zb_stoptime, zb_img, zb_text
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sy_super
+    where zb_id = #{zbId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sy_super
+    where zb_id = #{zbId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jk.entity.SuperBean" >
+    insert into sy_super (zb_id, zb_name, zb_url, 
+      zb_createtimn, zb_stoptime, zb_img, 
+      zb_text)
+    values (#{zbId,jdbcType=INTEGER}, #{zbName,jdbcType=VARCHAR}, #{zbUrl,jdbcType=VARCHAR}, 
+      #{zbCreatetimn,jdbcType=VARCHAR}, #{zbStoptime,jdbcType=VARCHAR}, #{zbImg,jdbcType=VARCHAR}, 
+      #{zbText,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jk.entity.SuperBean" >
+    insert into sy_super
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="zbId != null" >
+        zb_id,
+      </if>
+      <if test="zbName != null" >
+        zb_name,
+      </if>
+      <if test="zbUrl != null" >
+        zb_url,
+      </if>
+      <if test="zbCreatetimn != null" >
+        zb_createtimn,
+      </if>
+      <if test="zbStoptime != null" >
+        zb_stoptime,
+      </if>
+      <if test="zbImg != null" >
+        zb_img,
+      </if>
+      <if test="zbText != null" >
+        zb_text,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="zbId != null" >
+        #{zbId,jdbcType=INTEGER},
+      </if>
+      <if test="zbName != null" >
+        #{zbName,jdbcType=VARCHAR},
+      </if>
+      <if test="zbUrl != null" >
+        #{zbUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="zbCreatetimn != null" >
+        #{zbCreatetimn,jdbcType=VARCHAR},
+      </if>
+      <if test="zbStoptime != null" >
+        #{zbStoptime,jdbcType=VARCHAR},
+      </if>
+      <if test="zbImg != null" >
+        #{zbImg,jdbcType=VARCHAR},
+      </if>
+      <if test="zbText != null" >
+        #{zbText,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jk.entity.SuperBean" >
+    update sy_super
+    <set >
+      <if test="zbName != null" >
+        zb_name = #{zbName,jdbcType=VARCHAR},
+      </if>
+      <if test="zbUrl != null" >
+        zb_url = #{zbUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="zbCreatetimn != null" >
+        zb_createtimn = #{zbCreatetimn,jdbcType=VARCHAR},
+      </if>
+      <if test="zbStoptime != null" >
+        zb_stoptime = #{zbStoptime,jdbcType=VARCHAR},
+      </if>
+      <if test="zbImg != null" >
+        zb_img = #{zbImg,jdbcType=VARCHAR},
+      </if>
+      <if test="zbText != null" >
+        zb_text = #{zbText,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where zb_id = #{zbId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jk.entity.SuperBean" >
+    update sy_super
+    set zb_name = #{zbName,jdbcType=VARCHAR},
+      zb_url = #{zbUrl,jdbcType=VARCHAR},
+      zb_createtimn = #{zbCreatetimn,jdbcType=VARCHAR},
+      zb_stoptime = #{zbStoptime,jdbcType=VARCHAR},
+      zb_img = #{zbImg,jdbcType=VARCHAR},
+      zb_text = #{zbText,jdbcType=VARCHAR}
+    where zb_id = #{zbId,jdbcType=INTEGER}
+  </update>
+  <select id="selsuper" resultType="SuperBean">
+    select * from sy_super
+  </select>
+</mapper>
