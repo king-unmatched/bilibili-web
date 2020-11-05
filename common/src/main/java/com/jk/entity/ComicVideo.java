@@ -1,5 +1,8 @@
 package com.jk.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class ComicVideo {
@@ -18,11 +21,11 @@ public class ComicVideo {
     private String url;
 
     private Integer setNumber;
-
+    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date toUpdate;
 
-    private Integer 
-number;
+    private Integer number;
 
     public Integer getId() {
         return id;
