@@ -12,10 +12,4 @@ public class PagejumpController {
         return "index";
     }
 
-
-    @RequestMapping("login")
-    public String login(){
-        return "login";
-    }
-
 }
