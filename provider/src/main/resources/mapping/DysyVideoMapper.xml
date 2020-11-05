@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.dao.DysyVideoMapper">
-
+  <resultMap id="BaseResultMap" type="com.jk.entity.DysyVideo" >
+    <id column="video_id" property="videoId" jdbcType="INTEGER" />
+    <result column="video_img" property="videoImg" jdbcType="VARCHAR" />
+    <result column="video_duration" property="videoDuration" jdbcType="VARCHAR" />
+    <result column="video_xiaoimg" property="videoXiaoimg" jdbcType="VARCHAR" />
+    <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
+    <result column="video_name" property="videoName" jdbcType="VARCHAR" />
+    <result column="video_typeid" property="videoTypeid" jdbcType="REAL" />
+    <result column="video_heat" property="videoHeat" jdbcType="INTEGER" />
+    <result column="video_status" property="videoStatus" jdbcType="INTEGER" />
+    <result column="video_title" property="videoTitle" jdbcType="VARCHAR" />
+  </resultMap>
   <select id="selectVideo" resultType="DysyVideo">
-  select * from dy_sy_video a  left join dy_relevance b on a.video_typeid=b.dy_video_id
-  order by a.video_heat desc
+  select a.*,b.dy_name as xvip from dy_sy_video a left join dy_vip b on a.video_status=b.dy_id
+order by a.video_heat desc
   </select>
 </mapper>

@@ -1,5 +1,8 @@
 package com.jk.entity;
 
+import lombok.Data;
+
+@Data
 public class DysyVideo {
     private Integer videoId;
 
@@ -13,11 +16,49 @@ public class DysyVideo {
 
     private String videoRank;
 
-    private Integer videoTypeid;
+    private Float videoTypeid;
 
     private Integer videoHeat;
 
     private Integer videoStatus;
+
+    private String videoTitle;
+
+    private String videoXiaoimg;
+
+    private String xvip;
+
+    public String getXvip() {
+        return xvip;
+    }
+
+    public void setXvip(String xvip) {
+        this.xvip = xvip;
+    }
+
+    public String getVideoXiaoimg() {
+        return videoXiaoimg;
+    }
+
+    public void setVideoXiaoimg(String videoXiaoimg) {
+        this.videoXiaoimg = videoXiaoimg;
+    }
+
+    public Float getVideoTypeid() {
+        return videoTypeid;
+    }
+
+    public void setVideoTypeid(Float videoTypeid) {
+        this.videoTypeid = videoTypeid;
+    }
+
+    public String getVideoTitle() {
+        return videoTitle;
+    }
+
+    public void setVideoTitle(String videoTitle) {
+        this.videoTitle = videoTitle;
+    }
 
     public Integer getVideoId() {
         return videoId;
@@ -67,13 +108,6 @@ public class DysyVideo {
         this.videoRank = videoRank == null ? null : videoRank.trim();
     }
 
-    public Integer getVideoTypeid() {
-        return videoTypeid;
-    }
-
-    public void setVideoTypeid(Integer videoTypeid) {
-        this.videoTypeid = videoTypeid;
-    }
 
     public Integer getVideoHeat() {
         return videoHeat;
