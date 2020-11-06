@@ -40,4 +40,9 @@ public class IndexController {
             return new Result(false, "账号不存在！");
         }
     }
+
+    @RequestMapping("zhifu")
+    public String zhifu(){
+        return "zhifu";
+    }
 }
