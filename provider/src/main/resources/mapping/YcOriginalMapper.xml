@@ -5,69 +5,8 @@
     <id column="original_id" property="originalId" jdbcType="INTEGER" />
     <result column="original_author" property="originalAuthor" jdbcType="VARCHAR" />
     <result column="original_url" property="originalUrl" jdbcType="VARCHAR" />
+    <result column="original_img" property="originalImg" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    original_id, original_author, original_url
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from yc_original
-    where original_id = #{originalId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from yc_original
-    where original_id = #{originalId,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.jk.entity.YcOriginal" >
-    insert into yc_original (original_id, original_author, original_url
-      )
-    values (#{originalId,jdbcType=INTEGER}, #{originalAuthor,jdbcType=VARCHAR}, #{originalUrl,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.jk.entity.YcOriginal" >
-    insert into yc_original
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="originalId != null" >
-        original_id,
-      </if>
-      <if test="originalAuthor != null" >
-        original_author,
-      </if>
-      <if test="originalUrl != null" >
-        original_url,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="originalId != null" >
-        #{originalId,jdbcType=INTEGER},
-      </if>
-      <if test="originalAuthor != null" >
-        #{originalAuthor,jdbcType=VARCHAR},
-      </if>
-      <if test="originalUrl != null" >
-        #{originalUrl,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jk.entity.YcOriginal" >
-    update yc_original
-    <set >
-      <if test="originalAuthor != null" >
-        original_author = #{originalAuthor,jdbcType=VARCHAR},
-      </if>
-      <if test="originalUrl != null" >
-        original_url = #{originalUrl,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where original_id = #{originalId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.jk.entity.YcOriginal" >
-    update yc_original
-    set original_author = #{originalAuthor,jdbcType=VARCHAR},
-      original_url = #{originalUrl,jdbcType=VARCHAR}
-    where original_id = #{originalId,jdbcType=INTEGER}
-  </update>
 
   <select id="listYC" resultType="YcOriginal">
     select * from yc_original

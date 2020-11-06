@@ -7,6 +7,16 @@ public class YcOriginal {
 
     private String originalUrl;
 
+    private String originalImg;
+
+    public String getOriginalImg() {
+        return originalImg;
+    }
+
+    public void setOriginalImg(String originalImg) {
+        this.originalImg = originalImg;
+    }
+
     public Integer getOriginalId() {
         return originalId;
     }

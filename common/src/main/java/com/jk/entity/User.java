@@ -4,63 +4,73 @@ import lombok.Data;
 
 @Data
 public class User {
-    private Integer userId;
+    private Integer id;
 
-    private String userName;
+    private String usercode;
 
-    private String userPassword;
+    private String username;
 
-    private Integer userStatus;
+    private String userimg;
 
-    private Integer userLevel;
+    private String password;
 
-    private Long userPhone;
+    private String salt;
 
-    public Integer getUserId() {
-        return userId;
+    private String locked;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsercode() {
+        return usercode;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setUsercode(String usercode) {
+        this.usercode = usercode == null ? null : usercode.trim();
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword == null ? null : userPassword.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
-    public Integer getUserStatus() {
-        return userStatus;
+    public String getUserimg() {
+        return userimg;
     }
 
-    public void setUserStatus(Integer userStatus) {
-        this.userStatus = userStatus;
+    public void setUserimg(String userimg) {
+        this.userimg = userimg == null ? null : userimg.trim();
     }
 
-    public Integer getUserLevel() {
-        return userLevel;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserLevel(Integer userLevel) {
-        this.userLevel = userLevel;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
-    public Long getUserPhone() {
-        return userPhone;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setUserPhone(Long userPhone) {
-        this.userPhone = userPhone;
+    public void setSalt(String salt) {
+        this.salt = salt == null ? null : salt.trim();
+    }
+
+    public String getLocked() {
+        return locked;
+    }
+
+    public void setLocked(String locked) {
+        this.locked = locked == null ? null : locked.trim();
     }
 }

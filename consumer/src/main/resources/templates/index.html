@@ -81,7 +81,7 @@
     <link rel="preload" href="//vm.gtimg.cn/tencentvideo_v1/script/txv.core.js?v=20190402" as="script" />
     <link rel="preload" href="//ra.gtimg.com/sc/vqq/crystal-min.js" as="script" />
     <link rel="preload" href="//vm.gtimg.cn/c/=/tencentvideo/script/index2017/public_comps/shortcut.min.js,/tencentvideo/script/module/floatpanel.js" as="script" />
-
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body _wind="scene=频道页&pagename=精选频道" class="page_channel page_channel_choice">
 <svg class="svg_sprite" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1" height="1">
@@ -403,102 +403,7 @@
                 </div>
             </div>
 
-            <div class="quick_item quick_user" id="mod_head_user">
-                <a href="https://v.qq.com/biu/u/history/" class="quick_link _checklogin" id="mod_head_notice_trigger" target="_blank"  _stat="顶部导航区:头像">
-                    <img class="quick_user_avatar" src="//puui.qpic.cn/vupload/0/common_avatar.png/0" data-type="avatar" data-avatarsize="40">
-                    <span class="account_type" data-type="account_type_logo">
-                    <i class="icon icon_qq __account_type_qq none"><svg class="svg_icon svg_icon_qq" viewBox="0 0 20 20" width="8" height="8"><path d="M16.3 13.7c-.3.7-.7 1.3-1.2 1.8 1.1.3.8.9.8.9.5.3.5 2-2.3 2-1.8 0-2.6-.5-2.9-.9H10c-.3 0-.6 0-.9-.1-.3.3-1.1.9-2.9.9-2.7 0-2.7-1.7-2.2-2 0 0-.3-.6 1-.9-.5-.6-.9-1.2-1.2-2-1.1 2-1.7.7-1.6-.9.1-1.4 1.3-2.9 1.6-3.3V9c0-.3.1-.6.4-.9v-.2c0-.3.2-.6.4-.8V7c0-3 2.5-5.5 5.6-5.5S15.7 4 15.7 7v.3c.2.2.3.4.3.6v.2c.2.2.4.5.4.8 0 .2 0 .3-.1.5.3.4 1.5 1.9 1.6 3.3-.1 1.5-.6 2.8-1.6 1z"></path></svg></i>
-                    <i class="icon icon_wechat __account_type_wx none"><svg class="svg_icon svg_icon_wechat" viewBox="0 0 20 20" width="8" height="8"><path d="M13.4 7.6h.7c-.6-2.7-3.6-4.8-7.1-4.8-3.9 0-7 2.6-7 6 0 1.9 1.1 3.5 2.8 4.7l-.7 2.1 2.5-1.2c.9.2 1.6.4 2.5.4h.7c-.1-.5-.2-1-.2-1.5-.1-3.2 2.5-5.7 5.8-5.7zM9.7 5.7c.5 0 .9.3.9.9 0 .5-.3.9-.9.9-.5 0-1.1-.4-1.1-.9s.5-.9 1.1-.9zm-5 1.8c-.5 0-1.1-.4-1.1-.9s.5-.9 1.1-.9.9.3.9.9c0 .5-.3.9-.9.9zM19.8 13.1c0-2.8-2.8-5.1-6-5.1-3.3 0-6 2.3-6 5.1s2.6 5.1 6 5.1c.7 0 1.4-.2 2.1-.4l1.9 1.1-.5-1.8c1.5-1 2.5-2.4 2.5-4zm-7.9-.9c-.3 0-.7-.3-.7-.7 0-.3.4-.7.7-.7.5 0 .9.4.9.7 0 .4-.3.7-.9.7zm3.9 0c-.3 0-.7-.3-.7-.7 0-.3.4-.7.7-.7.5 0 .9.4.9.7 0 .4-.4.7-.9.7z"></path></svg></i>
-                </span>
-                    <img src="//puui.qpic.cn/vupload/0/common_blank.png/0" alt="" class="icon_vip_pic none" data-type="viplogo" width="15" />
-                    <i class="triangle_up"><i class="triangle_inner"></i></i>
-                </a>
-
-                <!-- 用户信息浮层 开始 -->
-                <div class="mod_quick_pop mod_pop_user" id="mod_head_notice_pop" _stat="顶部导航区:头像浮层">
-                    <div class="pop_info_content quick_pop_user">
-                        <div class="quick_pop_user_hd">
-                            <span class="account_type __accout_type_name"></span>
-                            <a href="https://v.qq.com/biu/u/history/" _stat="顶部导航区:头像浮层:昵称" class="user_name _nickname"></a>
-                            <a href="https://film.qq.com/vip/my/" class="link_vip_icon" _stat="顶部导航区:头像浮层:vipicon">
-                                <img src="//puui.qpic.cn/vupload/0/common_blank.png/0" alt="" class="icon_vip_pic none" data-type="viplogo" width="24" />
-                            </a>
-                            <a href="javascript:;" class="link_change" data-type="switchlogin" _stat="顶部导航区:头像浮层:切换账号" title="切换账号">切换</a>
-                            <a href="javascript:;" class="link_quit" data-type="logout" _stat="顶部导航区:头像浮层:退出"  title="退出">退出</a>
-                            <div class="quick_vip_meta" id="quick_user_vip" data-version='3'></div>
-                        </div>
-                        <div class="quick_pop_user_bd">
-                            <div class="quick_features cf">
-
-                                <a class="feature_item" href="//v.qq.com/u/comment/" target="_blank" _hot="顶部导航区:头像浮层:user_message" _stat="顶部导航区:头像浮层:user_message">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/vupload/20200619/2d581a1592554803839.png" srcset="https://vfiles.gtimg.cn/vupload/20200619/03b8481592559225259.png">
-                                    <span class="icon_text">评论消息</span>
-                                </a>
-
-                                <a class="feature_item" href="//v.qq.com/u/history/" target="_blank" _hot="顶部导航区:头像浮层:user_history" _stat="顶部导航区:头像浮层:user_history">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/vupload/20200619/92045c1592554803837.png" srcset="https://vfiles.gtimg.cn/vupload/20200619/36d2ce1592559225258.png">
-                                    <span class="icon_text">云同步观看记录</span>
-                                </a>
-
-                                <a class="feature_item" href="//cc.v.qq.com/" target="_blank" _hot="顶部导航区:头像浮层:user_lottery" _stat="顶部导航区:头像浮层:user_lottery">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/wupload/vqqcom.quick_features/20200730_qwzmcjia368icon.png" srcset="https://vfiles.gtimg.cn/wupload/vqqcom.quick_features/20200730_g6sb4bwm72icon.png">
-                                    <span class="icon_text">创作中心</span>
-                                </a>
-
-                                <a class="feature_item" href="//node.video.qq.com/x/api/download_pc" target="_blank" _hot="顶部导航区:头像浮层:download" _stat="顶部导航区:头像浮层:download">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/vupload/20200619/59554b1592554803837.png" srcset="https://vfiles.gtimg.cn/vupload/20200619/3ac3ad1592559225258.png">
-                                    <span class="icon_text">用客户端看抢VIP</span>
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--未登录会员账号 开始-->
-                <div class="mod_quick_pop mod_pop_user none" id="mod_notlogin_pop">
-                    <div class="pop_info_content quick_pop_user">
-                        <div class="quick_pop_user_hd">
-                            <span class="account_type">登录之后可以</span>
-                            <div class="quick_vip_meta">
-                                <span class="vip_now">开通VIP/超级影视VIP 看大片</span>
-                                <span class="vip_next">
-                            <a href="javascript:;" class="btn_vip_em __open_vip_notLogin" _stat="顶部导航区:头像浮层:开通vip" >开通</a>
-                        </span>
-                            </div>
-                        </div>
-                        <div class="quick_pop_user_bd">
-                            <div class="quick_features cf">
-
-                                <a class="feature_item" href="//v.qq.com/u/comment/" target="_blank" _hot="顶部导航区:头像浮层:user_message" _stat="顶部导航区:头像浮层:user_message">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/vupload/20200619/2d581a1592554803839.png" srcset="https://vfiles.gtimg.cn/vupload/20200619/03b8481592559225259.png">
-                                    <span class="icon_text">评论消息</span>
-                                </a>
-
-                                <a class="feature_item" href="//v.qq.com/u/history/" target="_blank" _hot="顶部导航区:头像浮层:user_history" _stat="顶部导航区:头像浮层:user_history">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/vupload/20200619/92045c1592554803837.png" srcset="https://vfiles.gtimg.cn/vupload/20200619/36d2ce1592559225258.png">
-                                    <span class="icon_text">云同步观看记录</span>
-                                </a>
-
-                                <a class="feature_item" href="//cc.v.qq.com/" target="_blank" _hot="顶部导航区:头像浮层:user_lottery" _stat="顶部导航区:头像浮层:user_lottery">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/wupload/vqqcom.quick_features/20200730_qwzmcjia368icon.png" srcset="https://vfiles.gtimg.cn/wupload/vqqcom.quick_features/20200730_g6sb4bwm72icon.png">
-                                    <span class="icon_text">创作中心</span>
-                                </a>
-
-                                <a class="feature_item" href="//node.video.qq.com/x/api/download_pc" target="_blank" _hot="顶部导航区:头像浮层:download" _stat="顶部导航区:头像浮层:download">
-                                    <img class="icon_feature" src="https://vfiles.gtimg.cn/vupload/20200619/59554b1592554803837.png" srcset="https://vfiles.gtimg.cn/vupload/20200619/3ac3ad1592559225258.png">
-                                    <span class="icon_text">用客户端看抢VIP</span>
-                                </a>
-
-                            </div>
-                            <div class="quick_pop_btn">
-                                <a href="javascript:;" _stat="顶部导航区:头像浮层:立即登录" class="btn_pop_link" data-type="login" data-boss="5">立即登录</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--未登录会员账号 结束-->
-
-                <!-- 用户信息浮层 结束 -->
+            <div class="quick_item quick_user" id="dengluchuangkou">
             </div>
         </div>
         <!-- 快捷入口 结束 -->
@@ -779,10 +684,7 @@
                                 </svg><span class="text">重磅推荐</span>
                             </span>
 
-
         <p id="lunbo2222"></p>
-
-
     </div>
 </div>
 
@@ -800,7 +702,6 @@
 <link rel="stylesheet" href="//vm.gtimg.cn/c/=/tencentvideo/vstyle/web/v6/style/css/channel/channel.ie.css?v=2020102220" />
 <![endif]-->
 <script type="text/javascript" src="//vm.gtimg.cn/tencentvideo_v1/script/txv.core.js?v=20190402"></script>
-
 
 
 
@@ -1127,23 +1028,7 @@
         <div class="mod_author_tablist" id="jingxuanyonghu">
 
 
-            <a class="author_item" href="http://v.qq.com/vplus/9638a95dc5d47a4dbcfe344f11a106c5" target="_blank">
-                <img loading="lazy" class="author_pic" lz_src="//inews.gtimg.com/newsapp_ls/0/11732297712_200200/0" src="//puui.qpic.cn/vupload/0/common_blank.png/0" alt="张文宏医生" onerror="picerr(this,'a')" />
-                <span class="author_name">张文宏医生</span>
-            </a>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1397,7 +1282,49 @@
         dongmanInfo();
         remenInfo();
         jingxuanInfo();
+        zuozheInfo();
     })
+    $(document).ready(function () {
+        $.ajax({
+            url:"/index/sysUser",
+            type:"post",
+            success:function(data){
+                var data = eval('('+data+')');
+                var denglus="";
+                if (data==null || data==""){
+                    denglus+='<a href="/index/loginus" _stat="顶部导航区:头像">'
+                        +'<img class="quick_user_avatar" src="//puui.qpic.cn/vupload/0/common_avatar.png/0" data-type="avatar" data-avatarsize="40">'
+                        +'</a>';
+                }else{
+                    denglus+='<a href="#" _stat="顶部导航区:头像" class="quick_link _checklogin">'
+                        +'<img class="quick_user_avatar" src="'+data.userimg+'" data-type="avatar" data-avatarsize="40">'
+                        +'</a>'
+                    +'<a href="https://v.qq.com/biu/u/history/"><font color="#FFFF00">'+data.username+'</font></a>'
+                    +'&nbsp;&nbsp;&nbsp;<a href="/index/zhuxiao"><font color="#ff0000">注销</font></a>';
+                }
+                $("#dengluchuangkou").append(denglus);
+            },
+            error:function (data) {
+                alert("系统出错了")
+            }
+        });
+    })
+    function zuozheInfo() {
+        $.ajax({
+            url:"/listYCO/selectlistYCO",
+            type:"post",
+            success:function(data){
+                var zuozhe="";
+                for (var i = 0; i <data.length; i++) {
+                    zuozhe+='<a class="author_item" href="'+data[i].originalUrl+'" target="_blank">'
+                        +'<img loading="lazy" class="author_pic" lz_src="'+data[i].originalImg+'" src="'+data[i].originalImg+'" alt="'+data[i].originalAuthor+'" onerror="picerr(this,\''+'a'+'\')" />'
+                        +'<span class="author_name">'+data[i].originalAuthor+'</span>'
+                        +'</a>';
+                }
+                $("#jingxuanyonghu").append(zuozhe);
+            },
+        });
+    }
     function jingxuanInfo() {
         $.ajax({
             url:"/selectJx/listJxChoiceness",
@@ -1719,5 +1646,4 @@
         feedback: true // 意见反馈
     })
 </script>
-
 </html>
