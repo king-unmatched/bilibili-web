@@ -35,10 +35,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.alibaba.fastjson.JSON;
 @Controller
 @RequestMapping("index")
@@ -55,6 +51,10 @@ public class IndexController {
     @RequestMapping("loginus")
     public String loginus(){
         return "login";
+    }
+    @RequestMapping("svip")
+    public String svip(){
+        return "svip";
     }
 
     @RequestMapping("login")

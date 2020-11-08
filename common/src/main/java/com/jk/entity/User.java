@@ -16,7 +16,17 @@ public class User {
 
     private String salt;
 
-    private String locked;
+    private Integer status;
+
+    private String vcolor;
+
+    public String getVcolor() {
+        return vcolor;
+    }
+
+    public void setVcolor(String vcolor) {
+        this.vcolor = vcolor;
+    }
 
     public Integer getId() {
         return id;
@@ -66,11 +76,11 @@ public class User {
         this.salt = salt == null ? null : salt.trim();
     }
 
-    public String getLocked() {
-        return locked;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setLocked(String locked) {
-        this.locked = locked == null ? null : locked.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }
