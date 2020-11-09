@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
+
 @FeignClient(value = "provider")
 public interface UserService {
 
@@ -14,4 +17,13 @@ public interface UserService {
 
     @RequestMapping("loginto")
     public void loginto(@RequestBody User ccc);
+
+    @RequestMapping("update")
+    public void update(@RequestParam String createtime, @RequestParam Integer id);
+
+    @RequestMapping("select")
+    public List<User> select();
+
+    @RequestMapping("updates")
+    public void updates(@RequestParam Integer id);
 }

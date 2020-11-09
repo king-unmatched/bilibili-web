@@ -82,6 +82,7 @@
     <link rel="preload" href="//ra.gtimg.com/sc/vqq/crystal-min.js" as="script" />
     <link rel="preload" href="//vm.gtimg.cn/c/=/tencentvideo/script/index2017/public_comps/shortcut.min.js,/tencentvideo/script/module/floatpanel.js" as="script" />
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
 </head>
 <body _wind="scene=频道页&pagename=精选频道" class="page_channel page_channel_choice">
 <svg class="svg_sprite" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1" height="1">
@@ -212,7 +213,7 @@
         <!-- 快捷入口 开始 -->
         <div class="mod_quick cf">
             <div class="quick_item quick_vip">
-                <a href="https://film.qq.com/" class="quick_link" target="_blank" _stat="顶部导航区:VIP" title="VIP频道">
+                <a href="/index/svip" class="quick_link" target="_blank" _stat="顶部导航区:VIP" title="VIP频道">
 
                     <svg class="svg_quick_icon svg_icon_vip" viewBox="0 0 26 26" width="26" height="26">
                         <filter x="-17.4%" y="-16%" width="134.8%" height="132%" filterUnits="objectBoundingBox" id="__gradient_vip1">
@@ -664,7 +665,7 @@
 
         <!--[if lte IE 8 ]><div class="slider_top_mask"></div><![endif]-->
     </div>
-    <div class="slider_nav _quicklink slider_nav_watched" _wind="columnname=精选_焦点图&controlname=new_vs_focus" >
+    <div class="slider_nav _quicklink slider_nav_watched" _wind="columnname=精选_焦点图&controlname=new_vs_focus" id="app">
 
         <a href="http://v.qq.com/u/history/" _stat="焦点图:追剧:大标题入口" class="nav_link nav_link_mine current" target="_blank" data-bgcolor="#3b7580" data-bgimage="//puui.qpic.cn/vupload/0/common_blank.png/0"><svg class="svg_slider_icon svg_icon_zj" width="16" height="11">
             <path class="path_1" d="M15 8A7 7 0 0 0 1 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
@@ -684,7 +685,14 @@
                                 </svg><span class="text">重磅推荐</span>
                             </span>
 
-        <p id="lunbo2222"></p>
+                <a v-for="lunbo in list" href="{{lunbo.zbUrl}}"
+                   target="_blank"
+                   class="nav_link" data-bgcolor="#48642a"
+                   data-bgimage="{{lunbo.zbImg}}"
+                   data-navcolor="undefined" _stat="焦点图:标题:3: {{lunbo.zbName}}"
+                   data-quicklink="loaded">
+                    <span class="text text2" title="{{lunbo.zbName}}: {{lunbo.zbText}}"><span class="title_text">{{lunbo.zbName}}</span>{{lunbo.zbText}}</span>
+                </a>
     </div>
 </div>
 
@@ -1273,6 +1281,8 @@
 
     </div>
 </div>
+<iframe  src="//video.qq.com/getcookie/cookie.html" frameborder="0"></iframe>
+<iframe  src="//video.qq.com/getcookie/cookie.html" frameborder="0"></iframe>
 
 <script type="text/javascript">
     $(function () {
@@ -1296,10 +1306,10 @@
                         +'<img class="quick_user_avatar" src="//puui.qpic.cn/vupload/0/common_avatar.png/0" data-type="avatar" data-avatarsize="40">'
                         +'</a>';
                 }else{
-                    denglus+='<a href="#" _stat="顶部导航区:头像" class="quick_link _checklogin">'
+                    denglus+='<a href="/index/center" _stat="顶部导航区:头像" class="quick_link _checklogin">'
                         +'<img class="quick_user_avatar" src="'+data.userimg+'" data-type="avatar" data-avatarsize="40">'
                         +'</a>'
-                    +'<a href="https://v.qq.com/biu/u/history/"><font color="'+data.vcolor+'">'+data.username+'</font></a>'
+                    +'<a href="/index/center"><font color="'+data.vcolor+'">'+data.username+'</font></a>'
                     +'&nbsp;&nbsp;&nbsp;<a href="/index/zhuxiao"><font color="#ff0000">注销</font></a>';
                 }
                 $("#dengluchuangkou").append(denglus);
@@ -1457,20 +1467,18 @@
             },
         });
     }
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            list: ""
+        }
+    })
     function lunboInfo2() {
         $.ajax({
             url:"/slide/selsuper",
             type:"post",
             success:function(data){
-                var pen="";
-                var a=0;
-                for (var i = 0; i <data.length; i++) {
-                    a++;
-                    pen+='<a href="'+data[i].zbUrl+'" target="_blank" class="nav_link " data-bgcolor="#48642a" data-bgimage="'+data[i].zbImg+'" data-navcolor="undefined" __wind _stat="焦点图:标题:'+a+':'+data[i].zbName+'" >' +
-                        '<span class="text text2"  title="'+data[i].zbName+':'+data[i].zbText+'" ><span class="title_text">'+data[i].zbName+'</span >'+data[i].zbText+'</span>' +
-                        '</a>';
-                }
-                $("#lunbo2222").append(pen);
+                vm.list=data;
             },
         });
     }

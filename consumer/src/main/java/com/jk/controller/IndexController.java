@@ -56,7 +56,14 @@ public class IndexController {
     public String svip(){
         return "svip";
     }
-
+    @RequestMapping("logins")
+    public String logins(){
+        return "logins";
+    }
+    @RequestMapping("buyvip")
+    public String buyvip(){
+        return "buyvip";
+    }
     @RequestMapping("login")
     @ResponseBody
     public Result login(HttpServletRequest request, User user){
@@ -155,12 +162,17 @@ public class IndexController {
     @RequestMapping("loginto")
     @ResponseBody
     public Result loginto(User ccc,String code,String phoneNumber,HttpServletRequest request) {
-        String user = (String) redisTemplate.opsForValue().get("sendCode"+phoneNumber);
-        if(code.equals(user)){
+        String user = (String) redisTemplate.opsForValue().get("sendCode" + phoneNumber);
+        if (code.equals(user)) {
             userService.loginto(ccc);
-            return new Result(true,"注册成功");
-        }else{
-            return new Result(false,"验证失败");
+            return new Result(true, "注册成功");
+        } else {
+            return new Result(false, "验证失败");
         }
+    }
+
+    @RequestMapping("zhifu")
+    public String zhifu(){
+        return "zhifu";
     }
 }

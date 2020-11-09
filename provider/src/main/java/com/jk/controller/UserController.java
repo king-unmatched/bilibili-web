@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+import java.util.List;
+
 @RestController
 public class UserController {
     @Autowired
@@ -20,5 +23,17 @@ public class UserController {
     @RequestMapping("loginto")
     public void loginto(@RequestBody User ccc){
         userService.loginto(ccc);
+    }
+    @RequestMapping("update")
+    public void update(@RequestParam String createtime,@RequestParam Integer id){
+        userService.update(createtime,id);
+    }
+    @RequestMapping("select")
+    public List<User> select(){
+        return userService.select();
+    }
+    @RequestMapping("updates")
+    public void updates(@RequestParam Integer id){
+        userService.updates(id);
     }
 }

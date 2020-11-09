@@ -2,6 +2,10 @@ package com.jk.dao;
 
 import com.jk.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Date;
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -18,4 +22,10 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User login(String usercode);
+
+    void update(@Param("createtime")String createtime,@Param("id") Integer id);
+
+    List<User> select();
+
+    void updates(Integer id);
 }

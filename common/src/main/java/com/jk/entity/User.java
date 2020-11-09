@@ -1,6 +1,9 @@
 package com.jk.entity;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Data
 public class User {
@@ -19,6 +22,17 @@ public class User {
     private Integer status;
 
     private String vcolor;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createtime;
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
 
     public String getVcolor() {
         return vcolor;

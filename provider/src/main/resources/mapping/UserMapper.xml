@@ -10,12 +10,22 @@
     <result column="salt" property="salt" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="vcolor" property="vcolor" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="DATE" />
   </resultMap>
   <insert id="insert" parameterType="com.jk.entity.User" >
     insert into sys_user_copy (usercode, username,userimg, password,status,vcolor)
     values (#{usercode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},#{userimg,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},1,'#FFFFF')
   </insert>
+  <update id="update">
+    update sys_user_copy set status=0,vcolor='#FFFF00',createtime=#{createtime,jdbcType=DATE} where id=#{id}
+  </update>
   <select id="login" resultType="User">
 select * from sys_user_copy where usercode = #{usercode}
   </select>
+  <select id="select" resultType="User">
+    select * from sys_user_copy
+  </select>
+  <update id="updates">
+    update sys_user_copy set status=1,vcolor='#FFFFF',createtime='2020-11-08' where id=#{id}
+  </update>
 </mapper>
