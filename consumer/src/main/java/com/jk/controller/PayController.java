@@ -9,27 +9,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.security.auth.Subject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
 @Controller
+@RequestMapping("/pay")
 public class PayController {
 
     private final String APP_ID = "2016103100781627";
     private final String APP_PRIVATE_KEY = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQChUl/p0Nj7yR+R30NcqwF1Zfv+OIbPvIYTklBIJMDEdBYCwpHJc2a8NRk3dEUjYfnCs15rYWTiCLrUF/rIaClajPmIXMi3vPQrqn9DUJlw5nJsJ9AeVxEIq2wLUctA+8grJiudiNv8hHkOAfn1IZqjq4WboTyBJHrCN+zVky0RjcuitnzaqWp2Qg6KJ5zUDELo+lV3/K9akwQM/J7F5Qc8u6YCLG6K1NBBpP04SQNYkS2+fRjNwPl0kc64QkssROAARbF+dEm70t3ymX3iKcgEHzIAT7WHdEruW2CTASja7fegEkA/pybLlotkgdnPytbCkYL6+dUoeIgenYcDtgnFAgMBAAECggEBAISUs5jw+HMt3xE+oRj2vbMjRs+u2zS9Zp+NHwe7lOWf1jscdz5N5oAFT50gpHWo3uBiE9ZCa+vMaudGcefkmx/9PlMQljFTTITakc7b3c9IxX8X1VYqDijG4XwIE/hrNR4pN603vjwxD2AwxaHtpS6gF6VJBPXJ6k3WMoFwfJiwVx0eVUszUSbulXF8VK21v415wgW23+aGodOAHG+CT55nm21EU7p6uXy2kIc1VBlVSxAwSdWD8tB4+80ILPYwkwsTt9IZJ9hjJyRof7B5z3bU/s5FS0AsZsw++W3GKZ7YA46IuKzDlphfdp3eaYPUcKW2zfEyrkbd+rkvh+DAwoECgYEA0WsTq+rdgOxaW7IDPQSeesF60gLgXBLo/LQIxwAS1ozH1BqhmAea1lwTMrR8XGgCf/4bqBzMxt0t3SyOWh6rhj0vpxaNlub+mQFe+sALzpaiCgFeLpsX8cXb/2NC8xT/zC14zVpkSQFHFWSf3hTRrXOcdXrqvxkhDvpLrFGFCyECgYEAxTSI8ZnzPJiDIO15ebphcR8aVaVjGVRrKz79942NQdZf2KslvzblcwxKr3d8MnDsgCT3VuScOl2ACEY8/5mpcqZ5bQRHZyIFsp6Jusf+WSsneKhIMLiaPKWSvXPTme/1OKJyQAIFK8lqo3SWUGrwKp1hEgtHtfsOBc4uLGOLriUCgYBpEzPcl8yqKm0wAwKS9CVcbIXmp+DQ8gALA34/8y6AjkSZjP81m+M52Rsc3uhjKSDP/bz8ve6VfVbM2dVXLHpdsYeea7eBVse6F7EDWabS8ku9f3A1LEZ4XhGDc9ecxhWO6eXqC4e0BbsX5dQ9Bu8p+48udw0f80jeDgI4JPL/YQKBgFL6YAUI+kgtBD/+rHaD7ixjIfmXtbMayl1QDBz1+tIRGhNZMHDc8H8QVPywEhpHWbwx0cFGQFZusUjKBTCnv5z2X3F3s3O55RvbiaiGLofmmJ00cevOQVfzc2M0MX08crp54Aj+0J40CiLtE7KSzKuhvQ6SoIH6OVRIBTW4TTXhAoGBAM+JhgddsEjlh9Mdv1b9mDLPexsbzG3h6vohggruwoJMJ5YOSO7gszxS591T2QPCTY/E5Su1smQDJY3ISQGI1DNMKxSKXDukPcDPSIdpe/yhGJs4es5eWFjy7Mag75cbiBVQXhSQz4B57B63yNauTclATUHBHEAPZCd/8yJ/szKM";
     private final String CHARSET = "UTF-8";
-    private final String ALIPAY_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoVJf6dDY+8kfkd9DXKsBdWX7/jiGz7yGE5JQSCTAxHQWAsKRyXNmvDUZN3RFI2H5wrNea2Fk4gi61Bf6yGgpWoz5iFzIt7z0K6p/Q1CZcOZybCfQHlcRCKtsC1HLQPvIKyYrnYjb/IR5DgH59SGao6uFm6E8gSR6wjfs1ZMtEY3LorZ82qlqdkIOiiec1AxC6PpVd/yvWpMEDPyexeUHPLumAixuitTQQaT9OEkDWJEtvn0YzcD5dJHOuEJLLETgAEWxfnRJu9Ld8pl94inIBB8yAE+1h3RK7ltgkwEo2u33oBJAP6cmy5aLZIHZz8rWwpGC+vnVKHiIHp2HA7YJxQIDAQAB\n";
+    private final String ALIPAY_PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIgHnOn7LLILlKETd6BFRJ0GqgS2Y3mn1wMQmyh9zEyWlz5p1zrahRahbXAfCfSqshSNfqOmAQzSHRVjCqjsAw1jyqrXaPdKBmr90DIpIxmIyKXv4GGAkPyJ/6FTFY99uhpiq0qadD/uSzQsefWo0aTvP/65zi3eof7TcZ32oWpwIDAQAB";
     private final String GATEWAY_URL = "https://openapi.alipaydev.com/gateway.do";
     private final String FORMAT ="JSON";
     private final String SIGN_TYPE = "RSA2";
     private final String NOTIFY_URL = "http://127.0.0.1/notifyurl";
-    private final String RETURN_URL = "http://localhost:8763/index/zhifu";
+    private final String RETURN_URL = "https://www.baidu.com/";
 
-    @RequestMapping("alipay")
-    public void alipay(HttpServletResponse httpResponse) throws IOException {
+    @RequestMapping("/alipay")
+    public void alipay(HttpServletResponse httpResponse,String total_amount,String subject) throws IOException {
 
         Random r=new Random();
         //实例化客户端,填入所需参数
@@ -43,11 +43,11 @@ public class PayController {
         //生成随机Id
         String out_trade_no = UUID.randomUUID().toString();
         //付款金额，必填
-        String total_amount =Integer.toString(r.nextInt(99999)+10000);
+        /*String total_amount =Integer.toString(r.nextInt(10));*/
         //订单名称，必填
-        String subject ="奥迪A8 2016款 A8L 60 TFSl quattro豪华型";
+        /*String subject ="连续包月首月";*/
         //商品描述，可空
-        String body = "尊敬的会员欢迎购买奥迪A8 2016款 A8L 60 TFSl quattro豪华型";
+        String body = "之后15元/月续费可随时关闭";
         request.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
                 + "\"total_amount\":\""+ total_amount +"\","
                 + "\"subject\":\""+ subject +"\","

@@ -43,6 +43,12 @@ public class IndexController {
 
     @RequestMapping("zhifu")
     public String zhifu(){
-        return "zhifu";
+        return "buyvip";
     }
+
+    @RequestMapping("tohistory")
+    public String history(){
+        return "history";
+    }
+
 }
