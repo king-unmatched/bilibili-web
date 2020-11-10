@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,695 +20,112 @@
 
 <body>
 <div class="open-vip-box">
-    <div class="banner">
-        <div class="vip-banner">
-            <!-- <a href="javascript:;" class="vip-box export-data"><img src="//staticcdn.shuidi.cn/shuidi/images/personal_modify/vip-pt.png"></a> -->
-            <div class="vip-box vip-box2 -left -no-select" id="vip-box">
-                <div class="vip-header vip-header2">
-                    <h2>腾讯视频VIP</h2>
-                    <h3>适用于非TV用户</h3>
-                </div>
-                <div class="vip-inner">
-                    <div class="vip-box2-top vip2-box2-top">
-                        <form id="forms">
+    <form id="forms" method="post">
+        <div class="banner">
+            <div class="vip-banner">
+                <!-- <a href="javascript:;" class="vip-box export-data"><img src="//staticcdn.shuidi.cn/shuidi/images/personal_modify/vip-pt.png"></a> -->
+                <div class="vip-box vip-box2 -left -no-select">
+                    <div class="vip-header vip-header2">
+                        <h2>腾讯视频VIP</h2>
+                        <h3>适用于非TV用户</h3>
+                    </div>
+                    <div class="vip-inner">
+                        <div class="vip-box2-top vip2-box2-top">
                             <div class="vip-box2-top-box" id="vip-html">
-                                    <a href="javascript:;" class="vip-tab vip-tab-add" tab-index="0" pay-type="pay_person_vip_one_year" pay-name="1个月VIP" pay-xufei="undefined"><i class="vip-box2-title1" name="subject">1个月VIP</i><i class="vip-box2-top1"><span name="total_amount">20</span>元<!--<font>40元</font>--></i><i class="vip-box2-bottom1">20元/月</i></a>
-                                    <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_vip_two_years" pay-name="2个月VIP" pay-xufei="undefined"><i class="vip-box2-title1" name="subject">3个月VIP</i><i class="vip-box2-top1"><span name="total_amount">45</span>元<!--<font>720元</font>--></i><!--<i class="vip-box2-bottom1">每天仅需<span>0.23</span>元</i>--></a>
-                                    <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_vip_three_years" pay-name="3个月VIP" pay-xufei="undefined"><span class="vip-tab-icon">推荐</span><i class="vip-box2-title1" name="subject">12个月VIP</i><i class="vip-box2-top1"><span name="total_amount">198</span>元<!--<font>1080元</font>--></i><i class="vip-box2-bottom1">每月<span>16.5</span>元/月</i></a>
+                                <a href="javascript:;" class="vip-tab vip-tab-add" tab-index="0" pay-type="pay_person_vip_one_year" pay-name="1个月VIP" pay-xufei="undefined"><i class="vip-box2-title1" name="subject">1个月VIP</i><i class="vip-box2-top1"><span name="total_amount"><input type="radio" value="20"  name="chi">20</span>元<!--<font>40元</font>--></i><i class="vip-box2-bottom1">20元/月</i></a>
+                                <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_vip_two_years" pay-name="2个月VIP" pay-xufei="undefined"><i class="vip-box2-title1" name="subject">3个月VIP</i><i class="vip-box2-top1"><span name="total_amount"><input type="radio" value="45"  name="chi">45</span>元<!--<font>720元</font>--></i><!--<i class="vip-box2-bottom1">每天仅需<span>0.23</span>元</i>--></a>
+                                <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_vip_three_years" pay-name="3个月VIP" pay-xufei="undefined"><span class="vip-tab-icon">推荐</span><i class="vip-box2-title1" name="subject">12个月VIP</i><i class="vip-box2-top1"><span name="total_amount"><input type="radio" value="198" name="chi">198</span>元<!--<font>1080元</font>--></i><i class="vip-box2-bottom1">每月<span>16.5</span>元/月</i></a>
                             </div>
                             <a href="javascript:zhifu();" type="submit" class="vip-box2-link" pay-type="pay_person_vip_one_year" pay-name="1年VIP">确认支付</a>
-                        </form>
-                        <!--                             <a href="javascript:;" class="vip-box2-link vip-box2-link-ljdg">立即订购</a>
-                 -->
-                    </div>
-                </div>
-            </div>
-            <div class="vip-box vip-box1 -right" id="vip-box">
-                <div class="vip-header vip-header1">
-                    <h2>超级影视VIP</h2>
-                    <h3>适用于TV全屏会员</h3>
-                </div>
-                <div class="vip-inner">
-                    <div class="vip-box2-top">
-                        <div class="vip-box2-top-box" id="svip-html">
-                            <a href="javascript:;" class="vip-tab vip-tab-add" tab-index="0" pay-type="pay_person_svip_one_year" pay-name="1个月SVIP" pay-xufei="undefined"><i class="vip-box2-title1" id="svip">1个月SVIP</i><i class="vip-box2-top1"><span id="jg4">50</span></i><i class="vip-box2-bottom1">50元/月</i></a>
-                            <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_svip_two_years" pay-name="3个月SVIP" pay-xufei="undefined"><i class="vip-box2-title1" id="svip2">3个月SVIP</i><i class="vip-box2-top1"><span id="jg5">88</span></i><i class="vip-box2-bottom1">29.3元/月</i></a>
-                            <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_svip_three_years" pay-name="12个月SVIP" pay-xufei="undefined"><span class="vip-tab-icon">推荐</span><i class="vip-box2-title1" id="svip3">12个月SVIP</i><i class="vip-box2-top1"><span id="jg6">288</span>元</i><i class="vip-box2-bottom1">24元/月</i></a>
+                            <!--                             <a href="javascript:;" class="vip-box2-link vip-box2-link-ljdg">立即订购</a>
+                     -->
                         </div>
-                        <a href="javascript:zhifu();" class="vip-box1-link vip-box2-link" pay-type="pay_person_svip_one_year" pay-name="1年SVIP">确认支付</a>
-                        <!--                             <a href="javascript:;" class="vip-box1-link vip-box2-link vip-box2-link-ljdg">立即订购</a>
-                 -->
                     </div>
                 </div>
+                <div class="vip-box vip-box1 -right" id="vip-box">
+                    <div class="vip-header vip-header1">
+                        <h2>超级影视VIP</h2>
+                        <h3>适用于TV全屏会员</h3>
+                    </div>
+                    <div class="vip-inner">
+                        <div class="vip-box2-top">
+                            <div class="vip-box2-top-box" id="svip-html">
+                                <a href="javascript:;" class="vip-tab vip-tab-add" tab-index="0" pay-type="pay_person_svip_one_year" pay-name="1个月SVIP" pay-xufei="undefined"><i class="vip-box2-title1" id="svip">1个月SVIP</i><i class="vip-box2-top1"><span id="jg4"><input type="radio" value="50" name="chi">50</span></i><i class="vip-box2-bottom1">50元/月</i></a>
+                                <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_svip_two_years" pay-name="3个月SVIP" pay-xufei="undefined"><i class="vip-box2-title1" id="svip2">3个月SVIP</i><i class="vip-box2-top1"><span id="jg5"><input type="radio" value="88" name="chi">88</span></i><i class="vip-box2-bottom1">29.3元/月</i></a>
+                                <a href="javascript:;" class="vip-tab" tab-index="0" pay-type="pay_person_svip_three_years" pay-name="12个月SVIP" pay-xufei="undefined"><span class="vip-tab-icon">推荐</span><i class="vip-box2-title1" id="svip3">12个月SVIP</i><i class="vip-box2-top1"><span id="jg6"><input type="radio" value="288" name="chi">288</span>元</i><i class="vip-box2-bottom1">24元/月</i></a>
+                            </div>
+                            <a href="javascript:zhifu();" class="vip-box1-link vip-box2-link" pay-type="pay_person_svip_one_year" pay-name="1年SVIP">确认支付</a>
+                            <!--                             <a href="javascript:;" class="vip-box1-link vip-box2-link vip-box2-link-ljdg">立即订购</a>
+                     -->
+                        </div>
+                    </div>
+                </div>
+                <!--            <a href="javascript:;" class="vip-box vip-box3"><img src="-->
+                <!--"></a>-->
             </div>
-            <!--            <a href="javascript:;" class="vip-box vip-box3"><img src="-->
-            <!--"></a>-->
         </div>
-    </div>
+    </form>
     <h2 style="height: 40px"></h2>
     <script>
         function zhifu(){
-            $.ajax({
-                url:"/pay/alipay",
-                data:$('#forms').serialize(),
-                type:"post",
-                dataType:"JSON",
-                success:function () {
-
+            var price=0;
+            var name="";
+            var miaoshu="";
+            var arr = document.getElementsByName("chi");
+            for (var i = 0; i <arr.length; i++){
+                if (arr[i].checked){
+                    price=arr[i].value;
                 }
-            })
+            }
+            if (price==50||price==88||price==288){
+                name="腾讯超级影视VIP";
+            }else{
+                name="腾讯视频VIP";
+            }
+            if (price==20){
+                miaoshu="1个月VIP";
+            }
+            if (price==45){
+                miaoshu="3个月VIP";
+            }
+            if (price==198){
+                miaoshu="12个月VIP";
+            }
+            if (price==50){
+                miaoshu="1个月SVIP";
+            }
+            if (price==88){
+                miaoshu="3个月SVIP";
+            }
+            if (price==288){
+                miaoshu="12个月SVIP";
+            }
+            location.href="/svip/alipay?price="+price+"&name="+name+"&miaoshu="+miaoshu;
         }
     </script>
-    <div class="container con-border">
-        <div class="con-retive">
-            <div class="vip-nav">
-                <div class="vip-nav-header">
-                    <ul class="package-list package-list-one">
-                        <li class="package-item ">
-                            <div class="package-title">
-                                <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-img1.png" width="100" height="29">
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="package-list package-list-two">
-                        <li class="package-item ">
-                            <div class="package-title">
-                                <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-img2.png" width="98" height="28">
-                                <p class="package-free">免费</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="package-tab">
-                        <ul class="package-list package-list-three package-ui">
-                            <li class="package-item ">
-                                <div class="package-title">
-                                    <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-img3.png" width="95" height="28">
-                                    <!--                                <a href="javascript:;" class="vip-box2-link vipLink1">确认支付</a>-->
-                                    <a href="javascript:;" class="vip-box2-link vipLink1 pay-sure" pay-type="pay_person_vip_one_year" pay-name="1年VIP" pay-xufei="undefined">确认支付</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="package-list package-list-four package-ui active">
-                            <li class="package-item ">
-                                <div class="package-title">
-                                    <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-img4.png" width="110" height="29">
-                                    <a style="background-image: linear-gradient(to right, #f2dcd2 , #ff9a63);" href="javascript:;" class="vip-box1-link vipLink2 vip-box2-link" pay-type="pay_person_svip_one_year" pay-name="1年SVIP" pay-xufei="undefined">确认支付</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-package ">
-                <ul class="package-list package-list-one">
-                    <!--<li class="package-item ">
-                        <div class="package-title">
-                            <img src="" width="100" height="29">
-                        </div>
-                    </li>-->
-                    <li class="package-item one">
-                        <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-t1.png" width="88" height="42">
-                        <span class="intro">
-                        <span>找客户<br>
-每天免费导出15万家公司联系电话</span>
-                    </span>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">免费查看2.1亿企业电话/邮箱</p>
-                            <p class="two-p2">挖掘企业所有自身、关联的联系方式</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover1-1.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">电话准确性分析</p>
-                            <p class="two-p2">获取电话准确性信息，高效联系企业老板</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/right-tel.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">导出企业查询结果</p>
-                            <p class="two-p2">导出企业电话、邮箱、地址、经营范围等</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover-add1.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">批量查询</p>
-                            <p class="two-p2">导入一批指定的企业名录，快速获取企业信息</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover-add2.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">搜索公司结果高级筛选</p>
-                            <p class="two-p2">有无电话、邮箱、网址、失信、商标等条件</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover3.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">公司搜索结果显示条数</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover4.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item one">
-                        <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-t2.png" width="88" height="42">
-                        <span class="intro">
-                        <span>查公司、查老板、查关系<br>
-                        深入了解公司/老板</span>
-                    </span>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">下载老板简历</p>
-                            <p class="two-p2">法人、董高监简历报告一键下载</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover5.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">查老板经历</p>
-                            <p class="two-p2">任职法人、高管、股东信息，查询合作伙伴等</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover6.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">风险扫描（企业）</p>
-                            <p class="two-p2">自身和企业关联风险</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover7.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">风险扫描（人员）</p>
-                            <p class="two-p2">自身和企业风险</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover8.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">风险监控（企业）</p>
-                            <p class="two-p2">实时获取关注企业的工商信息和风险信息变动</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover9.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">企业动态</p>
-                            <p class="two-p2">实时更新企业的最新动态，第一时间获取信息</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover-add3.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">涉诉详情</p>
-                            <p class="two-p2">法律诉讼、法院公告、开庭公告等详情</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover10.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">重要信息提示</p>
-                            <p class="two-p2">企业/人物自身、关联重要信息提醒</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover11.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">历史信息</p>
-                            <p class="two-p2">历史工商变更、诉讼、受到的行政处罚等</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover12.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">股权结构图</p>
-                            <p class="two-p2">展示企业深层的股东持股和对外投资情况</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover13.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">最终受益人</p>
-                            <p class="two-p2">挖掘拥有疑似超过25%公司股权的自然人或企业</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover14.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">疑似实际控制人</p>
-                            <p class="two-p2">企业的疑似实际控制人、总股权比例等信息</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover15.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">老板图谱</p>
-                            <p class="two-p2">任职法人、高管、股东信息，查询合作伙伴等</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover16.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">控股企业</p>
-                            <p class="two-p2">挖掘公司拥有其疑似实际控制权的企业</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover17.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">成长性分析</p>
-                            <p class="two-p2">逐年社保人数、注册资本变迁、逐年分支机构数</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover18.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">同业分析</p>
-                            <p class="two-p2">分析该企业的同行业发展情况和行业地位</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover18-1.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item one">
-                        <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-t3.png" width="88" height="42">
-                        <span class="intro">
-                        <span>查最新<br>
-                            最新注册、变更、备案企业</span>
-                    </span>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">最新注册企业</p>
-                            <p class="two-p2">免费查看每日最新注册企业的工商信息</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/chang-2.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">最新变更企业</p>
-                            <p class="two-p2">及时查看最新变更企业的工商信息、联系方式等</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover21.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">最新ICP备案企业</p>
-                            <p class="two-p2">查看最新icp备案企业的网址信息、联系方式等</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover22.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item one">
-                        <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-t4.png" width="88" height="42">
-                        <span class="intro">
-                        <span>信用报告免费</span>
-                    </span>
-                    </li>
-                    <li class="package-item two package-bg">
-                        <div class="intro-list">
-                            <p class="two-p1">企业信用报告</p>
-                            <p class="two-p2">工商信息、股东、主要成员等详情信息</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img" style="margin-top: -106px;margin-left: 410px;"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover23.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">风险报告</p>
-                            <p class="two-p2">直接风险、间接风险详情信息</p>
-                            <span class="intro-hover"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-eye.png"></span>
-                            <div class="intro-hover-img" style="margin-top: -180px;margin-left: 410px;"><img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-hover24.png"></div>
-                        </div>
-                    </li>
-                    <li class="package-item one package-bg">
-                        <img src="//staticcdn.shuidi.cn/shuidi/images/svip_vip/vip-t5.png" width="88" height="42">
-                        <span class="intro">
-                        <span>专属客服</span>
-                    </span>
-                    </li>
-                    <li class="package-item two">
-                        <div class="intro-list">
-                            <p class="two-p1">1 V 1专属客服</p>
 
-                        </div>
-                    </li>
-                </ul>
-                <ul class="package-list package-list-two">
-                    <!--<li class="package-item ">
-                        <div class="package-title">
-                            <img src="" width="98" height="28">
-                            <p class="package-free">免费</p>
-                        </div>
-                    </li>-->
-                    <li class="package-item one package-color"></li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">
-                        <div class="package-inner">最多10条</div>
-                    </li>
-                    <li class="package-item one package-color"></li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-bg package-color">
-                        <div class="package-inner">100家<br>（不支持查看变动详情）</div>
-                    </li>
-                    <li class="package-item two package-color">不支持查看动态详情</li>
-                    <li class="package-item two package-color package-bg">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-color package-bg">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-color package-bg">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-color package-bg">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-color package-bg">-</li>
-                    <li class="package-item two package-color">-</li>
-
-                    <li class="package-item one package-color"></li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item one package-color"></li>
-                    <li class="package-item two package-bg package-color">-</li>
-                    <li class="package-item two package-color">-</li>
-                    <li class="package-item one package-bg package-color"></li>
-                    <li class="package-item two package-color">-</li>
-                </ul>
-                <div class="package-tab">
-                    <ul class="package-list package-list-three package-ui package-ui1">
-                        <!--<li class="package-item ">
-                            <div class="package-title">
-                                <img src="" width="95" height="28">
-                            </div>
-                        </li>-->
-                        <li class="package-item one package-color"></li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner"> 10家/天</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 10万/天<br>（10次/天、10000条/次）</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner"> -</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 支持</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">最多10000条</div>
-                        </li>
-                        <li class="package-item one package-color">
-
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">200家<br>（可查看所有变动详情）</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">支持</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">不限次<br>（人物重要信息提示30次/月）</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item one package-color"></li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">-</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">-</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">-</div>
-                        </li>
-                        <li class="package-item one package-color"></li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">免费</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">免费</div>
-                        </li>
-                        <li class="package-item one package-bg package-color"></li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">支持</div>
-                        </li>
-                    </ul>
-                    <ul class="package-list package-list-four package-ui package-ui1 active">
-                        <!-- <li class="package-item ">
-                             <div class="package-title">
-                                 <img src="" width="110" height="29">
-                             </div>
-                         </li>-->
-                        <li class="package-item one package-color"></li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner"> 不限次</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 15万/天<br>（10次/天、15000条/次）</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner"> 10次/天</div>
-                        </li>
-                        <li class="package-item two package-bg">
-                            <div class="package-inner"> 支持</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">最多15000条</div>
-                        </li>
-                        <li class="package-item one package-color">
-
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">500家<br>（可查看所有变动详情）</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">支持</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">不限次<br>（人物重要信息提示30次/月）</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">30次/月</div>
-                        </li>
-                        <li class="package-item two package-color package-bg">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">不限次</div>
-                        </li>
-                        <li class="package-item one package-color"></li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 支持</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner"> 支持</div>
-                        </li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner"> 支持</div>
-                        </li>
-                        <li class="package-item one package-color"></li>
-                        <li class="package-item two package-bg package-color">
-                            <div class="package-inner">免费</div>
-                        </li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">免费</div>
-                        </li>
-                        <li class="package-item one package-bg package-color"></li>
-                        <li class="package-item two package-color">
-                            <div class="package-inner">支持</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="height: 20px"></div>
-
-    <!--    -->
-    <!--    <div class="service-introduce"><img src="-->
-    <!--"></div>-->
-    <!--    <div class="service-introduce"><img src="-->
-    <!--"></div>-->
-    <!--    <div class="service-introduce" style="margin-bottom: 60px;"><img src="-->
-    <!--"></div>-->
 </div>
 
 
-    <script type="text/javascript" src="//staticcdn.shuidi.cn/pa.1.1.js"></script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?4cb0385b9ad8022cb597e5015cb7a9e8";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <div style="display: none;">
-        <script type="text/javascript">
-            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-            document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1256666129'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256666129 ' type='text/javascript'%3E%3C/script%3E"));
-        </script><span style="display:none;" id="cnzz_stat_icon_1256666129"><a href="https://www.cnzz.com/stat/website.php?web_id=1256666129" target="_blank" title="站长统计">站长统计</a></span>
-        <script src=" http://s95.cnzz.com/z_stat.php?id=1256666129 " type="text/javascript"></script>
-        <script src="http://c.cnzz.com/core.php?web_id=1256666129&amp;t=z" charset="utf-8" type="text/javascript"></script>
-    </div>
+<script type="text/javascript" src="//staticcdn.shuidi.cn/pa.1.1.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4cb0385b9ad8022cb597e5015cb7a9e8";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div style="display: none;">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1256666129'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256666129 ' type='text/javascript'%3E%3C/script%3E"));
+    </script><span style="display:none;" id="cnzz_stat_icon_1256666129"><a href="https://www.cnzz.com/stat/website.php?web_id=1256666129" target="_blank" title="站长统计">站长统计</a></span>
+    <script src=" http://s95.cnzz.com/z_stat.php?id=1256666129 " type="text/javascript"></script>
+    <script src="http://c.cnzz.com/core.php?web_id=1256666129&amp;t=z" charset="utf-8" type="text/javascript"></script>
 </div>
 <script type="text/javascript" src="https://sourcecdn.shuidi.cn/pa/resource/js/Pa_Pa.js?v=202011061834"></script>
-<div id="pmt-background"></div>
-<div id="pmt-main">
-    <div id="pmt-first-row">
-        <button id="pmt-cancel"><img src="//staticcdn.shuidi.cn/shuidi/images/payment-common/pmt_cancel.jpg"></button>
-    </div>
-    <p id="pmt-title"></p>
-    <p id="pmt-cost-row">
-        <span class="pmt-cost-row-black">实付金额</span>
-        <span class="pmt-cost-row-orange">￥</span><span id="pmt-price" class="pmt-cost-row-orange"></span>
-        <span class="pmt-cost-row-black">元</span>
-    </p>
-    <p id="pmt-tip"></p>
-    <div id="pmt-qrcode-part">
-        <p id="pmt-qrcode-tip">请用微信扫码完成付款</p>
-        <div id="pmt-qrcode-imgs">
-            <div id="pmt-qrcode"></div>
-            <div id="pmt-scan-tip"></div>
-        </div>
-    </div>
-</div><input type="hidden" value="" id="digest">
-
-<div id="free-pay-background"></div>
-<div id="free-pay-main">
-    <div id="free-pay-first-row">
-        <p id="free-pay-title"></p>
-        <button id="free-pay-cancel">×</button>
-    </div>
-    <div id="free-pay-body">
-        <div id="free-pay-target-portrait"></div>
-        <div id="free-pay-content">
-            <p id="free-pay-content-title"></p>
-            <p id="free-pay-tip-line">
-                <img src="//staticcdn.shuidi.cn/shuidi/images/payment-common/free_pay_tip_img.jpg"> &nbsp;&nbsp;
-                <span id="free-pay-tip-unit">￥</span><span id="free-pay-tip-price">0.00</span> &nbsp;&nbsp;
-                <span id="free-pay-tip-count"></span><span id="free-pay-tip-participators">人已购买</span>
-            </p>
-            <p id="free-pay-report-title">报告内容：</p>
-            <div id="free-pay-report"></div>
-        </div>
-        <div id="free-pay-scan">
-            <p>扫二维码立即查看</p>
-            <div id="free-pay-scan-qrcode">
-                <img id="pay-qrcode" src="//staticcdn.shuidi.cn/shuidi/images/detail/QRCode3.png" class="program-qrcode">
-            </div>
-        </div>
-    </div>
-</div>
-
 <script type="text/javascript" src="//staticcdn.shuidi.cn/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="//staticcdn.shuidi.cn/js/jquery-ui.min2.js"></script>
 <script type="text/javascript" src="//staticcdn.shuidi.cn/js/jrender.min.js"></script>

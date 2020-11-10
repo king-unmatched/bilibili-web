@@ -2,108 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jk.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="com.jk.entity.User" >
-    <id column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="user_name" property="userName" jdbcType="VARCHAR" />
-    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
-    <result column="user_status" property="userStatus" jdbcType="INTEGER" />
-    <result column="user_level" property="userLevel" jdbcType="INTEGER" />
-    <result column="user_phone" property="userPhone" jdbcType="BIGINT" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="userimg" property="userimg" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="vcolor" property="vcolor" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="DATE" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    user_id, user_name, user_password, user_status, user_level, user_phone
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from t_user
-    where user_id = #{userId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from t_user
-    where user_id = #{userId,jdbcType=INTEGER}
-  </delete>
   <insert id="insert" parameterType="com.jk.entity.User" >
-    insert into t_user (user_id, user_name, user_password, 
-      user_status, user_level, user_phone
-      )
-    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, 
-      #{userStatus,jdbcType=INTEGER}, #{userLevel,jdbcType=INTEGER}, #{userPhone,jdbcType=BIGINT}
-      )
+    insert into sys_user_copy (usercode, username,userimg, password,status,vcolor)
+    values (#{usercode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},#{userimg,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},1,'#FFFFF')
   </insert>
-  <insert id="insertSelective" parameterType="com.jk.entity.User" >
-    insert into t_user
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
-        user_id,
-      </if>
-      <if test="userName != null" >
-        user_name,
-      </if>
-      <if test="userPassword != null" >
-        user_password,
-      </if>
-      <if test="userStatus != null" >
-        user_status,
-      </if>
-      <if test="userLevel != null" >
-        user_level,
-      </if>
-      <if test="userPhone != null" >
-        user_phone,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
-        #{userId,jdbcType=INTEGER},
-      </if>
-      <if test="userName != null" >
-        #{userName,jdbcType=VARCHAR},
-      </if>
-      <if test="userPassword != null" >
-        #{userPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="userStatus != null" >
-        #{userStatus,jdbcType=INTEGER},
-      </if>
-      <if test="userLevel != null" >
-        #{userLevel,jdbcType=INTEGER},
-      </if>
-      <if test="userPhone != null" >
-        #{userPhone,jdbcType=BIGINT},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jk.entity.User" >
-    update t_user
-    <set >
-      <if test="userName != null" >
-        user_name = #{userName,jdbcType=VARCHAR},
-      </if>
-      <if test="userPassword != null" >
-        user_password = #{userPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="userStatus != null" >
-        user_status = #{userStatus,jdbcType=INTEGER},
-      </if>
-      <if test="userLevel != null" >
-        user_level = #{userLevel,jdbcType=INTEGER},
-      </if>
-      <if test="userPhone != null" >
-        user_phone = #{userPhone,jdbcType=BIGINT},
-      </if>
-    </set>
-    where user_id = #{userId,jdbcType=INTEGER}
+  <update id="update">
+    update sys_user_copy set status=0,vcolor='#FFFF00',createtime=#{createtime,jdbcType=DATE} where id=#{id}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jk.entity.User" >
-    update t_user
-    set user_name = #{userName,jdbcType=VARCHAR},
-      user_password = #{userPassword,jdbcType=VARCHAR},
-      user_status = #{userStatus,jdbcType=INTEGER},
-      user_level = #{userLevel,jdbcType=INTEGER},
-      user_phone = #{userPhone,jdbcType=BIGINT}
-    where user_id = #{userId,jdbcType=INTEGER}
-  </update>
-  <select id="login" resultType="com.jk.entity.User">
-   select * from t_user where user_phone=#{userPhone}
+  <select id="login" resultType="User">
+select * from sys_user_copy where usercode = #{usercode}
   </select>
+  <select id="select" resultType="User">
+    select * from sys_user_copy
+  </select>
+  <update id="updates">
+    update sys_user_copy set status=1,vcolor='#FFFFF',createtime='2020-11-08' where id=#{id}
+  </update>
 </mapper>

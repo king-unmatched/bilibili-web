@@ -8,7 +8,7 @@
     <result column="video_xiaoimg" property="videoXiaoimg" jdbcType="VARCHAR" />
     <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
     <result column="video_name" property="videoName" jdbcType="VARCHAR" />
-    <result column="video_typeid" property="videoTypeid" jdbcType="REAL" />
+    <result column="video_typeid" property="videoTypeid" jdbcType="VARCHAR" />
     <result column="video_heat" property="videoHeat" jdbcType="INTEGER" />
     <result column="video_status" property="videoStatus" jdbcType="INTEGER" />
     <result column="video_title" property="videoTitle" jdbcType="VARCHAR" />
