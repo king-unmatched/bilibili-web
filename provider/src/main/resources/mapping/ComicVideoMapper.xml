@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jk.dao.ComicVideoMapper" >
+    <resultMap id="BaseResultMap" type="com.jk.entity.ComicVideo" >
+      <id column="id" property="id" jdbcType="INTEGER" />
+      <result column="name" property="name" jdbcType="VARCHAR" />
+      <result column="comic_xiaoimg" property="comicXiaoimg" jdbcType="VARCHAR" />
+      <result column="info" property="info" jdbcType="VARCHAR" />
+      <result column="playback" property="playback" jdbcType="INTEGER" />
+      <result column="img" property="img" jdbcType="VARCHAR" />
+      <result column="type" property="type" jdbcType="INTEGER" />
+      <result column="url" property="url" jdbcType="VARCHAR" />
+      <result column="comic_number" property="comicNumber" jdbcType="INTEGER" />
+      <result column="to_update" property="toUpdate" jdbcType="TIMESTAMP" />
+      <result column="ji_number" property="jiNumber" jdbcType="INTEGER" />
+    </resultMap>
 
   <select id="selectComicVideo" resultType="ComicVideo">
-    select * from comic_video
+   select a.*,b.dy_name as ztvip from comic_video a left join dy_vip b on a.type=b.dy_id
+order by a.playback desc
   </select>
 </mapper>

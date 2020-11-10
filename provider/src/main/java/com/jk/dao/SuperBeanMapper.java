@@ -4,6 +4,10 @@ import com.jk.entity.SuperBean;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 287a1f2ddb4f977a03e68fa6a79cb1be2709fca1
 @Mapper
 public interface SuperBeanMapper {
     int deleteByPrimaryKey(Integer zbId);

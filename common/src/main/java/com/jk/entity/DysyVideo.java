@@ -16,7 +16,7 @@ public class DysyVideo {
 
     private String videoRank;
 
-    private Float videoTypeid;
+    private String videoTypeid;
 
     private Integer videoHeat;
 
@@ -44,11 +44,11 @@ public class DysyVideo {
         this.videoXiaoimg = videoXiaoimg;
     }
 
-    public Float getVideoTypeid() {
+    public String getVideoTypeid() {
         return videoTypeid;
     }
 
-    public void setVideoTypeid(Float videoTypeid) {
+    public void setVideoTypeid(String videoTypeid) {
         this.videoTypeid = videoTypeid;
     }
 

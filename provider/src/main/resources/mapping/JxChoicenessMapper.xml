@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.JxChoicenessMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.entity.JxChoiceness" >
+    <id column="choiceness_id" property="choicenessId" jdbcType="INTEGER" />
+    <result column="choiceness_info" property="choicenessInfo" jdbcType="VARCHAR" />
+    <result column="choiceness_name" property="choicenessName" jdbcType="VARCHAR" />
+    <result column="choiceness_sc" property="choicenessSc" jdbcType="VARCHAR" />
+    <result column="choiceness_url" property="choicenessUrl" jdbcType="VARCHAR" />
+    <result column="choiceness_img" property="choicenessImg" jdbcType="VARCHAR" />
+    <result column="choiceness_zhongxin" property="choicenessZhongxin" jdbcType="VARCHAR" />
+    <result column="choiceness_touxiang" property="choicenessTouxiang" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="listJxC" resultType="JxChoiceness">
+    select * from jx_choiceness
+  </select>
+</mapper>
