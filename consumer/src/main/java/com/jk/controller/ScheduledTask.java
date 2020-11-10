@@ -22,7 +22,7 @@ public class ScheduledTask {
     @Autowired
     private UserService UserService;
 
-    @Scheduled(cron="0/1 * * * * ?")
+    @Scheduled(cron="0 0 10,14,16 * * ?")
     public void testOne() {
         List<User> select = UserService.select();
         SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
