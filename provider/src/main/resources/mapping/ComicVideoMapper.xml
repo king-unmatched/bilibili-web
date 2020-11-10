@@ -13,6 +13,7 @@
       <result column="comic_number" property="comicNumber" jdbcType="INTEGER" />
       <result column="to_update" property="toUpdate" jdbcType="TIMESTAMP" />
       <result column="ji_number" property="jiNumber" jdbcType="INTEGER" />
+      <result column="comic_title" property="comicTitle" jdbcType="VARCHAR" />
     </resultMap>
 
   <select id="selectComicVideo" resultType="ComicVideo">

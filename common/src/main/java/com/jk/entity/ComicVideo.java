@@ -30,6 +30,16 @@ public class ComicVideo {
 
     private String ztvip;
 
+    private String comicTitle;
+
+    public String getComicTitle() {
+        return comicTitle;
+    }
+
+    public void setComicTitle(String comicTitle) {
+        this.comicTitle = comicTitle;
+    }
+
     public String getZtvip() {
         return ztvip;
     }
