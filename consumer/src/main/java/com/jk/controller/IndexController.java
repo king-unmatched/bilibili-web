@@ -64,6 +64,10 @@ public class IndexController {
     public String buyvip(){
         return "buyvip";
     }
+    @RequestMapping("dyplayer")
+    public String dyplayer(){
+        return "dyplayer";
+    }
     @RequestMapping("login")
     @ResponseBody
     public Result login(HttpServletRequest request, User user){
