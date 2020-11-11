@@ -43,7 +43,7 @@ public class IndexController {
 
     @RequestMapping("index")
     public String index(){
-        return "index1";
+        return "index";
     }
     @RequestMapping("loginus")
     public String loginus(){
@@ -93,7 +93,7 @@ public class IndexController {
     @RequestMapping("zhuxiao")
     public String zhuxiao(HttpServletRequest request){
         request.getSession().removeAttribute("sysUser");
-        return "index1";
+        return "index";
     }
     //发送验证码的请求路径URL
     private static final String SERVER_URL="https://api.netease.im/sms/sendcode.action";
@@ -168,14 +168,25 @@ public class IndexController {
         }
     }
 
-    @RequestMapping("zhifu")
-    public String zhifu(){
-        return "buyvip";
+    @RequestMapping("center")
+    public String shop(){
+        return "center";
     }
-
-    @RequestMapping("tohistory")
-    public String history(){
-        return "history";
+    @RequestMapping("qxvip")
+    public String qxvip(){
+        return "qxvip";
+    }
+    @RequestMapping("kgklishi")
+    public String kgklishi(){
+        return "kgklishi";
+    }
+    @RequestMapping("qqxinxi")
+    public String qqxinxi(){
+        return "qqxinxi";
+    }
+    @RequestMapping("zhguanli")
+    public String zhguanli(){
+        return "zhguanli";
     }
 
 }
