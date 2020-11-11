@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,8 +22,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -46,7 +43,7 @@ public class IndexController {
 
     @RequestMapping("index")
     public String index(){
-        return "index";
+        return "index1";
     }
     @RequestMapping("loginus")
     public String loginus(){
@@ -96,7 +93,7 @@ public class IndexController {
     @RequestMapping("zhuxiao")
     public String zhuxiao(HttpServletRequest request){
         request.getSession().removeAttribute("sysUser");
-        return "index";
+        return "index1";
     }
     //发送验证码的请求路径URL
     private static final String SERVER_URL="https://api.netease.im/sms/sendcode.action";
@@ -173,6 +170,12 @@ public class IndexController {
 
     @RequestMapping("zhifu")
     public String zhifu(){
-        return "zhifu";
+        return "buyvip";
     }
+
+    @RequestMapping("tohistory")
+    public String history(){
+        return "history";
+    }
+
 }
