@@ -9,6 +9,6 @@ public class SyTypeBean {
     private String syName;
 
     private Integer syPid;
-
+    private String syTypeName;
 
 }

@@ -69,6 +69,6 @@
     where sy_id = #{syId,jdbcType=INTEGER}
   </update>
   <select id="seltype" resultType="SyTypeBean">
-    select * from sy_type
+    select a.*,b.sy_typename syTypeName from sy_type a,sy_typename b where a.sy_pid=b.sy_id
   </select>
 </mapper>
