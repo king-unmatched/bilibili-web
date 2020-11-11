@@ -167,6 +167,11 @@ public class IndexController {
             return new Result(false, "验证失败");
         }
     }
+    @RequestMapping("xiu")
+    @ResponseBody
+    public void xiu(Integer id,String password){
+        userService.xiu(id,password);
+    }
 
     @RequestMapping("center")
     public String shop(){

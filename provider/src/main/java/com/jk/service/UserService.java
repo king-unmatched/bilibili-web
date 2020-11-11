@@ -15,4 +15,6 @@ public interface UserService {
     List<User> select();
 
     void updates(Integer id);
+
+    void xiu(Integer id, String password);
 }

@@ -1,52 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <link
-            rel="preconnect"
-            href="https://cfe-70089.njc.vod.tencent-cloud.com"
-            crossorigin
-    />
-    <link
-            rel="dns-prefetch"
-            href="https://cfe-70089.njc.vod.tencent-cloud.com"
-    />
-    <link
-            rel="shortcut icon"
-            href="https://cfe-70089.njc.vod.tencent-cloud.com/creatordev/favicon.ico"
-    />
-    <title>创作中心</title>
-
-    <link rel="stylesheet" href="//cfe.gtimg.cn/creator/umi.307fb4ec.css" />
-    <script>
-        window.routerBase = "/";
-    </script>
-    <script>
-
-    </script>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstraps/bootstrap-paginator.js"></script>
 </head>
-
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 进度条</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+</head>
 <body>
-<div id="root"></div>
-
-<script src="//vm.gtimg.cn/tencentvideo_v1/script/txv.login.js"></script>
-<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-<script>
-    var _mtac = { performanceMonitor: 1 };
-    (function () {
-        var mta = document.createElement("script");
-        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-        mta.setAttribute("name", "MTAH5");
-
-        mta.setAttribute("sid", "500724541");
-        mta.setAttribute("cid", "500728766");
-
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(mta, s);
-    })();
-</script>
-<script src="//cfe.gtimg.cn/creator/js/cavans-toBlob.js"></script>
-
-<script src="//cfe.gtimg.cn/creator/umi.a04f34df.js"></script>
+    <div class="login-form">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseThree">
+                        <center>修改密码</center>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body" id="app">
+                    <center>
+                        <table class="table table-bordered table-striped" style="width: 500px">
+                            <input id="id" class="form-control" name="id" style="display:none" readonly="readonly" v-model="list">
+                            <tr>
+                                <td>密码</td>
+                                <td><input id="pass" class="form-control" type="text" name="password" placeholder="新密码"></td>
+                            </tr>
+                            <tr>
+                                <td>确认密码</td>
+                                <td><input id="pass2" class="form-control" type="text" placeholder="确认密码"></td>
+                            </tr>
+                        </table>
+                        <button type="button" class="btn btn-default"  onclick="xiu()">修改</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            list: ""
+        }
+    });
+    $(document).ready(function () {
+        $.ajax({
+            url:"/index/sysUser",
+            type:"post",
+            success:function(data){
+                var data = eval('('+data+')');
+                vm.list=data.id;
+            },
+        });
+    });
+    function xiu() {
+        var password = $("#pass").val();
+        var id = $("#id").val();
+        var pass2 = $("#pass2").val();
+        if (password!=pass2){
+            alert("密码不一致~");
+            return;
+        }
+        $.ajax({
+            url:"/index/xiu",
+            type:"post",
+            data:{id:id,password:password},
+            success:function(){
+                alert("修改成功");
+            },
+        });
+    }
+</script>
 </html>

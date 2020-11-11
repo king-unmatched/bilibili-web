@@ -28,4 +28,7 @@ select * from sys_user_copy where usercode = #{usercode}
   <update id="updates">
     update sys_user_copy set status=1,vcolor='#FFFFF',createtime='2020-11-08' where id=#{id}
   </update>
+  <update id="xiu">
+    update sys_user_copy set password=#{password} where id=#{id}
+  </update>
 </mapper>

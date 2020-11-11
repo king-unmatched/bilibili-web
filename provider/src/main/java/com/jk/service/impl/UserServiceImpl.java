@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
     public void updates(Integer id) {
         userMapper.updates(id);
     }
+
+    @Override
+    public void xiu(Integer id, String password) {
+        userMapper.xiu(id,password);
+    }
 }

@@ -26,4 +26,7 @@ public interface UserService {
 
     @RequestMapping("updates")
     public void updates(@RequestParam Integer id);
+
+    @RequestMapping("xiu")
+    public void xiu(@RequestParam Integer id,@RequestParam String password);
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>个人信息</title>
+    <script src="../js/jquery.min.js"></script>
 </head>
 <head>
     <meta charset="utf-8">
@@ -18,7 +19,7 @@
     <div class="col-md-2 col-md-offset-2">
         <span>v3</span>
     <div class="col-sm-6 col-md-6">
-        <a href="javascript:datu()" class="thumbnail">
+        <a href="#" data-toggle="modal" data-target="#myModal" class="thumbnail">
             <img :src="xx.userimg"
                  alt="通用的占位符缩略图">
         </a>
@@ -47,7 +48,16 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+            <div class="col-sm-10 col-md-10" id="apps">
+                <a class="thumbnail">
+                    <img :src="ss"
+                         alt="通用的占位符缩略图">
+                </a>
+            </div>
+    </div>
+</div>
 </body>
 <script>
     var vm = new Vue({
@@ -56,17 +66,22 @@
             xx: ""
         }
     })
+    var vs = new Vue({
+        el: '#apps',
+        data: {
+            ss: ""
+        }
+    })
     $(document).ready(function () {
         $.ajax({
             url:"/index/sysUser",
             type:"post",
             success:function(data){
+                var data = eval('('+data+')');
                 vm.xx=data;
+                vs.ss=data.userimg;
             },
         });
     })
-    function datu() {
-
-    }
 </script>
 </html>
