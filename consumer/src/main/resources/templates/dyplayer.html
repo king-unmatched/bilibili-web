@@ -435,7 +435,6 @@
         }
     </style>
 
-
     <style>
         .dadiv{
             height: 79.6px;
@@ -445,16 +444,57 @@
             text-decoration: none;
             display: inline-block;
             font-size: 20px;
-
             cursor: pointer;
         }
-        .button {
-            background-color: #B8860B;
-            border-radius: 24px;
-        }
-
     </style>
 
+    <style>
+        .className{
+            line-height:34px;
+            height:34px;
+            width:200px;
+            color:#333333;
+            background-color:#ededed;
+            font-size:15px;
+            font-weight:bold;
+            font-family:Arial;
+            background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #ffec64), color-stop(1, #ffab23));
+            background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+            background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+            background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+            background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+            background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+            border:0px solid #ffaa22;
+            -webkit-border-top-left-radius:40px;
+            -moz-border-radius-topleft:40px;
+            border-top-left-radius:40px;
+            -webkit-border-top-right-radius:40px;
+            -moz-border-radius-topright:40px;
+            border-top-right-radius:40px;
+            -webkit-border-bottom-left-radius:40px;
+            -moz-border-radius-bottomleft:40px;
+            border-bottom-left-radius:40px;
+            -webkit-border-bottom-right-radius:40px;
+            -moz-border-radius-bottomright:40px;
+            border-bottom-right-radius:40px;
+            -moz-box-shadow: inset 0px 1px 0px 0px #fff6af;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #fff6af;
+            box-shadow: inset 0px 1px 0px 0px #fff6af;
+            text-align:center;
+            display:inline-block;
+            text-decoration:none;
+        }.className:hover{
+             background-color:#f5f5f5;
+             background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #ffab23), color-stop(1, #ffec64));
+             background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+             background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+             background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+             background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+             background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+         }
+    </style>
 
 
 </head>
@@ -1321,10 +1361,8 @@
 
                 <div class="mod_player_side" _wind="pagename=播放列表" r-on="{mouseenter:enterSide;mouseleave:leaveSide}">
                     <div class="player_side_hd">
-
                     </div>
                     <div class="player_side_bd">
-
                         <div class="panel_body panel_body_1" _r-cid="10" _r-component="c-video-list">
                             <div class="scroll_top" r-notemplate="true">
                                 <div class="player_header player_header_simple">
@@ -1343,27 +1381,11 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="scroll_wrap" id="video_scroll_wrap" data-coverchd="true">
                                 <div class="player_hint"></div>
-
-
                                 <div id="mod_follow_act">
                                     <div class="hint"></div>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <svg class="svg_sprite" display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" r-notemplate="true">
                                     <symbol id="svg_icon_vip_flat_sm" viewBox="0 0 16 16">
                                         <path d="M14.746 7.105l-2.584 2.959.422 4.038-.014.012c.007.042.024.081.024.125 0 .424-.329.768-.734.768a.713.713 0 0 1-.273-.057l-.011.009-3.57-1.685-3.539 1.647-.008-.005a.695.695 0 0 1-.33.091c-.406 0-.734-.344-.734-.768 0-.032.013-.059.017-.09l-.009-.006.17-1.56c.475-.108.943-.233 1.4-.383l-.098.805 3.115-1.294 3.073 1.292-.351-3.232 2.291-2.737-.486-.085c.346-.434.667-.889.967-1.359l.942.189.006.02a.75.75 0 0 1 .571.733.77.77 0 0 1-.257.573zm-1.618-2.671c-2.169 3.982-5.932 6.722-10.238 7.351a.63.63 0 0 1-.345.073c-.385-.039-.666-.41-.628-.829a.729.729 0 0 1 .607-.669l-.003-.03c3.946-.511 7.401-3.005 9.388-6.636.127-.27.394-.444.688-.414.385.039.666.41.627.829a.785.785 0 0 1-.104.32l.008.005zM7.99 3.014L6.348 6.441l-3.347.579 1.685 2.042a12.73 12.73 0 0 1-1.333.434L1.268 7.107a.773.773 0 0 1-.259-.575c0-.345.221-.626.52-.723l.008-.034 3.928-.776 1.869-3.597h.03a.724.724 0 0 1 .642-.416c.279 0 .513.169.637.409h.028l1.722 3.31c-.318.429-.659.839-1.027 1.224L7.99 3.014z"></path>
@@ -1381,33 +1403,21 @@
                                         <path d="M13.5 11.5a1 1 0 0 1-1-1 1 1 0 0 1 0-2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1zm0-4h-4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-1-4h-2v2h2v-2zm-6 11h-4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-1-4h-2v2h2v-2zm1-3a1 1 0 0 1-1-1v-4a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1zm-3 0h-1a1 1 0 0 1 0-2 1 1 0 0 1 2 0v1a1 1 0 0 1-1 1zm0-4h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0 4a1 1 0 0 1 2 0v1a1 1 0 0 1-1 1h-1a1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
                                     </symbol>
                                 </svg>
-
-                                <div id="_vip_player_sec" _r-cid="11" _r-component="c-vip"><div class="mod_vip_sidebar status4" style="z-index: unset;">
-                                    <div class="mod_pay">
-                                        <div class="info">
-
-                                            <div class="dadiv">
-
-                                                <div class="buttondiv" data-action="minipay" data-url="" style="height: 36.8px;width: 280px">
-                                                    <a href="#" class="button">
-                                                        <font color="black">开通VIP会员免费看</font>
-                                                    </a>
+                                <div id="_vip_player_sec" _r-cid="11" _r-component="c-vip">
+                                    <div class="mod_vip_sidebar status4" style="z-index: unset;">
+                                        <div class="mod_pay">
+                                            <div class="info">
+                                                <div class="dadiv">
+                                                    <div class="buttondiv" data-action="minipay" data-url="" style="height: 36.8px;width: 280px">
+                                                        <a href='../index/buyvip' class='className'>
+                                                            <font color="black">开通vip视频免费看</font>
+                                                        </a>
+                                                    </div>
                                                 </div>
-
-
-                                                <div class="buttondiv" data-action="singlepay_cid" data-url="" style="height: 36.8px;width: 280px">
-                                                    <a href="#" class="button">
-                                                        <font color="black">非会员 5元购买本片</font>
-                                                    </a>
-                                                </div>
-
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
-                                </div>
-
 
                                 <div style="">
                                     <div class="mod_episode_filter _page_list">
@@ -3364,125 +3374,6 @@
                     <div class="mod_barrage_list none" r-component="c-barrage-list" id="barrage_container" r-notemplate="true"></div>
                 </div>
                 <div id="dark_layer" class="dark_layer"></div>
-            </div>
-            <div r-component="c-intro" r-class="{desc_on: intrduceOff}" class="player_headline player_headline_mood cf" r-expose="intro">
-                <div class="mod_intro">
-                    <div class="video_base _base" r-notemplate="true" style="background-color: white">
-                        <h1 class="video_title _video_title">
-
-                            八佰
-
-                            <span class="alias" r-show="{isMain}" style="display:inline-block;">The Eight Hundred</span>
-
-
-
-
-                        </h1>
-
-                        <span class="video_score" r-on="{mouseover: scoreexpose}" r-show="{isMain}" style="display: none">
-        <span class="units">8.</span><span class="decimal">7</span>
-								</span>
-                    </div>
-
-                    <div class="video_info_wrap" style="display: block" r-show="{hasVplus || hasTag}">
-                        <div class="video_info">
-                            <div class="tag_item tag_item_intro" r-class="{icon_display:hasDesc}" r-on="{click:descSwitch}">
-                                <i class="icon_sm icon_intro_sm">
-                                    <svg class="svg_icon svg_icon_cup_sm" viewBox="0 0 16 16" width="16" height="16">
-                                        <use xlink:href="#svg_icon_video_intro"></use>
-                                    </svg>
-                                </i>
-                                <span class="icon_text">内容简介</span>
-                                <i class="icon_sm icon_arrow_down_sm icon_rotate_down">
-                                    <svg class="svg_icon svg_icon_cup_sm" viewBox="0 0 16 16" width="16" height="16">
-                                        <use xlink:href="#svg_icon_arrow_down_xs"></use>
-                                    </svg>
-                                </i>
-                            </div>
-
-                            <div class="video_user _video_user" r-show="{hasVplus}" style="display:none;">
-
-                                <span class="user_name">undefined</span>
-
-                                <a href="javascript:" class="btn_book" r-class="{btn_booked: followundefined}" r-subscribe="undefined" r-attr="{title: followundefined ? '取消关注' : '关注'; _stat: followundefined ? 'intro:cancelorder' : 'intro:order'}">
-                                    <span class="btn_txt" r-text>{followundefined ? '已关注' : '关注'}</span>
-                                    <span class="num" r-text>{fansNumundefined}</span>
-                                </a>
-
-                            </div>
-
-                            <div class="video_tags _video_tags">
-
-                                <a _stat="intro:tag" href="//v.qq.com/x/list/movie?offset=0&area=100024" target="_blank" class="tag_item">内地</a>
-
-                                <a _stat="intro:tag" href="//v.qq.com/x/list/movie?offset=0&year=100040" target="_blank" class="tag_item">2020</a>
-
-                                <a _stat="intro:tag" href="//v.qq.com/x/search/?stag=txt.playpage.vppdesc&q=%E5%8E%86%E5%8F%B2%E7%94%B5%E5%BD%B1" target="_blank" class="tag_item">历史</a>
-                                <a _stat="intro:tag" href="//v.qq.com/x/search/?stag=txt.playpage.vppdesc&q=%E6%88%98%E4%BA%89%E7%94%B5%E5%BD%B1" target="_blank" class="tag_item">战争</a>
-                                <a _stat="intro:tag" href="//v.qq.com/x/search/?stag=txt.playpage.vppdesc&q=%E5%89%A7%E6%83%85%E7%94%B5%E5%BD%B1" target="_blank" class="tag_item">剧情</a>
-                                <a _stat="intro:tag" href="//v.qq.com/x/search/?stag=txt.playpage.vppdesc&q=%E9%99%A2%E7%BA%BF%E7%94%B5%E5%BD%B1" target="_blank" class="tag_item">院线</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="mod_mood" r-component="c-mood" r-expose="mood" r-notemplate="true" style="background-color: #2aabd2">
-                    <div class="mood_like" r-on="{click: thumbsChange.bind(null, true)}" _stat="mood:thumbsup">
-                        <i class="icon_mood icon_mood_like">
-                            <svg class="svg_icon_mood svg_icon_mood_like" viewBox="0 0 22 22" width="22" height="22">
-                                <g class="svg_icon_true">
-                                    <circle cx="11" cy="11" r="11" fill="#fac82f"></circle>
-                                    <path class="path_1" d="M11 19c-4.418 0-8-3.437-8-7.676 0-.044.006-.085.007-.128A27.188 27.188 0 0 1 11 10c2.788 0 5.473.422 7.993 1.196.001.043.007.084.007.128C19 15.563 15.418 19 11 19z" fill="#e62929"></path>
-                                    <path class="path_2" d="M7.712 6.679L5.655 8.715a.976.976 0 0 1-1.371 0 .952.952 0 0 1 0-1.357L5.655 6 4.284 4.642a.952.952 0 0 1 0-1.357.976.976 0 0 1 1.371 0l2.057 2.036a.953.953 0 0 1 0 1.358zM14.288 6.679l2.057 2.036a.976.976 0 0 0 1.371 0 .952.952 0 0 0 0-1.357L16.345 6l1.371-1.358a.952.952 0 0 0 0-1.357.976.976 0 0 0-1.371 0l-2.057 2.036a.953.953 0 0 0 0 1.358z" fill="#000"></path>
-                                </g>
-                                <g class="svg_icon_false">
-                                    <path d="M11 11c-4.418 0-8-3.437-8-7.676 0-.044.006-.085.007-.128A27.188 27.188 0 0 1 11 2c2.788 0 5.473.422 7.993 1.196.001.043.007.084.007.128C19 7.563 15.418 11 11 11z" fill="#e62929"></path>
-                                    <circle cx="11" cy="11" r="11" fill="#777"></circle>
-                                    <path d="M11 19c-4.418 0-8-3.437-8-7.676 0-.044.006-.085.007-.128A27.188 27.188 0 0 1 11 10c2.788 0 5.473.422 7.993 1.196.001.043.007.084.007.128C19 15.563 15.418 19 11 19zm6.716-10.285a.976.976 0 0 1-1.371 0l-2.057-2.036a.953.953 0 0 1 0-1.358l2.057-2.036a.976.976 0 0 1 1.371 0 .952.952 0 0 1 0 1.357L16.345 6l1.371 1.358a.952.952 0 0 1 0 1.357zm-12.061 0a.976.976 0 0 1-1.371 0 .952.952 0 0 1 0-1.357L5.655 6 4.284 4.642a.952.952 0 0 1 0-1.357.976.976 0 0 1 1.371 0l2.057 2.036a.953.953 0 0 1 0 1.358L5.655 8.715z" fill="#2e2e37"></path>
-                                </g>
-                            </svg>
-                        </i>
-                        <span class="icon_text" r-text="inner">{likeText}</span>
-                    </div>
-                    <div class="mood_value">
-                        <div class="mood_progress">
-                            <div class="mood_progress_value _mood_progress"></div>
-                        </div>
-                        <span class="mood_plusone">+1</span>
-                        <div class="mood_text _mood_text"><span r-text>{pText}</span></div>
-                    </div>
-                    <div class="mood_dislike" r-on="{click: thumbsChange.bind(null, false)}" _stat="mood:thumbsdown">
-                        <i class="icon_mood icon_mood_dislike">
-                            <svg class="svg_icon_mood svg_icon_mood_like" viewBox="0 0 22 22" width="22" height="22">
-                                <linearGradient id="svg_defs_dislike" gradientUnits="userSpaceOnUse" x1="11" y1="22" x2="11">
-                                    <stop offset="0" stop-color="#fac82f"></stop>
-                                    <stop offset="1" stop-color="#3bb474"></stop>
-                                </linearGradient>
-                                <g class="svg_icon_true">
-                                    <circle fill="url(#svg_defs_dislike)" cx="11" cy="11" r="11"></circle>
-                                    <g class="svg_g_face">
-                                        <circle fill="#000" cx="6.5" cy="12.5" r="1.5"></circle>
-                                        <circle fill="#000" cx="15.5" cy="12.5" r="1.5"></circle>
-                                        <path fill="#000" d="M13.971 19.001c-.23 0-.462-.074-.653-.225-.661-.52-1.463-.794-2.319-.794s-1.658.274-2.319.795c-.439.346-1.089.284-1.45-.138s-.297-1.046.144-1.392c1.018-.801 2.306-1.243 3.625-1.243s2.607.442 3.626 1.244a.962.962 0 0 1 .143 1.391 1.047 1.047 0 0 1-.797.362z"></path>
-                                    </g>
-                                </g>
-                                <g class="svg_icon_false">
-                                    <circle cx="11" cy="11" r="11" fill="#777"></circle>
-                                    <path d="M15.5 14a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 15.5 14zm-.732 4.639a1.047 1.047 0 0 1-.797.362c-.23 0-.462-.074-.653-.225a3.712 3.712 0 0 0-2.319-.794c-.856 0-1.658.274-2.319.795a1.06 1.06 0 0 1-1.45-.138.961.961 0 0 1 .144-1.392 5.883 5.883 0 0 1 3.625-1.243c1.319 0 2.607.442 3.626 1.244a.962.962 0 0 1 .143 1.391zM6.5 14a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 6.5 14z" fill="#2e2e37"></path>
-                                </g>
-                            </svg>
-                        </i>
-                        <span class="icon_text" r-text="inner">{dislikeText}</span>
-                    </div>
-                </div>
-
-                <div class="mod_ad " r-component="c-intro-ad" r-expose="intro-ad" r-notemplate="true">
-                    <a _stat="intro:download" href="javascript:;" target="_blank" style="background-color: #1b6d85">
-                        <img src="//puui.qpic.cn/tv/0/9935446_680132/0" alt="免费享1080P" class=" none">
-                        <img src="//puui.qpic.cn/tv/0/9935494_680132/0" alt="3倍播放" class=""></a>
-                </div>
             </div>
         </div>
     </div>
