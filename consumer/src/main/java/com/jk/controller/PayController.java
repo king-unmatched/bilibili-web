@@ -5,6 +5,7 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.jk.entity.Order;
 import com.jk.entity.User;
 import com.jk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,7 +144,9 @@ public class PayController {
                 }
                 user.setCreatetime(cal.getTime());
             }
-            if (total_amount!=null&&total_amount!=""){
+            List<Order> all = UserService.findAll(out_trade_no);
+            if (all==null){
+                UserService.creatOrder(out_trade_no,trade_no,total_amount);
                 UserService.update(sim.format(user.getCreatetime()),user.getId());
             }
             return "svip";//跳转付款成功页面
