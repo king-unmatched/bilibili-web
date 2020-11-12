@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.jk.entity.Order" >
+        <id column="order_id" property="orderId" jdbcType="INTEGER" />
+        <result column="order_num" property="orderNum" jdbcType="VARCHAR" />
+        <result column="order_name" property="orderName" jdbcType="VARCHAR" />
+        <result column="order_price" property="orderPrice" jdbcType="DECIMAL" />
+        <result column="order_count" property="orderCount" jdbcType="INTEGER" />
+        <result column="order_createtime" property="orderCreatetime" jdbcType="DATE" />
+    </resultMap>
+    <insert id="creatOrder">
+insert into dd_order(order_num,order_name,order_price,order_count,order_createtime) values(#{orderNum},#{orderName},#{orderPrice},1,#{orderCreatetime})
+    </insert>
+    <select id="findAll" resultType="Order">
+select * from dd_order where order_num=#{out_trade_no}
+    </select>
+</mapper>

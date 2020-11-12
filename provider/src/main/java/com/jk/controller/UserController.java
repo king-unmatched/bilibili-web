@@ -36,4 +36,8 @@ public class UserController {
     public void updates(@RequestParam Integer id){
         userService.updates(id);
     }
+    @RequestMapping("xiu")
+    public void xiu(@RequestParam Integer id,@RequestParam String password){
+        userService.xiu(id,password);
+    }
 }

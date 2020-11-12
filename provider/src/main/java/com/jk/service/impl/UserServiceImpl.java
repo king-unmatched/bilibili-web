@@ -3,6 +3,7 @@ package com.jk.service.impl;
 import com.jk.dao.UserMapper;
 import com.jk.entity.User;
 import com.jk.service.UserService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,7 @@ public class UserServiceImpl implements UserService {
         userMapper.insert(ccc);
     }
 
+    @GlobalTransactional
     @Override
     public void update(String createtime,Integer id) {
         userMapper.update(createtime,id);
@@ -38,5 +40,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updates(Integer id) {
         userMapper.updates(id);
+    }
+
+    @Override
+    public void xiu(Integer id, String password) {
+        userMapper.xiu(id,password);
     }
 }

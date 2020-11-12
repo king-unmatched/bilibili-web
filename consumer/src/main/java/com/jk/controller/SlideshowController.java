@@ -2,7 +2,7 @@ package com.jk.controller;
 
 import com.jk.entity.SlideshowBean;
 import com.jk.entity.SuperBean;
-import com.jk.entity.SyTypeBean;
+import com.jk.entity.TypeBean;
 import com.jk.service.SlideshowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,7 @@ public class SlideshowController {
 
 
     @RequestMapping("seltype")
-    public List<SyTypeBean> seltype(){
+    public List<TypeBean> seltype(){
         return slideshowService.seltype();
     }
 

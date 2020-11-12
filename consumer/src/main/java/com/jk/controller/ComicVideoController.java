@@ -20,4 +20,5 @@ public class ComicVideoController {
     public List<ComicVideo>listComic(){
         return comicVideoService.selectComicVideo();
     }
+
 }

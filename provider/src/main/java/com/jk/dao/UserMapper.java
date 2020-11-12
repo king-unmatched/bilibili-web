@@ -28,4 +28,6 @@ public interface UserMapper {
     List<User> select();
 
     void updates(Integer id);
+
+    void xiu(@Param("id")Integer id,@Param("password") String password);
 }
