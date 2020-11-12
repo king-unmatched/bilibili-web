@@ -68,6 +68,7 @@ public class IndexController {
     public String dyplayer(){
         return "dyplayer";
     }
+
     @RequestMapping("login")
     @ResponseBody
     public Result login(HttpServletRequest request, User user){
