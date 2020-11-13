@@ -4,5 +4,9 @@ server:
 spring:
   application:
     name: consumer
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
   main:
     allow-bean-definition-overriding: true

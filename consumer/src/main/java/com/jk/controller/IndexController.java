@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,8 +22,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -174,9 +171,31 @@ public class IndexController {
             return new Result(false, "验证失败");
         }
     }
-
-    @RequestMapping("zhifu")
-    public String zhifu(){
-        return "zhifu";
+    @RequestMapping("xiu")
+    @ResponseBody
+    public void xiu(Integer id,String password){
+        userService.xiu(id,password);
     }
+
+    @RequestMapping("center")
+    public String shop(){
+        return "center";
+    }
+    @RequestMapping("qxvip")
+    public String qxvip(){
+        return "qxvip";
+    }
+    @RequestMapping("kgklishi")
+    public String kgklishi(){
+        return "kgklishi";
+    }
+    @RequestMapping("qqxinxi")
+    public String qqxinxi(){
+        return "qqxinxi";
+    }
+    @RequestMapping("zhguanli")
+    public String zhguanli(){
+        return "zhguanli";
+    }
+
 }
