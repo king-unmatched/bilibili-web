@@ -1,9 +1,10 @@
 package com.jk.service;
 
-import com.jk.entity.SyTypeBean;
+import com.jk.entity.TypeBean;
 
 import java.util.List;
 
 public interface TypeService {
-    List<SyTypeBean> seltype();
+
+    List<TypeBean> typeLlist();
 }
