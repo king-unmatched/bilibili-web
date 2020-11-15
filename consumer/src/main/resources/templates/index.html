@@ -735,7 +735,7 @@
 
             <a href="/channel/variety?listpage=1&channel=variety&source=1&exclusive=1" class="nav_link grey t4"  _stat="频道推荐区:子频道:腾讯自制" data-key="腾讯自制" v-for="type1 in type.typeList">{{type1.syName}}</a>
         </div>
-        <div class="main_nav_block main_nav_block_2"  v-for="type in typebeanList.slice(3,4)">>
+        <div class="main_nav_block main_nav_block_2"  v-for="type in typebeanList.slice(3,4)">
             <a href="/channel/cartoon" class="nav_link bold t2" data-channel="cartoon" _stat="频道推荐区:主频道:动漫"><img src="//puui.qpic.cn/vupload/0/20181206_1544081196508_jhfbyyujr58.png/0" alt="" class="nav_icon" />{{type.syName}}</a>
 
             <a href="/channel/cartoon?listpage=1&channel=cartoon&iarea=1" class="nav_link grey t4"  _stat="频道推荐区:子频道:国漫" data-key="国漫" v-for="type1 in type.typeList">{{type1.syName}}</a>
@@ -1261,17 +1261,17 @@
                 for (var i = 0; i <data.length; i++) {
                     c++;
                     dongm+='<div class="list_item ">'
-                        +'<a href="'+data[i].url+'" target="_blank" class="figure" tabindex="-1" _stat="new_vs_hot_cartoon:img:'+data[i].name+'" data-float="'+data[i].id+'">'
+                        +'<a onclick="selectComic('+data[i].comicNumber+')" target="_blank" class="figure" tabindex="-1" _stat="new_vs_hot_cartoon:img:'+data[i].name+'" data-float="'+data[i].id+'">'
                         +'<img loading="lazy" class="figure_pic" lz_next="vcover_vt_pic" alt="'+data[i].name+'" onerror="picerr(this,\''+'v'+'\')" src="'+data[i].img+'">'
                         +'<div class="figure_caption">更新至'+data[i].jiNumber+'集</div>'
                         +'<img loading="lazy" class="mark_v mark_v_'+data[i].ztvip+'" src="'+data[i].comicXiaoimg+'" srcset="'+data[i].comicXiaoimg+'@2x.png/0 2x" alt="'+data[i].ztvip+'" onerror="picerr(this)">'
                         +'</a>'
                         +'<div class="figure_detail figure_detail_two_row  ">'
-                        +'<a href="'+data[i].url+'" class="figure_title figure_title_two_row bold" title="'+data[i].name+'" _stat="new_vs_hot_cartoon:title:'+data[i].name+'" target="_blank">'+data[i].name+'</a>'
+                        +'<a onclick="selectComic('+data[i].comicNumber+')"  class="figure_title figure_title_two_row bold" title="'+data[i].name+'" _stat="new_vs_hot_cartoon:title:'+data[i].name+'" target="_blank">'+data[i].name+'</a>'
                         +'<div class="figure_desc" title="'+data[i].info+'">'+data[i].info+' </div>'
                         +'</div>'
                         +'</div>';
-                    dmph+='<a href="'+data[i].url+'" class="rank_item rank_item_'+c+' cf" title="'+data[i].name+'" target="scene=%E9%A2%91%E9%81%93%E9%A1%B5&amp;pagename=%E7%B2%BE%E9%80%89%E9%A2%91%E9%81%93&amp;columnname=%E7%B2%BE%E9%80%89_%E5%8A%A8%E6%BC%AB&amp;controlname=new_vs_hot_cartoon&amp;cid=m441e3rjq9kwpsc&amp;vid=&amp;pid=&amp;datatype=1&amp;playertype=1&amp;controlidx=0&amp;columnidx=7&amp;plat_bucketid=9231005">'
+                    dmph+='<a onclick="selectComic('+data[i].comicNumber+')" class="rank_item rank_item_'+c+' cf" title="'+data[i].name+'" target="scene=%E9%A2%91%E9%81%93%E9%A1%B5&amp;pagename=%E7%B2%BE%E9%80%89%E9%A2%91%E9%81%93&amp;columnname=%E7%B2%BE%E9%80%89_%E5%8A%A8%E6%BC%AB&amp;controlname=new_vs_hot_cartoon&amp;cid=m441e3rjq9kwpsc&amp;vid=&amp;pid=&amp;datatype=1&amp;playertype=1&amp;controlidx=0&amp;columnidx=7&amp;plat_bucketid=9231005">'
                         +'<span class="rank_num rank_num_'+c+'">'+c+'</span>'
                         +'<span class="rank_title">'+data[i].name+'</span>'
                         +'<span class="rank_desc">'+data[i].info+'</span>'
@@ -1337,6 +1337,9 @@
                 $("#dianyingfl").append(dyfl);
             },
         });
+    }
+    function selectComic(comicNumber) {
+        location.href = "/index/tobofang?comicNumber="+comicNumber;
     }
     var vm = new Vue({
         el: '#app',
