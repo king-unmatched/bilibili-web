@@ -8,6 +8,7 @@ import com.jk.util.CheckSumBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -22,6 +23,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -194,4 +198,41 @@ public class IndexController {
         return "zhguanli";
     }
 
+
+    @RequestMapping("tobofang")
+    public String tobofang(Integer comicNumber, HttpSession session){
+        session.setAttribute("comicNumber",comicNumber);
+        return "bofang";
+    }
+
+    @RequestMapping("doGetOne")
+    public void doGetOne(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter out=response.getWriter();
+        Integer comicNumber = (Integer) request.getSession().getAttribute("comicNumber");
+        String com = JSONObject.toJSONString(comicNumber);
+        out.write(String.valueOf(com));
+        out.flush();
+        out.close();
+    }
+
+    @RequestMapping("tologinthree")
+    public String tologinthree(){
+        return "loginthree";
+    }
+
+    @RequestMapping("toOne")
+    public String toOne(){
+        return "1";
+    }
+
+    @RequestMapping("toTwo")
+    public String toTwo(){
+        return "2";
+    }
+
+    @RequestMapping("toThree")
+    public String toThree(){
+        return "3";
+    }
 }

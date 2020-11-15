@@ -19,4 +19,12 @@
    select a.*,b.dy_name as ztvip from comic_video a left join dy_vip b on a.type=b.dy_id
 order by a.playback desc
   </select>
+  
+  <select id="selectComic" resultType="ComicVideo" parameterType="Integer">
+    SELECT * from episode_number c LEFT join comic_video e on c.video_id = e.comic_number where c.video_id= #{comicNumber}
+  </select>
+  
+  <select id="findgoodbyid" resultType="EpisodeNumber" parameterType="int">
+    SELECT * from episode_number where episode_id = #{episodeId}
+  </select>
 </mapper>

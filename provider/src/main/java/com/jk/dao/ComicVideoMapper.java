@@ -1,6 +1,7 @@
 package com.jk.dao;
 
 import com.jk.entity.ComicVideo;
+import com.jk.entity.EpisodeNumber;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,4 +20,8 @@ public interface ComicVideoMapper {
     int updateByPrimaryKey(ComicVideo record);
 
     List<ComicVideo> selectComicVideo();
+
+    List<ComicVideo> selectComic(Integer comicNumber);
+
+    EpisodeNumber findgoodbyid(int episodeId);
 }
