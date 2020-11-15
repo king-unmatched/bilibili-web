@@ -1216,14 +1216,14 @@
 
             })
         }
-
+        var cn = "";
         $(function(){
             $.ajax({
                 url:"/index/doGetOne",
                 type:"post",
                 dataType:"JSON",
                 success:function (data) {
-                    var cn = data;
+                    cn = data;
                     jibiao(cn);
                 }
             })
