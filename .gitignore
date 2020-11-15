@@ -12,3 +12,11 @@ gen
 =======
 !/pom.xml
 >>>>>>> 904f72a63a3249e7477741f964bbe5b4c5ce7a21
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
