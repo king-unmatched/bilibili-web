@@ -93,4 +93,7 @@
   <insert id="insertToneSefl" parameterType="ToneSelfBean">
     insert into t_oneself(oneself_name,oneself_url,oneself_img,oneself_status) values(#{oneselfName},#{oneselfUrl},#{oneselfImg},0)
   </insert>
+  <select id="selToneSelfBean" resultType="ToneSelfBean">
+    select * from t_oneself where oneself_status=1
+  </select>
 </mapper>
