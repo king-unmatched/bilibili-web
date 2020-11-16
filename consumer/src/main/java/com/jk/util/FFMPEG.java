@@ -111,8 +111,8 @@ public class FFMPEG {
     public static void  main(String [] arg){
         HashMap<String, String>dto=new HashMap<String, String>();
         dto.put("ffmpeg_path", "D:\\xuexiao\\demo\\ffmpeg\\bin\\ffmpeg.exe");
-        dto.put("input_path", "https://apd-6d0e2bf7daf1bade800a5914bd3fc36c.v.smtcdns.com/om.tc.qq.com/AFOV8nl8WqAgifPvG_C9UsL5Gzq6Eo2mzHQzrS3LqYS4/uwMROfz2r57EIaQXGdGnC2dePkZaz9nvINvy8qtBz-4opyj0/svp_50001/szg_4498_50001_0b6bimadgaaa5aaijqu7ifpvcq6dgnbqam2a.f622.mp4?sdtfrom=v1010&guid=15c3fc81253236b781bf5b01a8bef746&vkey=DF9412B3180A92EC4AC9E14EB2D69375227A5B6F961F1D480D2C61566C61B097C2BD49DDC49898202CD2F167C9E303547740F64C62A55E66EDCA03785B9DF2363EB27F829074CE2B438677B4309116BD3FF4B181C581775E781EF8925BB81DEC04DF88AC0C63E95ED86248B432893810320AC624C4F392DB38870FB627BB9816");
-        dto.put("video_converted_path", "D:\\xuexiao\\shuiyin\\qiannvxianyuan.mp4");
+        dto.put("input_path", "https://apd-c163640ef7ecc389866385777d6ac048.v.smtcdns.com/om.tc.qq.com/A6cXSaqsMRnoNfaB0elwq9wdnSRK3oLG3EbdcoNYQDYo/uwMROfz2r5zEIaQXGdGnC2dfDmafRkP9ujxgqKjuATzMrE-2/w3133bauidz.mp4?sdtfrom=v1010&guid=15c3fc81253236b781bf5b01a8bef746&vkey=A5893053AE4286FA11CA667C3377C7AD94DF815BDF17FE44802C8787D680CDCF744FEB5C5DF426EB9351B052B09743CE181AD415A4D19168261D3FD18D551683093F01C4C3215CFB43132CD03ABF055636F57F109E28890A4ABE87940DBF922F53D3DF356D6E00A15772ABBA5554B791A74898CA7A62E89045102BF76AE230E4");
+        dto.put("video_converted_path", "D:\\xuexiao\\shuiyin\\babai.mp4");
         dto.put("logo", "C\\\\:/Users/duan/Pictures/logo.png");
         String secondsString=  new FFMPEG().videoTransfer(dto);
         System.out.println("转换共用:"+secondsString+"秒");
