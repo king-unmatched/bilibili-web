@@ -12,6 +12,10 @@ public class TypeBean {
 
     private Integer syPid;
 
+    private String syTypeName;
+
+
     private List<TypeBean> typeList;
+
 
 }

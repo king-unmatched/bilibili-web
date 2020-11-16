@@ -12,6 +12,7 @@ gen
 =======
 !/pom.xml
 >>>>>>> 904f72a63a3249e7477741f964bbe5b4c5ce7a21
+<<<<<<< HEAD
 ### Example user template template
 ### Example user template
 
@@ -20,3 +21,6 @@ gen
 *.iml
 out
 gen
+=======
+!/provider/
+>>>>>>> 12cb5b5ef712626beadbdbff147bb3cd31d30821

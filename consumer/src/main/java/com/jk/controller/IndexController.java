@@ -65,6 +65,11 @@ public class IndexController {
     public String buyvip(){
         return "buyvip";
     }
+    @RequestMapping("tonesefl")
+    public String tonesefl(){
+        return "tonesefl";
+    }
+
     @RequestMapping("login")
     @ResponseBody
     public Result login(HttpServletRequest request, User user){

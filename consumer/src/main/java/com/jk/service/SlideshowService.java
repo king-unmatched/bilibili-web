@@ -1,5 +1,6 @@
 package com.jk.service;
 
+import com.jk.entity.EpisodeNumberBean;
 import com.jk.entity.SlideshowBean;
 import com.jk.entity.SuperBean;
 import com.jk.entity.TypeBean;
@@ -15,12 +16,17 @@ public interface SlideshowService {
 
 
 
-
     @RequestMapping("seltype")
     public List<TypeBean> seltype();
 
 
 
+
     @RequestMapping("selsuper")
     public List<SuperBean> selsuper();
+
+
+
+    @RequestMapping("selEpisodeNumber")
+    public List<EpisodeNumberBean> selEpisodeNumber();
 }

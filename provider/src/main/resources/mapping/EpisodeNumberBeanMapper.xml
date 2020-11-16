@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.EpisodeNumberBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.entity.EpisodeNumberBean" >
+    <id column="episode_id" property="episodeId" jdbcType="INTEGER" />
+    <result column="episode_num" property="episodeNum" jdbcType="INTEGER" />
+    <result column="episode_url" property="episodeUrl" jdbcType="VARCHAR" />
+    <result column="video_id" property="videoId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    episode_id, episode_num, episode_url, video_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from episode_number
+    where episode_id = #{episodeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from episode_number
+    where episode_id = #{episodeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jk.entity.EpisodeNumberBean" >
+    insert into episode_number (episode_id, episode_num, episode_url, 
+      video_id)
+    values (#{episodeId,jdbcType=INTEGER}, #{episodeNum,jdbcType=INTEGER}, #{episodeUrl,jdbcType=VARCHAR}, 
+      #{videoId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jk.entity.EpisodeNumberBean" >
+    insert into episode_number
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="episodeId != null" >
+        episode_id,
+      </if>
+      <if test="episodeNum != null" >
+        episode_num,
+      </if>
+      <if test="episodeUrl != null" >
+        episode_url,
+      </if>
+      <if test="videoId != null" >
+        video_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="episodeId != null" >
+        #{episodeId,jdbcType=INTEGER},
+      </if>
+      <if test="episodeNum != null" >
+        #{episodeNum,jdbcType=INTEGER},
+      </if>
+      <if test="episodeUrl != null" >
+        #{episodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="videoId != null" >
+        #{videoId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jk.entity.EpisodeNumberBean" >
+    update episode_number
+    <set >
+      <if test="episodeNum != null" >
+        episode_num = #{episodeNum,jdbcType=INTEGER},
+      </if>
+      <if test="episodeUrl != null" >
+        episode_url = #{episodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="videoId != null" >
+        video_id = #{videoId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where episode_id = #{episodeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jk.entity.EpisodeNumberBean" >
+    update episode_number
+    set episode_num = #{episodeNum,jdbcType=INTEGER},
+      episode_url = #{episodeUrl,jdbcType=VARCHAR},
+      video_id = #{videoId,jdbcType=INTEGER}
+    where episode_id = #{episodeId,jdbcType=INTEGER}
+  </update>
+  <select id="selEpisodeNumber" resultType="EpisodeNumberBean">
+    select * from episode_number
+  </select>
+</mapper>
