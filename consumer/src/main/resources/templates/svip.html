@@ -1048,6 +1048,9 @@
                 var zhuangtai="";
                 var denglu="";
                 var denglus="";
+                var shijian = new Date();
+                var riqi = new Date(data.createtime);
+                var str = riqi.toLocaleDateString();
                 if (data==null || data==""){
                     denglus+='<a href="/index/logins" class="quick_link _checklogin" >'
                         +'<img class="quick_user_avatar" src="//puui.qpic.cn/vupload/0/common_avatar.png/0" data-type="avatar" data-avatarsize="40">'
@@ -1064,9 +1067,15 @@
                         +'</a>'
                         +'<a href="/index/center"><font color="'+data.vcolor+'">'+data.username+'</font></a>'
                         +'&nbsp;&nbsp;&nbsp;<a href="/index/zhuxiao"><font color="#ff0000">注销</font></a>';
-                    denglu+='<center><a href="/index/center"><font color="'+data.vcolor+'">'+data.username+'</font></a><br/>' +
-                        '<span>'+data.createtime+'</span>' +
-                        '</center>'
+                    if (riqi>=shijian){
+                        denglu+='<center><a href="/index/center"><font color="'+data.vcolor+'">'+data.username+'</font></a><br/>' +
+                            '<span>'+str+'到期</span>' +
+                            '</center>';
+                    }else{
+                        denglu+='<center><a href="/index/center"><font color="'+data.vcolor+'">'+data.username+'</font></a><br/>' +
+                            '<span>未开通vip</span>' +
+                            '</center>';
+                    }
                     if (data.status==1){
                         zhuangtai+='<a data-v-7a95db78="" href="/index/buyvip" title="开通腾讯视频VIP" class="btn_vip_open" vft-report-key="key83">' +
                             '        <img data-v-7a95db78="" src="https://puui.qpic.cn/vupload/0/20190429_1556525820107_ydqfb4uftz9.png/0" alt="" class="star_black">开通腾讯视频VIP' +
