@@ -6,138 +6,45 @@
     <link rel="stylesheet" href="../css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/jquery.min.js"></script>
-    <style type="text/css">
-        /*用css重定义div标签*/
-        #sssss {
-            /*添加背景图*/
-            background-image: url(../images/true.png);
-            /*定义画的格子大小*/
-            width: 100%;
-            height: 1px;
-            text-align: left;
-            border: 1px solid #458591;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        .block {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .sliderContainer {
-            position: relative;
-            text-align: center;
-            width: 310px;
-            height: 40px;
-            line-height: 40px;
-            margin-top: 15px;
-            background: #f7f9fa;
-            color: #45494c;
-            border: 1px solid #e4e7eb;
-        }
-
-        .sliderContainer_active .slider {
-            height: 38px;
-            top: -1px;
-            border: 1px solid #1991FA;
-        }
-
-        .sliderContainer_active .sliderMask {
-            height: 38px;
-            border-width: 1px;
-        }
-
-        .sliderContainer_success .slider {
-            height: 38px;
-            top: -1px;
-            border: 1px solid #52CCBA;
-            background-color: #52CCBA !important;
-        }
-
-        .sliderContainer_success .sliderMask {
-            height: 38px;
-            border: 1px solid #52CCBA;
-            background-color: #D2F4EF;
-        }
-
-        .sliderContainer_success .sliderIcon {
-            background-position: 0 0 !important;
-        }
-
-        .sliderContainer_fail .slider {
-            height: 38px;
-            top: -1px;
-            border: 1px solid #f57a7a;
-            background-color: #f57a7a !important;
-        }
-
-        .sliderContainer_fail .sliderMask {
-            height: 38px;
-            border: 1px solid #f57a7a;
-            background-color: #fce1e1;
-        }
-
-        .sliderContainer_fail .sliderIcon {
-            top: 14px;
-            background-position: 0 -82px !important;
-        }
-        .sliderContainer_active .sliderText, .sliderContainer_success .sliderText, .sliderContainer_fail .sliderText {
-            display: none;
-        }
-
-        .sliderMask {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 40px;
-            border: 0 solid #1991FA;
-            background: #D1E9FE;
-        }
-
-        .slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 40px;
-            height: 40px;
-            background: #fff;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: background .2s linear;
-        }
-
-        .slider:hover {
-            background: #1991FA;
-        }
-
-        .slider:hover .sliderIcon {
-            background-position: 0 -13px;
-        }
-
-        .sliderIcon {
-            position: absolute;
-            top: 15px;
-            left: 13px;
-            width: 14px;
-            height: 12px;
-            background: url(http://cstaticdun.126.net//2.6.3/images/icon_light.f13cff3.png) 0 -26px;
-            background-size: 34px 471px;
-        }
-
-        .refreshIcon {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 34px;
-            height: 34px;
-            cursor: pointer;
-            background: url(http://cstaticdun.126.net//2.6.3/images/icon_light.f13cff3.png) 0 -437px;
-            background-size: 34px 471px;
-        }
+        .slider-btn{position:absolute;width:44px;height:44px;left:0;top:-7px;z-index:12;cursor:pointer;background-image:url(../images/yangshi.png);background-position:0 -84px;transition:inherit}
+        .ver-tips{position:absolute;left:0;bottom:-22px;background:rgba(255,255,255,.9);height:22px;line-height:22px;font-size:12px;width:100%;margin:0;text-align:left;padding:0 8px;transition:all .4s}
+        .slider-tips{bottom:0}
+        .ver-tips i{display:inline-block;width:22px;height:22px;vertical-align:top;background-image:url(../images/yangshi.png);background-position:-4px -1229px}
+        .ver-tips span{display:inline-block;vertical-align:top;line-height:22px;color:#455}
+        .active-tips{display:block}
+        .hidden{display:none}
+        .re-btn{position:absolute;left:0;bottom:0;height:28px;padding:0 16px}
+        .re-btn a{display:inline-block;width:14px;height:14px;margin:7px 0;background-image:url(../images/yangshi.png);background-position:0 -1179px;cursor:pointer}
+        .re-btn a:hover{background-position:0 -1193px}
     </style>
 </head>
+<style type="text/css">
+    /*用css重定义div标签*/
+    #sssss {
+        /*添加背景图*/
+        background-image: url(../images/true.png);
+        /*定义画的格子大小*/
+        width: 100%;
+        height: 0px;
+        text-align: left;
+        border: 1px solid #cc00ff;
+    }
+    .verBox {
+        width: 0px;
+        height: 0px;
+        text-align:center;
+        top:0;
+        opacity:0;
+        transition:all 0.8s;
+    }
+</style>
 <body id="sssss">
+<div class="verBox">
+    <div id="imgVer" style="display:inline-block;"></div>
+</div>
 <section id="content">
     <!--头部-->
     <div class="content-header clearfix">
@@ -150,13 +57,12 @@
             <form methed="post" id="myforms">
                 <div class="s1">
                     <h4>账号</h4>
-                    <input name="usercode" type="text" placeholder="用户名/手机/邮箱">
+                    <input  name="usercode" type="text" placeholder="用户名/手机/邮箱">
                 </div>
                 <div class="s1">
                     <h4>密码</h4>
-                    <input name="password" type="password" placeholder="请输入密码">
+                    <input id="passwordmima" name="password" type="password" placeholder="请输入密码">
                 </div>
-                <div id="captcha"></div>
                 <div class="s2">
                     <input type="checkbox">
                     <span>记住密码</span>
@@ -174,10 +80,10 @@
                     <span>使用第三方账号直接登录</span>
                     <div class="login-icon">
                         <a href="#">
-                            <img src="../js/images/qq.png" alt="">
+                            <img src="../images/qq.png" alt="">
                         </a>
                         <a href="#">
-                            <img src="../js/images/wechat.png" alt="">
+                            <img src="../images/wechat.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -245,20 +151,6 @@
             },
         });
     }
-    function insert(){
-        $.ajax({
-            url:"/index/login",
-            type:"post",
-            data:$("#myforms").serialize(),
-            success:function(data){
-                if (data.success) {
-                    window.location.href="/index/svip";
-                }else{
-                    alert(data.message);
-                }
-            },
-        });
-    }
     var countdown=60;
     function sendemail(){
         var phoneNumber = $("#phone").val();
@@ -315,257 +207,256 @@
 
         }
     }
-    (function (window) {
-        const l = 42, // 滑块边长
-            r = 9, // 滑块半径
-            w = 310, // canvas宽度
-            h = 155, // canvas高度
-            PI = Math.PI
-        const L = l + r * 2 + 3 // 滑块实际边长
-
-        function getRandomNumberByRange (start, end) {
-            return Math.round(Math.random() * (end - start) + start)
-        }
-
-        function createCanvas (width, height) {
-            const canvas = createElement('canvas')
-            canvas.width = width
-            canvas.height = height
-            return canvas
-        }
-
-        function createImg (onload) {
-            const img = createElement('img')
-            img.crossOrigin = "Anonymous"
-            img.onload = onload
-            img.onerror = () => {
-                img.src = getRandomImg()
-            }
-            img.src = getRandomImg()
-            return img
-        }
-
-        function createElement (tagName, className) {
-            const elment = document.createElement(tagName)
-            elment.className = className
-            return elment
-        }
-
-        function addClass (tag, className) {
-            tag.classList.add(className)
-        }
-
-        function removeClass (tag, className) {
-            tag.classList.remove(className)
-        }
-
-        function getRandomImg () {
-            return 'https://picsum.photos/300/150/?image=' + getRandomNumberByRange(0, 1084)
-        }
-
-        function draw (ctx, x, y, operation) {
-            ctx.beginPath()
-            ctx.moveTo(x, y)
-            ctx.arc(x + l / 2, y - r + 2, r, 0.72 * PI, 2.26 * PI)
-            ctx.lineTo(x + l, y)
-            ctx.arc(x + l + r - 2, y + l / 2, r, 1.21 * PI, 2.78 * PI)
-            ctx.lineTo(x + l, y + l)
-            ctx.lineTo(x, y + l)
-            ctx.arc(x + r - 2, y + l / 2, r + 0.4, 2.76 * PI, 1.24 * PI, true)
-            ctx.lineTo(x, y)
-            ctx.lineWidth = 2
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)'
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)'
-            ctx.stroke()
-            ctx[operation]()
-            ctx.globalCompositeOperation = 'overlay'
-        }
-
-        function sum (x, y) {
-            return x + y
-        }
-
-        function square (x) {
-            return x * x
-        }
-
-        class jigsaw {
-            constructor ({ el, onSuccess, onFail, onRefresh }) {
-                el.style.position = el.style.position || 'relative'
-                this.el = el
-                this.onSuccess = onSuccess
-                this.onFail = onFail
-                this.onRefresh = onRefresh
-            }
-
-            init () {
-                this.initDOM()
-                this.initImg()
-                this.bindEvents()
-            }
-
-            initDOM () {
-                const canvas = createCanvas(w, h) // 画布
-                const block = canvas.cloneNode(true) // 滑块
-                const sliderContainer = createElement('div', 'sliderContainer')
-                const refreshIcon = createElement('div', 'refreshIcon')
-                const sliderMask = createElement('div', 'sliderMask')
-                const slider = createElement('div', 'slider')
-                const sliderIcon = createElement('span', 'sliderIcon')
-                const text = createElement('span', 'sliderText')
-
-                block.className = 'block'
-                text.innerHTML = '向右滑动填充拼图'
-
-                const el = this.el
-                el.appendChild(canvas)
-                el.appendChild(refreshIcon)
-                el.appendChild(block)
-                slider.appendChild(sliderIcon)
-                sliderMask.appendChild(slider)
-                sliderContainer.appendChild(sliderMask)
-                sliderContainer.appendChild(text)
-                el.appendChild(sliderContainer)
-
-                Object.assign(this, {
-                    canvas,
-                    block,
-                    sliderContainer,
-                    refreshIcon,
-                    slider,
-                    sliderMask,
-                    sliderIcon,
-                    text,
-                    canvasCtx: canvas.getContext('2d'),
-                    blockCtx: block.getContext('2d')
-                })
-            }
-
-            initImg () {
-                const img = createImg(() => {
-                    this.draw()
-                    this.canvasCtx.drawImage(img, 0, 0, w, h)
-                    this.blockCtx.drawImage(img, 0, 0, w, h)
-                    const y = this.y - r * 2 - 1
-                    const ImageData = this.blockCtx.getImageData(this.x - 3, y, L, L)
-                    this.block.width = L
-                    this.blockCtx.putImageData(ImageData, 0, y)
-                })
-                this.img = img
-            }
-
-            draw () {
-                // 随机创建滑块的位置
-                this.x = getRandomNumberByRange(L + 10, w - (L + 10))
-                this.y = getRandomNumberByRange(10 + r * 2, h - (L + 10))
-                draw(this.canvasCtx, this.x, this.y, 'fill')
-                draw(this.blockCtx, this.x, this.y, 'clip')
-            }
-
-            clean () {
-                this.canvasCtx.clearRect(0, 0, w, h)
-                this.blockCtx.clearRect(0, 0, w, h)
-                this.block.width = w
-            }
-
-            bindEvents () {
-                this.el.onselectstart = () => false
-                this.refreshIcon.onclick = () => {
-                    this.reset()
-                    typeof this.onRefresh === 'function' && this.onRefresh()
-                }
-
-                let originX, originY, trail = [], isMouseDown = false
-
-                const handleDragStart = function (e) {
-                    originX = e.clientX || e.touches[0].clientX
-                    originY = e.clientY || e.touches[0].clientY
-                    isMouseDown = true
-                }
-
-                const handleDragMove = (e) => {
-                    if (!isMouseDown) return false
-                    const eventX = e.clientX || e.touches[0].clientX
-                    const eventY = e.clientY || e.touches[0].clientY
-                    const moveX = eventX - originX
-                    const moveY = eventY - originY
-                    if (moveX < 0 || moveX + 38 >= w) return false
-                    this.slider.style.left = moveX + 'px'
-                    const blockLeft = (w - 40 - 20) / (w - 40) * moveX
-                    this.block.style.left = blockLeft + 'px'
-
-                    addClass(this.sliderContainer, 'sliderContainer_active')
-                    this.sliderMask.style.width = moveX + 'px'
-                    trail.push(moveY)
-                }
-
-                const handleDragEnd = (e) => {
-                    if (!isMouseDown) return false
-                    isMouseDown = false
-                    const eventX = e.clientX || e.changedTouches[0].clientX
-                    if (eventX == originX) return false
-                    removeClass(this.sliderContainer, 'sliderContainer_active')
-                    this.trail = trail
-                    const { spliced, verified } = this.verify()
-                    if (spliced) {
-                        if (verified) {
-                            addClass(this.sliderContainer, 'sliderContainer_success')
-                            typeof this.onSuccess === 'function' && this.onSuccess()
-                        } else {
-                            addClass(this.sliderContainer, 'sliderContainer_fail')
-                            this.text.innerHTML = '再试一次'
-                            this.reset()
-                        }
-                    } else {
-                        addClass(this.sliderContainer, 'sliderContainer_fail')
-                        typeof this.onFail === 'function' && this.onFail()
-                        setTimeout(() => {
-                            this.reset()
-                        }, 1000)
+    imgVer({
+        el:'$("#imgVer")',
+        width:'260',
+        height:'116',
+        img:[
+            '../images/1.jpg',
+            '../images/2.jpg',
+            '../images/3.jpg',
+            '../images/4.jpg'
+        ],
+        success:function () {
+            $.ajax({
+                url:"/index/login",
+                type:"post",
+                data:$("#myforms").serialize(),
+                success:function(data){
+                    if (data.success) {
+                        window.location.href="/index/svip";
+                    }else{
+                        alert(data.message);
+                        $("#content").css({
+                            "left":"0",
+                            "opacity":"1"
+                        });
+                        $(".verBox").css({
+                            "left":"404px",
+                            "opacity":"0"
+                        });
                     }
-                }
-                this.slider.addEventListener('mousedown', handleDragStart)
-                this.slider.addEventListener('touchstart', handleDragStart)
-                document.addEventListener('mousemove', handleDragMove)
-                document.addEventListener('touchmove', handleDragMove)
-                document.addEventListener('mouseup', handleDragEnd)
-                document.addEventListener('touchend', handleDragEnd)
-            }
+                },
+            });
+        },
+        error:function () {
+            //alert('错误什么都不执行')
+        }
+    });
+    function insert() {
+        if($(".usercode").val() == '') {
+            alert("请输入用户名");
+        }else if($(".password").val() == ''){
+            alert("请输入密码")
+        } else {
+            $("#content").css({
+                "left":"-404px",
+                "opacity":"0"
+            });
+            $(".verBox").css({
+                "left":"0",
+                "opacity":"1"
+            })
+        }
+    }
+    function imgVer(Config) {
+        var el = eval(Config.el);
+        var w = Config.width;
+        var h = Config.height;
+        var imgLibrary = Config.img;
+        var PL_Size = 48;
+        var padding = 20;
+        var MinN_X = padding + PL_Size;
+        var MaxN_X = w - padding - PL_Size - PL_Size / 6;
+        var MaxN_Y = padding;
+        var MinN_Y = h - padding - PL_Size - PL_Size / 6;
 
-            verify () {
-                const arr = this.trail // 拖动时y轴的移动距离
-                const average = arr.reduce(sum) / arr.length
-                const deviations = arr.map(x => x - average)
-                const stddev = Math.sqrt(deviations.map(square).reduce(sum) / arr.length)
-                const left = parseInt(this.block.style.left)
-                return {
-                    spliced: Math.abs(left - this.x) < 10,
-                    verified: stddev !== 0, // 简单验证下拖动轨迹，为零时表示Y轴上下没有波动，可能非人为操作
-                }
+        function RandomNum(Min, Max) {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            if (Math.round(Rand * Range) == 0) {
+                return Min + 1;
+            } else if (Math.round(Rand * Max) == Max) {
+                return Max - 1;
+            } else {
+                var num = Min + Math.round(Rand * Range) - 1;
+                return num;
             }
-
-            reset () {
-                this.sliderContainer.className = 'sliderContainer'
-                this.slider.style.left = 0
-                this.block.style.left = 0
-                this.sliderMask.style.width = 0
-                this.clean()
-                this.img.src = getRandomImg()
-            }
-
         }
 
-        window.jigsaw = {
-            init: function (opts) {
-                return new jigsaw(opts).init()
-            }
+        var imgRandom = RandomNum(1, imgLibrary.length);
+        var imgSrc = imgLibrary[imgRandom];
+        var X = RandomNum(MinN_X, MaxN_X);
+        var Y = RandomNum(MinN_Y, MaxN_Y);
+        var left_Num = -X + 10;
+        var html = '<div style="position:relative;padding:16px 16px 28px;border:1px solid #ddd;background:#f2ece1;border-radius:16px;">';
+        html += '<div style="position:relative;overflow:hidden;width:' + w + 'px;">';
+        html += '<div style="position:relative;width:' + w + 'px;height:' + h + 'px;">';
+        html += '<img id="scream" src="' + imgSrc + '" style="width:' + w + 'px;height:' + h + 'px;">';
+        html += '<canvas id="puzzleBox" width="' + w + '" height="' + h + '" style="position:absolute;left:0;top:0;z-index:22;"></canvas>';
+        html += '</div>';
+        html += '<div class="puzzle-lost-box" style="position:absolute;width:' + w + 'px;height:' + h + 'px;top:0;left:' + left_Num + 'px;z-index:111;">';
+        html += '<canvas id="puzzleShadow" width="' + w + '" height="' + h + '" style="position:absolute;left:0;top:0;z-index:22;"></canvas>';
+        html += '<canvas id="puzzleLost" width="' + w + '" height="' + h + '" style="position:absolute;left:0;top:0;z-index:33;"></canvas>';
+        html += '</div>';
+        html += '<p class="ver-tips"></p>';
+        html += '</div>';
+        html += '<div class="re-btn"><a></a></div>';
+        html += '</div>';
+        html += '<br>';
+        html += '<div style="position:relative;width:' + w + 'px;margin:auto;">';
+        html += '<div style="border:1px solid #c3c3c3;border-radius:24px;background:#ece4dd;box-shadow:0 1px 1px rgba(12,10,10,0.2) inset;">';
+        html += '<p style="font-size:12px;color: #486c80;line-height:28px;margin:0;text-align:right;padding-right:22px;">按住左边滑块，拖动完成上方拼图</p>';
+        html += '</div>';
+        html += '<div class="slider-btn"></div>';
+        html += '</div>';
+        el.html(html);
+        var d = PL_Size / 3;
+        var c = document.getElementById("puzzleBox");
+        var ctx = c.getContext("2d");
+        ctx.globalCompositeOperation = "xor";
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#fff";
+        ctx.shadowOffsetX = 3;
+        ctx.shadowOffsetY = 3;
+        ctx.fillStyle = "rgba(0,0,0,0.7)";
+        ctx.beginPath();
+        ctx.lineWidth = "1";
+        ctx.strokeStyle = "rgba(0,0,0,0)";
+        ctx.moveTo(X, Y);
+        ctx.lineTo(X + d, Y);
+        ctx.bezierCurveTo(X + d, Y - d, X + 2 * d, Y - d, X + 2 * d, Y);
+        ctx.lineTo(X + 3 * d, Y);
+        ctx.lineTo(X + 3 * d, Y + d);
+        ctx.bezierCurveTo(X + 2 * d, Y + d, X + 2 * d, Y + 2 * d, X + 3 * d, Y + 2 * d);
+        ctx.lineTo(X + 3 * d, Y + 3 * d);
+        ctx.lineTo(X, Y + 3 * d);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+        var c_l = document.getElementById("puzzleLost");
+        var c_s = document.getElementById("puzzleShadow");
+        var ctx_l = c_l.getContext("2d");
+        var ctx_s = c_s.getContext("2d");
+        var img = new Image();
+        img.src = imgSrc;
+        img.onload = function () {
+            ctx_l.drawImage(img, 0, 0, w, h);
         }
-    }(window))
-
-    jigsaw.init({
-        el: document.getElementById('captcha'),
-
-    })
+        ctx_l.beginPath();
+        ctx_l.strokeStyle = "rgba(0,0,0,0)";
+        ctx_l.moveTo(X, Y);
+        ctx_l.lineTo(X + d, Y);
+        ctx_l.bezierCurveTo(X + d, Y - d, X + 2 * d, Y - d, X + 2 * d, Y);
+        ctx_l.lineTo(X + 3 * d, Y);
+        ctx_l.lineTo(X + 3 * d, Y + d);
+        ctx_l.bezierCurveTo(X + 2 * d, Y + d, X + 2 * d, Y + 2 * d, X + 3 * d, Y + 2 * d);
+        ctx_l.lineTo(X + 3 * d, Y + 3 * d);
+        ctx_l.lineTo(X, Y + 3 * d);
+        ctx_l.closePath();
+        ctx_l.stroke();
+        ctx_l.shadowBlur = 10;
+        ctx_l.shadowColor = "black";
+        ctx_l.clip();
+        ctx_s.beginPath();
+        ctx_s.lineWidth = "1";
+        ctx_s.strokeStyle = "rgba(0,0,0,0)";
+        ctx_s.moveTo(X, Y);
+        ctx_s.lineTo(X + d, Y);
+        ctx_s.bezierCurveTo(X + d, Y - d, X + 2 * d, Y - d, X + 2 * d, Y);
+        ctx_s.lineTo(X + 3 * d, Y);
+        ctx_s.lineTo(X + 3 * d, Y + d);
+        ctx_s.bezierCurveTo(X + 2 * d, Y + d, X + 2 * d, Y + 2 * d, X + 3 * d, Y + 2 * d);
+        ctx_s.lineTo(X + 3 * d, Y + 3 * d);
+        ctx_s.lineTo(X, Y + 3 * d);
+        ctx_s.closePath();
+        ctx_s.stroke();
+        ctx_s.shadowBlur = 20;
+        ctx_s.shadowColor = "black";
+        ctx_s.fill();
+        var moveStart = '';
+        $(".slider-btn").mousedown(function (e) {
+            e = e || window.event;
+            $(this).css({
+                "background-position": "0 -216px"
+            });
+            moveStart = e.pageX;
+        });
+        onmousemove = function (e) {
+            e = e || window.event;
+            var moveX = e.pageX;
+            var d = moveX - moveStart;
+            if (moveStart == '') {
+            } else {
+                if (d < 0 || d > (w - padding - PL_Size)) {
+                } else {
+                    $(".slider-btn").css({
+                        "left": d + 'px',
+                        "transition": "inherit"
+                    });
+                    $("#puzzleLost").css({
+                        "left": d + 'px',
+                        "transition": "inherit"
+                    });
+                    $("#puzzleShadow").css({
+                        "left": d + 'px',
+                        "transition": "inherit"
+                    });
+                }
+            }
+        };
+        onmouseup = function (e) {
+            e = e || window.event;
+            var moveEnd_X = e.pageX - moveStart;
+            var ver_Num = X - 10;
+            var deviation = 4;
+            var Min_left = ver_Num - deviation;
+            var Max_left = ver_Num + deviation;
+            if (moveStart == '') {
+            } else {
+                if (Max_left > moveEnd_X && moveEnd_X > Min_left) {
+                    $(".ver-tips").html('<i style="background-position:-4px -1207px;"></i><span style="color:#42ca6b;">验证通过</span><span></span>');
+                    $(".ver-tips").addClass("slider-tips");
+                    $(".puzzle-lost-box").addClass("hidden");
+                    $("#puzzleBox").addClass("hidden");
+                    setTimeout(function () {
+                        $(".ver-tips").removeClass("slider-tips");
+                        imgVer(Config);
+                    }, 2000);
+                    Config.success();
+                } else {
+                    $(".ver-tips").html('<i style="background-position:-4px -1229px;"></i><span style="color:red;">验证失败:</span><span style="margin-left:4px;">拖动滑块将悬浮图像正确拼合</span>');
+                    $(".ver-tips").addClass("slider-tips");
+                    setTimeout(function () {
+                        $(".ver-tips").removeClass("slider-tips");
+                    }, 2000);
+                    Config.error();
+                }
+            }
+            setTimeout(function () {
+                $(".slider-btn").css({
+                    "left": '0',
+                    "transition": "left 0.5s"
+                });
+                $("#puzzleLost").css({
+                    "left": '0',
+                    "transition": "left 0.5s"
+                });
+                $("#puzzleShadow").css({
+                    "left": '0',
+                    "transition": "left 0.5s"
+                });
+            }, 1000);
+            $(".slider-btn").css({
+                "background-position": "0 -84px"
+            });
+            moveStart = '';
+            $(".re-btn a").on("click", function () {
+                imgVer(Config);
+            })
+        }
+    }
 </script>
+
 </body>
 </html>

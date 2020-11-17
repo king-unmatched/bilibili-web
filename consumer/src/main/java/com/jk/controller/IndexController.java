@@ -223,11 +223,6 @@ public class IndexController {
         out.close();
     }
 
-    @RequestMapping("tologinthree")
-    public String tologinthree(){
-        return "loginthree";
-    }
-
     @RequestMapping("toOne")
     public String toOne(){
         return "1";
