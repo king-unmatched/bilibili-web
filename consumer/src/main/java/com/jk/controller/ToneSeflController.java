@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
 @RestController
 @RequestMapping("tone")
@@ -36,6 +37,11 @@ public class ToneSeflController {
     @RequestMapping("inserToneSelf")
     public void inserToneSelf(ToneSelfBean toneSelfBean){
         toneSeflService.insertToneSefl(toneSelfBean);
+    }
+
+    @RequestMapping("selToneSelf")
+    public List<ToneSelfBean> selToneSelf(){
+        return toneSeflService.selToneSelfBean();
     }
 
 }

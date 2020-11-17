@@ -6,6 +6,8 @@ import com.jk.service.ToneSelfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ToneSelfServiceImpl implements ToneSelfService {
 
@@ -16,5 +18,10 @@ public class ToneSelfServiceImpl implements ToneSelfService {
     @Override
     public void insertToneSefl(ToneSelfBean toneSelfBean) {
         toneSelfBeanMapper.insertToneSefl(toneSelfBean);
+    }
+
+    @Override
+    public List<ToneSelfBean> selToneSelfBean() {
+        return toneSelfBeanMapper.selToneSelfBean();
     }
 }

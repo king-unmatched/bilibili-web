@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <title>个人信息</title>
     <script src="../js/jquery.min.js"></script>
+
+
 </head>
 <head>
     <meta charset="utf-8">
+
     <title>Bootstrap 实例 - 进度条</title>
+    <script src="../jss/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+
 </head>
 <body>
 <div class="row" id="app">
@@ -58,6 +64,53 @@
             </div>
     </div>
 </div>
+<div class="mod_row_box" _wind="columnname=精选_今日热门&controlname=new_vs_hot_today" _expose="new_vs_hot_today" id="new_vs_hot_today" data-istyle="4" data-context="1">
+
+    <div class="mod_hd">
+
+
+        <h2 class="mod_title">
+           个人视频
+        </h2>
+    </div>
+
+    <div class="mod_bd cf _quickopen _quickopen_duration">
+        <div class="mod_figure
+
+        mod_figure_h_default
+
+
+
+        mod_figure_h_default_1row
+
+
+        mod_figure_h_default
+
+
+        mod_figure_scroll
+
+
+
+
+    " data-rowCount="8"  data-rowLen="1" id="jrremen">
+
+
+
+
+
+            <!--QQlive_FB_CAP_ss_rm_div AD begin...."l=QQlive_FB_CAP_ss_rm&log=off"--><div id="QQlive_FB_CAP_ss_rm" style="width:1px;height:1px;display:none;" class="l_qq_com"></div><!--QQlive_FB_CAP_ss_rm AD end --><!--[if !IE]>|xGv00|c12474066497e6c706d23e9842e0d3ba<![endif]-->
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
 </body>
 <script>
     var vm = new Vue({
@@ -83,5 +136,32 @@
             },
         });
     })
+$(function () {
+    remenInfo();
+})
+
+    function remenInfo() {
+        $.ajax({
+            url:"/tone/selToneSelf",
+            type:"post",
+            success:function(data){
+                var remen="";
+                for (var i = 0; i <data.length; i++) {
+                    remen+='<div class="list_item "  __wind>'
+                        +'<a href="'+data[i].oneselfUrl+'" target="_blank" class="figure" tabindex="-1" _stat="new_vs_hot_today:img:'+data[i].oneselfName+'"  data-float="'+data[i].oneselfId+'"   data-quickopen="true" >'
+                        +'<img loading="lazy" class="figure_pic" width="150px" height="100px" src="'+data[i].oneselfImg+'" alt="'+data[i].oneselfName+'" onerror="picerr(this,\''+'h'+'\')" />'
+                        +'</a>'
+                        +'<div class="figure_detail figure_detail_two_row  ">'
+                        +'<a href="'+data[i].oneselfUrl+'" class="figure_title figure_title_two_row " title="'+data[i].oneselfName+'" _stat="new_vs_hot_today:title:'+data[i].oneselfName+'" target="_blank">'+data[i].oneselfName+'</a>'
+                        +'</div>'
+                        +'</div>';
+
+                }
+                $("#jrremen").append(remen);
+            },
+        });
+    }
 </script>
+
+
 </html>
