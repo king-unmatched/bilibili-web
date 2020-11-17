@@ -156,6 +156,9 @@ public class PayController {
             if (all.size()==0){
                 ser.creatOrder(out_trade_no,trade_no,total_amount);
                 UserService.update(sim.format(user.getCreatetime()),user.getId());
+                User login = UserService.login(user.getUsercode());
+                request.getSession().removeAttribute("sysUser");
+                request.getSession().setAttribute("sysUser",login);
             }
             return "svip";//跳转付款成功页面
         }else{

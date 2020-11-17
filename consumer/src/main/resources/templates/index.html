@@ -48,7 +48,7 @@
             obj.srcset && (obj.srcset = img + ' 2x');
         }
         // 检测白屏跳转且防止死循环跳转
-        window.emptyPageTimer = setTimeout(function () {
+        /*window.emptyPageTimer = setTimeout(function () {
             var loc = window.location
             if(!~loc.pathname.indexOf('/bk/channel/choice.html')) {
                 loc.href = 'https://v.qq.com/bk/channel/choice.html'
@@ -56,7 +56,7 @@
         }, 8000)
         try {
             !function(){var e=["lite"],t=["tesla"];function n(e){var t=document.createElement("style"),n=document.head||document.getElementsByTagName("head")[0];t.type="text/css",t.styleSheet?t.styleSheet.cssText=e:t.appendChild(document.createTextNode(e)),n.appendChild(t)}function o(e,t,n){var o="";if(n>0){var i=new Date;i.setTime(i.getTime()+24*n*60*60*1e3),o="; expires="+i.toUTCString()}else o=";expires=Thu, 01 Jan 1970 00:00:01 GMT";document.cookie=e+"="+(t||"")+o+"; path=/"}function i(e){for(var t=e+"=",n=document.cookie.split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1,i.length);if(0==i.indexOf(t))return i.substring(t.length,i.length)}return null}function a(e){for(var t={},n=("?"===e[0]?e.substr(1):e).split("&"),o=0;o<n.length;o++){var i=n[o].split("=");t[decodeURIComponent(i[0])]=decodeURIComponent(i[1]||"")}return t}!function(){var r=a(location&&location.search||""),c=navigator.userAgent.toLocaleLowerCase(),d=r.mode,l=i("__mode");try{t.some(function(e){return c.match(e)})}catch(e){}(d&&~e.indexOf(d)||l&&~e.indexOf(l))&&(n(".__client_download__,.__lite_hide__{display:none !important}"),function(){var e=a(location&&location.search||""),t=e&&e.scale||"";t?o("__scale",t,30):t=i("__scale");var r=(document.body&&document.body||document.getElementsByTagName("body")).clientWidth||1e3;if((t=+t)&&"number"==typeof t&&!isNaN(t)){var c="html,body{overflow-x: hidden;}body{transform: scale("+t+");transform-origin: center top;}";r<1280&&(c+="body{min-width: 990px;}",c+=".site_head .head_inner{position: relative;}"),n(c)}}()),window.channelInfos&&"choice"===window.channelInfos.channelId&&(d&&~e.indexOf(d)?o("__mode",d,30):o("__mode","",-1))}()}();
-        } catch (e) {}
+        } catch (e) {}*/
 
         function getQueryVariable(variable)
         {
@@ -83,6 +83,9 @@
     <link rel="preload" href="//vm.gtimg.cn/c/=/tencentvideo/script/index2017/public_comps/shortcut.min.js,/tencentvideo/script/module/floatpanel.js" as="script" />
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body _wind="scene=频道页&pagename=精选频道" class="page_channel page_channel_choice">
 <svg class="svg_sprite" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1" height="1">
@@ -190,10 +193,10 @@
              src="//puui.qpic.cn/vupload/0/common_blank.png/0" alt="" />
 
         <div class="mod_search">
-            <form id="searchForm" action="//v.qq.com/x/search/" method="get" target="_blank" class="search_form cf">
-                <label class="search_label" for="keywords">搜索关键词</label>
+            <form id="searchForm" method="post" target="_blank" class="search_form cf">
+                <label class="search_label" for="tags">搜索关键词</label>
                 <div class="search_keywords">
-                    <input type="text" name="q" id="keywords" class="search_input" placeholder="" autocomplete="off"  _stat="顶部导航区_搜索框" />
+                    <input type="search" name="q" id="tags" class="search_input" placeholder="" autocomplete="off"  _stat="顶部导航区_搜索框" />
                 </div>
                 <input type="hidden" name="stag">
                 <input type="hidden" name="smartbox_ab">
@@ -208,7 +211,6 @@
                 </svg>热搜榜
                 </a>
             </form>
-            <div class="mod_smartbox none" id="smartbox"></div>
         </div>
         <!-- 快捷入口 开始 -->
         <div class="mod_quick cf">
@@ -1413,6 +1415,61 @@
             }
         })
     }
+    query=function(){
+        var serach=$("#tags").val();
+        $.ajax({
+            url:"../fuzzes",
+            data:{value:serach},
+            success:function(data){
+
+                var str="";
+                for (var i = 0; i < data.length; i++) {
+                    str += "<p><a href='"+data[i].url+"'>"+data[i].name+"</a></p><p><img src='"+data[i].img+"' width='160px' height='160px'></p><p><span>简介:"+data[i].info+"</span></p>" ;
+
+                }
+                console.log(data)
+
+                $("#zhanshi").html(str);
+
+            },
+            error:function () {
+                alert("查询失败")
+            }
+        })
+    }
+    var availableTags = new Array();
+
+    $(document).ready(function() {
+        $("#tags").bind("input propertychange", function () {
+
+            $("#tags").val(($(this).val()));
+            var res="";
+            $.get("queryzdbq?value="+$(this).val(), function (data, status) {
+
+
+                var results=data;
+                for(var i=0;i<results.length;i++){
+
+
+                    availableTags[i]=results[i];
+                    /*var r =availableTags[i];
+                    alert(r);*/
+                }
+
+                $("#tags").autocomplete({
+                    source: availableTags,
+                    /*select: function(e, ui) {
+
+                        alert(ui.item.value)
+
+                    }*/
+                });
+            });
+
+        });
+
+
+    })
 </script>
 
 

@@ -1,0 +1,27 @@
+server:
+  port: 8764
+
+
+
+spring:
+  application:
+      name: es
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-name: my-application
+      cluster-nodes: localhost:9300
+
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://DESKTOP-70RB78L:3306/tencent?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath*:mybatis/*Mapper.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
