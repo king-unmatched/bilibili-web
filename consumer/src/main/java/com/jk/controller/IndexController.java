@@ -233,8 +233,4 @@ public class IndexController {
         return "2";
     }
 
-    @RequestMapping("toThree")
-    public String toThree(){
-        return "3";
-    }
 }

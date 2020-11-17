@@ -496,7 +496,7 @@
          }
     </style>
 
-
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body class="page_play" _wind="scene=播放底层页&controlname=电影">
@@ -1353,8 +1353,8 @@
             <div class="player_container cf" r-component="c-player-wrapper-wide" r-class="{player_container_wide: wide}" r-notemplate="true">
                 <div class="mod_player_section cf">
 
-                    <video src="https://diwuzu123.oss-cn-beijing.aliyuncs.com/img/babai.mp4"
-                           style="object-fit: fill;width: 880px;height: 495px"controls="controls" autoplay="autoplay" loop="loop">
+                    <video id="videovip" src="https://diwuzu123.oss-cn-beijing.aliyuncs.com/img/babai.mp4"
+                           style="object-fit: fill;width: 880px;height: 495px"controls="controls" autopdlay="autoplay" loop="loop">
                     </video>
 
                 </div>
@@ -3576,6 +3576,50 @@
 
 
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url:"/index/sysUser",
+                type:"post",
+                success:function(data){
+                    var data = eval('('+data+')');
+                    var video = document.getElementById("videovip");
+                    if (data==null || data==""){
+                        if(video){
+                            //使用事件监听方式捕捉事件
+                            video.addEventListener("timeupdate",function(){
+                                //用秒数来显示当前播放进度
+                                var timeDisplay = Math.floor(video.currentTime);
+                                if(timeDisplay>30){
+                                    location.href="/index/loginus";
+                                    alert("请登录！")
+                                }
+
+                            },false)
+                        }
+                    }else{
+                        if (data.status==1){
+                            if(video){
+                                //使用事件监听方式捕捉事件
+                                video.addEventListener("timeupdate",function(){
+                                    //用秒数来显示当前播放进度
+                                    var timeDisplay = Math.floor(video.currentTime);
+                                    if(timeDisplay>30){
+                                        location.href="/index/buyvip";
+                                        alert("请开通vip！")
+                                    }
+
+                                },false)
+                            }
+                        }
+                    }
+                },
+                error:function (data) {
+                    alert("系统出错了")
+                }
+            });
+        })
+    </script>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -3627,7 +3671,6 @@
         //    window.PageMessage.wait('tvp-playing', boot);
         //    window.PageMessage.wait('tvp-adStart', boot);
         //    window.PageMessage.wait('tvp-error', boot);
-        window.PageMessage.wait('tvp-ready', boot);
         setTimeout(boot, 5000);
 
         var booted = false;
@@ -3645,5 +3688,4 @@
 
 </div>
 </body>
-
 </html>

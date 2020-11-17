@@ -899,7 +899,7 @@
             <div class="player_container " r-component="c-player-wrapper-wide" r-class="{player_container_wide: wide}" r-notemplate="true">
                 <div class="mod_player_section cf" style="width: 874px;height: 600px">
                     <script src="//vm.gtimg.cn/tencentvideo/script/vplay2017/2011101124/vplay.play.js" crossorigin="anonymous"></script>
-                    <video src="https://diwuzu123.oss-cn-beijing.aliyuncs.com/img/modaozushiQ.mp4" style="width: 874px;height: 600px" autoplay controls loop poster="https://icweiliimg9.pstatp.com/weili/l/913146374019088384.webp"></video>
+                    <video id="videovip" src="https://diwuzu123.oss-cn-beijing.aliyuncs.com/img/%E5%85%A8%E8%81%8C%E9%AB%98%E6%89%8B%E7%AC%AC2%E5%AD%A3%E7%AC%AC01%E8%AF%9D.mp4" style="width: 874px;height: 600px" autoplay controls loop poster="https://icweiliimg9.pstatp.com/weili/l/913146374019088384.webp"></video>
                 </div>
 
                 <div class="mod_player_side" _wind="pagename=播放列表" id="episode_number">
@@ -1304,6 +1304,36 @@
                     }
                     $("#dengluchuangkou").append(denglus);
                     $("#common").append(commond);
+                    var video = document.getElementById("videovip");
+                    if (data==null || data==""){
+                        if(video){
+                            //使用事件监听方式捕捉事件
+                            video.addEventListener("timeupdate",function(){
+                                //用秒数来显示当前播放进度
+                                var timeDisplay = Math.floor(video.currentTime);
+                                if(timeDisplay>30){
+                                    location.href="/index/loginus";
+                                    alert("请登录！")
+                                }
+
+                            },false)
+                        }
+                    }else{
+                        if (data.status==1){
+                            if(video){
+                                //使用事件监听方式捕捉事件
+                                video.addEventListener("timeupdate",function(){
+                                    //用秒数来显示当前播放进度
+                                    var timeDisplay = Math.floor(video.currentTime);
+                                    if(timeDisplay>30){
+                                        location.href="/index/buyvip";
+                                        alert("请开通vip！")
+                                    }
+
+                                },false)
+                            }
+                        }
+                    }
                 },
                 error:function (data) {
                     alert("系统出错了")
