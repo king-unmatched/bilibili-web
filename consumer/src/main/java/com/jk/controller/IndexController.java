@@ -66,8 +66,12 @@ public class IndexController {
         return "buyvip";
     }
     @RequestMapping("tonesefl")
-    public String tonesefl(){
+    public String tonesefl() {
         return "tonesefl";
+    }
+    @RequestMapping("dyplayer")
+    public String dyplayer(){
+        return "dyplayer";
     }
 
     @RequestMapping("login")

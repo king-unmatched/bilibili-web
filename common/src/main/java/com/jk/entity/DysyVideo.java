@@ -28,6 +28,27 @@ public class DysyVideo {
 
     private String xvip;
 
+    private String smallPicture;
+
+    private String videoInfo;
+
+    public String getVideoInfo() {
+        return videoInfo;
+    }
+
+    public void setVideoInfo(String videoInfo) {
+        this.videoInfo = videoInfo;
+    }
+
+    public String getSmallPicture() {
+        return smallPicture;
+    }
+
+    public void setSmallPicture(String smallPicture) {
+        this.smallPicture = smallPicture;
+    }
+
+
     public String getXvip() {
         return xvip;
     }

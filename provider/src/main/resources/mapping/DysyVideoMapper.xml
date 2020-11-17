@@ -12,6 +12,8 @@
     <result column="video_heat" property="videoHeat" jdbcType="INTEGER" />
     <result column="video_status" property="videoStatus" jdbcType="INTEGER" />
     <result column="video_title" property="videoTitle" jdbcType="VARCHAR" />
+    <result column="small_picture" property="smallPicture" jdbcType="VARCHAR" />
+    <result column="video_info" property="videoInfo" jdbcType="VARCHAR" />
   </resultMap>
   <select id="selectVideo" resultType="DysyVideo">
   select a.*,b.dy_name as xvip from dy_sy_video a left join dy_vip b on a.video_status=b.dy_id
