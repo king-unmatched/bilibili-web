@@ -65,6 +65,15 @@ public class IndexController {
     public String dyplayer(){
         return "dyplayer";
     }
+    @RequestMapping("comic")
+    public String comic(){
+        return "comic";
+    }
+
+    @RequestMapping("fsq")
+    public String fsq(){
+        return "fsq";
+    }
     @RequestMapping("login")
     @ResponseBody
     public Result login(HttpServletRequest request, User user){
