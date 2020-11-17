@@ -30,6 +30,25 @@ public class ComicVideo {
 
     private String ztvip;
 
+    //集表
+    private Integer episodeId;
+    private Integer episodeNum;
+    private String episodeUrl;
+    private Integer videoId;
+    private Integer episodeStatus;
     private String comicTitle;
+
+    public String getComicTitle() {
+        return comicTitle;
+    }
+
+    public void setComicTitle(String comicTitle) {
+        this.comicTitle = comicTitle;
+    }
+
+    public String getZtvip() {
+        return ztvip;
+    }
+
 
 }

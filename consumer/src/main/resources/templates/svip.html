@@ -1049,8 +1049,6 @@
                 var denglu="";
                 var denglus="";
                 var shijian = new Date();
-                var riqi = new Date(data.createtime);
-                var str = riqi.toLocaleDateString();
                 if (data==null || data==""){
                     denglus+='<a href="/index/logins" class="quick_link _checklogin" >'
                         +'<img class="quick_user_avatar" src="//puui.qpic.cn/vupload/0/common_avatar.png/0" data-type="avatar" data-avatarsize="40">'
@@ -1062,6 +1060,8 @@
                         '        </a>';
                     denglu+=' <a data-v-7a95db78="" href="/index/logins" class="btn_login" vft-report-key="key78">立即登录</a>';
                 }else{
+                    var riqi = new Date(data.createtime);
+                    var str = riqi.toLocaleDateString();
                     denglus+='<a href="/index/center" _stat="顶部导航区:头像" class="quick_link _checklogin">'
                         +'<img class="quick_user_avatar" src="'+data.userimg+'" data-type="avatar" data-avatarsize="40">'
                         +'</a>'

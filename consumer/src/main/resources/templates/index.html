@@ -83,10 +83,35 @@
     <link rel="preload" href="//vm.gtimg.cn/c/=/tencentvideo/script/index2017/public_comps/shortcut.min.js,/tencentvideo/script/module/floatpanel.js" as="script" />
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .list_item {
+        height: 315px;
+        width: 183px;
+    }
+
+    .list_item_b {
+        width: 215px;
+        height: 315px;
+        top: 0px;
+        position: absolute;
+        opacity: 0;
+        display: block;
+        font-size: 12px;
+        transition: 0.3s;
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+    }
+
+    .list_item:hover .list_item_b {
+        opacity: 1;
+    }
+</style>
 <body _wind="scene=频道页&pagename=精选频道" class="page_channel page_channel_choice">
 <svg class="svg_sprite" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1" height="1">
     <linearGradient id="__lg_collect" gradientUnits="userSpaceOnUse" x1="-126.4" y1="27.9" x2="-126.4" y2="26.9" gradientTransform="matrix(10 0 0 -10 1275 285)">
@@ -1208,6 +1233,8 @@
         zuozheInfo();
         selecttype();
     })
+
+
     $(document).ready(function () {
         $.ajax({
             url:"/index/sysUser",
@@ -1310,8 +1337,21 @@
                         +'<img loading="lazy" class="mark_v mark_v_'+data[i].ztvip+'" src="'+data[i].comicXiaoimg+'" srcset="'+data[i].comicXiaoimg+'@2x.png/0 2x" alt="'+data[i].ztvip+'" onerror="picerr(this)">'
                         +'</a>'
                         +'<div class="figure_detail figure_detail_two_row  ">'
-                        +'<a onclick="selectComic('+data[i].comicNumber+')"  class="figure_title figure_title_two_row bold" title="'+data[i].name+'" _stat="new_vs_hot_cartoon:title:'+data[i].name+'" target="_blank">'+data[i].name+'</a>'
+                        +'<a onclick="selectComic('+data[i].comicNumber+')" class="figure_title figure_title_two_row bold" title="'+data[i].name+'" _stat="new_vs_hot_cartoon:title:'+data[i].name+'" target="_blank">'+data[i].name+'</a>'
                         +'<div class="figure_desc" title="'+data[i].info+'">'+data[i].info+' </div>'
+                        +'</div>'
+                        +'<div class="list_item_b" style="background-color: white">'
+                        +'<div style="width: 215px;height: 165px">'
+                        +'<a onclick="selectComic('+data[i].comicNumber+')"><img src="'+data[i].img+'" style="width: 215px;height: 165px"></a>'
+                        +'</div>'
+                        +'<div style="width: 215px;height: 75px">'
+                        +'<a style="margin-left: 50px" href="'+data[i].url+'">'
+                        +'<font style="font-weight: bold">'+data[i].name+'</font>'
+                        +'</a>'
+                        +'</div>'
+                        +'<div style="width: 215px;height: 75px">'
+                        +'<font style="font-weight: bold">'+data[i].comicTitle+'</font>'
+                        +'</div>'
                         +'</div>'
                         +'</div>';
                     dmph+='<a onclick="selectComic('+data[i].comicNumber+')" class="rank_item rank_item_'+c+' cf" title="'+data[i].name+'" target="scene=%E9%A2%91%E9%81%93%E9%A1%B5&amp;pagename=%E7%B2%BE%E9%80%89%E9%A2%91%E9%81%93&amp;columnname=%E7%B2%BE%E9%80%89_%E5%8A%A8%E6%BC%AB&amp;controlname=new_vs_hot_cartoon&amp;cid=m441e3rjq9kwpsc&amp;vid=&amp;pid=&amp;datatype=1&amp;playertype=1&amp;controlidx=0&amp;columnidx=7&amp;plat_bucketid=9231005">'
@@ -1363,18 +1403,31 @@
                         +'<span class="rank_title">'+data[i].videoName+'</span>'
                         +'<span class="rank_desc">'+data[i].videoTitle+'</span>'
                         +'<span class="rank_update">'+data[i].videoHeat+'万</span>'
-                    +'</a>';
+                        +'</a>';
                     dyfl+='<div class="list_item ">'
                         +'<a href="'+data[i].videoUrl+'" target="scene=%E9%A2%91%E9%81%93%E9%A1%B5&amp;pagename=%E7%B2%BE%E9%80%89%E9%A2%91%E9%81%93&amp;columnname=%E7%B2%BE%E9%80%89_%E7%94%B5%E5%BD%B1&amp;controlname=new_vs_hot_movie&amp;cid=mzc002001pvlwzm&amp;vid=&amp;pid=&amp;datatype=1&amp;playertype=1&amp;controlidx=0&amp;columnidx=5&amp;plat_bucketid=9231005" class="figure" tabindex="-1" _stat="new_vs_hot_movie:img:'+data[i].videoName+'" data-float="'+data[i].videoHeat+'" data-floatid="'+data[i].videoId+'">'
                         +'<img loading="lazy" class="figure_pic" alt="'+data[i].videoName+'" onerror="picerr(this,\''+'v'+'\')" src="'+data[i].videoImg+'" style="visibility: visible;">'
-                    +'<div class="figure_caption"> '+data[i].videoDuration+' </div>'
-                    +'<div class="figure_score">'+data[i].videoTypeid+'</div>'
-                    +'<img loading="lazy" class="mark_v mark_v_'+data[i].xvip+'" src="'+data[i].videoXiaoimg+'" srcset="'+data[i].videoXiaoimg+'@2x.png/0 2x" alt="'+data[i].xvip+'" onerror="picerr(this)"> </a>'
-                    +'<div class="figure_detail figure_detail_two_row  ">'
-                    +'<a href="'+data[i].videoUrl+'" class="figure_title figure_title_two_row bold" title="'+data[i].videoName+'" _stat="new_vs_hot_movie:title:'+data[i].videoName+'" target="scene=%E9%A2%91%E9%81%93%E9%A1%B5&amp;pagename=%E7%B2%BE%E9%80%89%E9%A2%91%E9%81%93&amp;columnname=%E7%B2%BE%E9%80%89_%E7%94%B5%E5%BD%B1&amp;controlname=new_vs_hot_movie&amp;cid=mzc002001pvlwzm&amp;vid=&amp;pid=&amp;datatype=1&amp;playertype=1&amp;controlidx=0&amp;columnidx=5&amp;plat_bucketid=9231005">'+data[i].videoName+'</a>'
-                    +'<div class="figure_desc" title="'+data[i].videoTitle+'">'+data[i].videoTitle+'</div>'
-                    +'</div>'
-                    +'</div>';
+                        +'<div class="figure_caption"> '+data[i].videoDuration+' </div>'
+                        +'<div class="figure_score">'+data[i].videoTypeid+'</div>'
+                        +'<img loading="lazy" class="mark_v mark_v_'+data[i].xvip+'" src="'+data[i].videoXiaoimg+'" srcset="'+data[i].videoXiaoimg+'@2x.png/0 2x" alt="'+data[i].xvip+'" onerror="picerr(this)"> </a>'
+                        +'<div class="figure_detail figure_detail_two_row  ">'
+                        +'<a href="'+data[i].videoUrl+'" class="figure_title figure_title_two_row bold" title="'+data[i].videoName+'" _stat="new_vs_hot_movie:title:'+data[i].videoName+'" target="scene=%E9%A2%91%E9%81%93%E9%A1%B5&amp;pagename=%E7%B2%BE%E9%80%89%E9%A2%91%E9%81%93&amp;columnname=%E7%B2%BE%E9%80%89_%E7%94%B5%E5%BD%B1&amp;controlname=new_vs_hot_movie&amp;cid=mzc002001pvlwzm&amp;vid=&amp;pid=&amp;datatype=1&amp;playertype=1&amp;controlidx=0&amp;columnidx=5&amp;plat_bucketid=9231005">'+data[i].videoName+'</a>'
+                        +'<div class="figure_desc" title="'+data[i].videoTitle+'">'+data[i].videoTitle+'</div>'
+                        +'</div>'
+                        +'<div class="list_item_b" style="background-color: white">'
+                        +'<div style="width: 215px;height: 165px">'
+                        +'<a href="'+data[i].videoUrl+'"><img src="'+data[i].smallPicture+'" style="width: 215px;height: 165px"></a>'
+                        +'</div>'
+                        +'<div style="width: 215px;height: 75px">'
+                        +'<a style="margin-left: 50px" href="'+data[i].videoUrl+'">'
+                        +'<font style="font-weight: bold">'+data[i].videoName+'</font>'
+                        +'</a>'
+                        +'</div>'
+                        +'<div style="width: 215px;height: 75px">'
+                        +'<font style="font-weight: bold">'+data[i].videoInfo+'</font>'
+                        +'</div>'
+                        +'</div>'
+                        +'</div>';
                 }
                 $("#dypaihang").append(diany);
                 $("#dianyingfl").append(dyfl);

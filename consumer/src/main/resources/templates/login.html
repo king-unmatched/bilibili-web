@@ -2,200 +2,345 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登录</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/jquery.min.js"></script>
-    <style type="text/css">
-        /*用css重定义div标签*/
-        #sssss {
-            /*添加背景图*/
-            background-image: url(../images/true.png);
-            /*定义画的格子大小*/
+    <title>jQuery登录框拼图滑块验证代码 - 站长素材</title>
+    <style>
+        .bxs-row {
+            margin-bottom:12px;
+        }
+        .logo-box {
+            width:404px;
+            margin:120px auto;
+            border:1px solid #e5e5e5;
+            border-radius:4px;
+            box-shadow:0 4px 18px rgba(0,0,0,0.2);
+            position:relative;
+            overflow:hidden;
+            height:360px;
+        }
+        .login {
+            position:absolute;
+            width:320px;left:0;
+            top:0;
+            padding: 42px 42px 36px;
+            transition:all 0.8s;
+        }
+        .username,.password,.btn {
+            height: 44px;
             width: 100%;
-            height: 1px;
-            text-align: left;
-            border: 1px solid #cc00ff;
+            padding: 0 10px;
+            border: 1px solid #9da3a6;
+            background: #fff;
+            text-overflow: ellipsis;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -khtml-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            color: #000;
+            font-size: 1em;
+            font-family: Helvetica,Arial,sans-serif;
+            font-weight: 400;
+            direction: ltr;
+            font-size:13px;
+        }
+        .submit {
+            background-color: #0070ba;
+            color:#fff;
+            border:1px solid #0070ba;
+        }
+        .submit:hover {
+            background-color:#005ea6;
+        }
+        .verBox {
+            position:absolute;
+            width:100%;
+            text-align:center;
+            left:404px;
+            top:0;
+            opacity:0;
+            transition:all 0.8s;
+            padding-top:55px;
+        }
+        .err {
+            margin:12px 0 0;
+            line-height:12px;
+            height:12px;
+            font-size:12px;
+            color:red;
         }
     </style>
+    <script src='https://libs.baidu.com/jquery/1.10.2/jquery.min.js'></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body id="sssss">
-<section id="content">
-    <!--头部-->
-    <div class="content-header clearfix">
-        <a href="javascript:;" class="current">登录</a>
-        <a href="javascript:;">注册</a>
-    </div>
-    <!--内容-->
-    <div class="content-body">
-        <div class="dom" style="display: block;">
-            <form methed="post" id="myforms">
-                <div class="s1">
-                    <h4>账号</h4>
-                    <input name="usercode" type="text" placeholder="用户名/手机/邮箱">
-                </div>
-                <div class="s1">
-                    <h4>密码</h4>
-                    <input name="password" type="password" placeholder="请输入密码">
-                </div>
-                <div class="s2">
-                    <input type="checkbox">
-                    <span>记住密码</span>
-                </div>
-                <input type="button" class="btn" value="登&nbsp;录" onclick="insert();">
-            </form>
-            <div class="dom-footer">
-                <div class="login-another">
-                    <a href="#">找回密码</a>
-                    <span>|</span>
-                    <span>还没有注册帐号?</span>
-                    <a href="#">立即注册</a>
-                </div>
-                <div class="login-three">
-                    <span>使用第三方账号直接登录</span>
-                    <div class="login-icon">
-                        <a href="#">
-                            <img src="../images/qq.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="../images/wechat.png" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
+<body>
+
+<div class="logo-box">
+    <div class="login" style="">
+        <div class="bxs-row" style="text-align:center;">
+            <img id="logo" src="../images/logo.jpg" style="width:72px;"><span class="tips" style="color:red;">忍住不哭来段口技</span>
         </div>
-        <div class="dom">
-            <form method="post" id="forms">
-                <div class="s1">
-                    <h4>手机号码</h4>
-                    <input id="phone" type="text" placeholder="填写你的手机号码作为登录账户">
-                </div>
-                <div class="s1">
-                    <h4>用户名</h4>
-                    <input id="username" type="text" placeholder="中、英文均可, 最长20个字符或10个汉字">
-                </div>
-                <div class="s1">
-                    <h4>密码</h4>
-                    <input id="password" type="text" placeholder="6-30位英文、数字、符号, 区分大小写">
-                </div>
-                <div class="s1 msg-code">
-                    <h4>短信验证码</h4>
-                    <input id="yzm" type="text" placeholder="填写短信验证码">
-                    <input type="button" id="btn" value="发送验证码" onclick="sendemail()"
-                           style="width: 120px; height: 38px; border: 1; float: right; border:none">
-                </div>
-                <div class="s1">
-                    <h4>邀请码<span style="color: purple">(选填)</span></h4>
-                    <input name="code" type="text" placeholder="如果有邀请码, 请填写">
-                </div>
-                <input type="button" class="btn" value="注&nbsp;册" onclick="login()">
-            </form>
-            <div class="dom-footer">
-                <div class="login-three">
-                    <span>使用第三方账号直接登录</span>
-                    <div class="login-icon">
-                        <a href="#">
-                            <img src="../images/qq.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="../images/wechat.png" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="bxs-row">
+            <input type="text" class="username" placeholder="用户名" value="admin">
+            <p class=" err err-username"></p>
+        </div>
+        <div class="bxs-row">
+            <input type="password" class="password" placeholder="密码">
+            <p class="err err-password"></p>
+        </div>
+        <div class="bxs-row">
+            <input type="submit" class="submit btn" value="登录">
         </div>
     </div>
-</section>
+    <div class="verBox">
+        <div id="imgVer" style="display:inline-block;"></div>
+    </div>
+</div>
 <script>
-    function login() {
-        var code =$("#yzm").val();
-        var phoneNumber = $("#phone").val();
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var ran = Math.ceil(Math.random()*8999999999+1000000000);
-        $.ajax({
-            url:"/index/loginto",
-            type:"post",
-            data:{'usercode':ran,'username':username,'password':password,'code':code,'phoneNumber':phoneNumber},
-            success:function(data){
-                if (data.success) {
-                    alert("注册成功账号为:"+ran);
-                } else {
-                    alert(data.message);
-                }
-            },
-        });
-    }
-    function insert(){
-        $.ajax({
-            url:"/index/login",
-            type:"post",
-            data:$("#myforms").serialize(),
-            success:function(data){
-                if (data.success) {
-                    window.location.href="/index/index";
-                }else{
-                    alert(data.message);
-                }
-            },
-        });
-    }
-    var countdown=60;
-    function sendemail(){
-        var phoneNumber = $("#phone").val();
-        $.ajax({
-            url:"/index/dxcode",
-            type:"post",
-            data:{phoneNumber:phoneNumber},
-            success:function(){
-            },
-        });
-        var obj = $("#btn");
-        settime(obj);
-    }
-    function settime(obj) { //发送验证码倒计时
-        if (countdown == 0) {
-            obj.attr('disabled',false);
-            //obj.removeattr("disabled");
-            obj.val("重新获取验证码");
-            countdown = 60;
-            return;
+    imgVer({
+        el:'$("#imgVer")',
+        width:'260',
+        height:'116',
+        img:[
+            'images/ver.png',
+            'images/ver-1.png',
+            'images/ver-2.png',
+            'images/ver-3.png'
+        ],
+        success:function () {
+            //alert('执行登录函数');
+            $(".login").css({
+                "left":"0",
+                "opacity":"1"
+            });
+            $(".verBox").css({
+                "left":"404px",
+                "opacity":"0"
+            });
+            $(".tips").html('你是不是不知道账号密码！？？？');
+            $("#logo").attr("src",'images/login-err.png')
+        },
+        error:function () {
+            //alert('错误什么都不执行')
+        }
+    });
+    $(".submit").on('click',function () {
+        if($(".username").val() == '') {
+            // $(".err-username").html('杂种！！你用户名呢！？？？');
+            $(".tips").html('老兄！！你用户名呢！？？？');
+            $("#logo").attr("src",'images/null-username.jpg')
+        } else if($(".password").val() == '') {
+            // $(".err-password").html('畜生！！你密码呢！？？？');
+            $(".tips").html('老兄！！你密码呢！？？？');
+            $("#logo").attr("src",'images/null-password.jpg')
         } else {
-            obj.attr('disabled',true);
-            obj.val("重新发送(" + countdown + ")");
-            countdown--;
+            $(".login").css({
+                "left":"-404px",
+                "opacity":"0"
+            });
+            $(".verBox").css({
+                "left":"0",
+                "opacity":"1"
+            })
         }
-        setTimeout(function() {
-                settime(obj) }
-            ,1000)
-    }
-    window.onload = function () {
-        // 1.1 获取需要的标签
-        let as = document.getElementsByClassName('content-header')[0].getElementsByTagName('a');
-        let contents = document.getElementsByClassName('dom');
+    })
+    function imgVer(Config) {
+        var el = eval(Config.el);
+        var w = Config.width;
+        var h = Config.height;
+        var imgLibrary = Config.img;
+        var PL_Size = 48;
+        var padding = 20;
+        var MinN_X = padding + PL_Size;
+        var MaxN_X = w - padding - PL_Size - PL_Size / 6;
+        var MaxN_Y = padding;
+        var MinN_Y = h - padding - PL_Size - PL_Size / 6;
 
-        // 1.2 遍历
-        for (let i = 0; i < as.length; i++) {
-            // 1.2.1 取出单个对象
-            let a = as[i];
-            a.id = i;
-
-            // 1.2.2 监听鼠标的移动事件
-            a.onclick = function () {
-                // 让所有的a的class都清除
-                for (let j = 0; j < as.length; j++) {
-                    as[j].className = '';
-                    contents[j].style.display = 'none';
-                }
-
-                // 设置当前a的class
-                this.className = 'current';
-                // 从contents数组中取出对应的标签
-                contents[this.id].style.display = 'block';
+        function RandomNum(Min, Max) {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            if(Math.round(Rand * Range) == 0) {
+                return Min + 1;
+            } else if(Math.round(Rand * Max) == Max) {
+                return Max - 1;
+            } else {
+                var num = Min + Math.round(Rand * Range) - 1;
+                return num;
             }
-
         }
-    }
+        var imgRandom = RandomNum(1, imgLibrary.length);
+        var imgSrc = imgLibrary[imgRandom];
+        var X = RandomNum(MinN_X, MaxN_X);
+        var Y = RandomNum(MinN_Y, MaxN_Y);
+        var left_Num = -X + 10;
+        var html = '<div style="position:relative;padding:16px 16px 28px;border:1px solid #ddd;background:#f2ece1;border-radius:16px;">';
+        html += '<div style="position:relative;overflow:hidden;width:' + w + 'px;">';
+        html += '<div style="position:relative;width:' + w + 'px;height:' + h + 'px;">';
+        html += '<img id="scream" src="' + imgSrc + '" style="width:' + w + 'px;height:' + h + 'px;">';
+        html += '<canvas id="puzzleBox" width="' + w + '" height="' + h + '" style="position:absolute;left:0;top:0;z-index:22;"></canvas>';
+        html += '</div>';
+        html += '<div class="puzzle-lost-box" style="position:absolute;width:' + w + 'px;height:' + h + 'px;top:0;left:' + left_Num + 'px;z-index:111;">';
+        html += '<canvas id="puzzleShadow" width="' + w + '" height="' + h + '" style="position:absolute;left:0;top:0;z-index:22;"></canvas>';
+        html += '<canvas id="puzzleLost" width="' + w + '" height="' + h + '" style="position:absolute;left:0;top:0;z-index:33;"></canvas>';
+        html += '</div>';
+        html += '<p class="ver-tips"></p>';
+        html += '</div>';
+        html += '<div class="re-btn"><a></a></div>';
+        html += '</div>';
+        html += '<br>';
+        html += '<div style="position:relative;width:' + w + 'px;margin:auto;">';
+        html += '<div style="border:1px solid #c3c3c3;border-radius:24px;background:#ece4dd;box-shadow:0 1px 1px rgba(12,10,10,0.2) inset;">';
+        html += '<p style="font-size:12px;color: #486c80;line-height:28px;margin:0;text-align:right;padding-right:22px;">按住左边滑块，拖动完成上方拼图</p>';
+        html += '</div>';
+        html += '<div class="slider-btn"></div>';
+        html += '</div>';
+        el.html(html);
+        var d = PL_Size / 3;
+        var c = document.getElementById("puzzleBox");
+        var ctx = c.getContext("2d");
+        ctx.globalCompositeOperation = "xor";
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#fff";
+        ctx.shadowOffsetX = 3;
+        ctx.shadowOffsetY = 3;
+        ctx.fillStyle = "rgba(0,0,0,0.7)";
+        ctx.beginPath();
+        ctx.lineWidth = "1";
+        ctx.strokeStyle = "rgba(0,0,0,0)";
+        ctx.moveTo(X, Y);
+        ctx.lineTo(X + d, Y);
+        ctx.bezierCurveTo(X + d, Y - d, X + 2 * d, Y - d, X + 2 * d, Y);
+        ctx.lineTo(X + 3 * d, Y);
+        ctx.lineTo(X + 3 * d, Y + d);
+        ctx.bezierCurveTo(X + 2 * d, Y + d, X + 2 * d, Y + 2 * d, X + 3 * d, Y + 2 * d);
+        ctx.lineTo(X + 3 * d, Y + 3 * d);
+        ctx.lineTo(X, Y + 3 * d);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+        var c_l = document.getElementById("puzzleLost");
+        var c_s = document.getElementById("puzzleShadow");
+        var ctx_l = c_l.getContext("2d");
+        var ctx_s = c_s.getContext("2d");
+        var img = new Image();
+        img.src = imgSrc;
+        img.onload = function() {
+            ctx_l.drawImage(img, 0, 0, w, h);
+        }
+        ctx_l.beginPath();
+        ctx_l.strokeStyle = "rgba(0,0,0,0)";
+        ctx_l.moveTo(X, Y);
+        ctx_l.lineTo(X + d, Y);
+        ctx_l.bezierCurveTo(X + d, Y - d, X + 2 * d, Y - d, X + 2 * d, Y);
+        ctx_l.lineTo(X + 3 * d, Y);
+        ctx_l.lineTo(X + 3 * d, Y + d);
+        ctx_l.bezierCurveTo(X + 2 * d, Y + d, X + 2 * d, Y + 2 * d, X + 3 * d, Y + 2 * d);
+        ctx_l.lineTo(X + 3 * d, Y + 3 * d);
+        ctx_l.lineTo(X, Y + 3 * d);
+        ctx_l.closePath();
+        ctx_l.stroke();
+        ctx_l.shadowBlur = 10;
+        ctx_l.shadowColor = "black";
+        ctx_l.clip();
+        ctx_s.beginPath();
+        ctx_s.lineWidth = "1";
+        ctx_s.strokeStyle = "rgba(0,0,0,0)";
+        ctx_s.moveTo(X, Y);
+        ctx_s.lineTo(X + d, Y);
+        ctx_s.bezierCurveTo(X + d, Y - d, X + 2 * d, Y - d, X + 2 * d, Y);
+        ctx_s.lineTo(X + 3 * d, Y);
+        ctx_s.lineTo(X + 3 * d, Y + d);
+        ctx_s.bezierCurveTo(X + 2 * d, Y + d, X + 2 * d, Y + 2 * d, X + 3 * d, Y + 2 * d);
+        ctx_s.lineTo(X + 3 * d, Y + 3 * d);
+        ctx_s.lineTo(X, Y + 3 * d);
+        ctx_s.closePath();
+        ctx_s.stroke();
+        ctx_s.shadowBlur = 20;
+        ctx_s.shadowColor = "black";
+        ctx_s.fill();
+        var moveStart = '';
+        $(".slider-btn").mousedown(function(e) {
+            e = e || window.event;
+            $(this).css({
+                "background-position": "0 -216px"
+            });
+            moveStart = e.pageX;
+        });
+        onmousemove = function(e) {
+            e = e || window.event;
+            var moveX = e.pageX;
+            var d = moveX - moveStart;
+            if(moveStart == '') {} else {
+                if(d < 0 || d > (w - padding - PL_Size)) {} else {
+                    $(".slider-btn").css({
+                        "left": d + 'px',
+                        "transition": "inherit"
+                    });
+                    $("#puzzleLost").css({
+                        "left": d + 'px',
+                        "transition": "inherit"
+                    });
+                    $("#puzzleShadow").css({
+                        "left": d + 'px',
+                        "transition": "inherit"
+                    });
+                }
+            }
+        };
+        onmouseup = function(e) {
+            e = e || window.event;
+            var moveEnd_X = e.pageX - moveStart;
+            var ver_Num = X - 10;
+            var deviation = 4;
+            var Min_left = ver_Num - deviation;
+            var Max_left = ver_Num + deviation;
+            if(moveStart == '') {} else {
+                if(Max_left > moveEnd_X && moveEnd_X > Min_left) {
+                    $(".ver-tips").html('<i style="background-position:-4px -1207px;"></i><span style="color:#42ca6b;">验证通过</span><span></span>');
+                    $(".ver-tips").addClass("slider-tips");
+                    $(".puzzle-lost-box").addClass("hidden");
+                    $("#puzzleBox").addClass("hidden");
+                    setTimeout(function() {
+                        $(".ver-tips").removeClass("slider-tips");
+                        imgVer(Config);
+                    }, 2000);
+                    Config.success();
+                } else {
+                    $(".ver-tips").html('<i style="background-position:-4px -1229px;"></i><span style="color:red;">验证失败:</span><span style="margin-left:4px;">拖动滑块将悬浮图像正确拼合</span>');
+                    $(".ver-tips").addClass("slider-tips");
+                    setTimeout(function() {
+                        $(".ver-tips").removeClass("slider-tips");
+                    }, 2000);
+                    Config.error();
+                }
+            }
+            setTimeout(function() {
+                $(".slider-btn").css({
+                    "left": '0',
+                    "transition": "left 0.5s"
+                });
+                $("#puzzleLost").css({
+                    "left": '0',
+                    "transition": "left 0.5s"
+                });
+                $("#puzzleShadow").css({
+                    "left": '0',
+                    "transition": "left 0.5s"
+                });
+            }, 1000);
+            $(".slider-btn").css({
+                "background-position": "0 -84px"
+            });
+            moveStart = '';
+            $(".re-btn a").on("click", function() {
+                imgVer(Config);
+            })
+        }
 </script>
+
 </body>
 </html>
